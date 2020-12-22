@@ -62,8 +62,11 @@
 .phot__image--background{
   width: 100vw;
   opacity: 0.5;
- 
-
+  
+}
+.Phot {
+  text-align: center;
+  position: relative;
 }
 
 .expect{
@@ -71,7 +74,9 @@
   opacity: 0.7;
   position: absolute;
   top:200px;
-  left:380px;
+  left:160px;
+  
+  display: inline-block;
   height: 400px;
   width: 850px;
   color: #ffffff;
@@ -111,10 +116,11 @@
 
 .select{
   text-decoration: none;
-  color: rgb(115, 112, 107);
+  color: rgb(242, 203, 86);
   font-size: 18px;
   display: inline-block;
   margin: 15px;
+  font-weight: 700;
 
 }
 
