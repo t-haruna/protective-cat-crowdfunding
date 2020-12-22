@@ -1,0 +1,207 @@
+.project{
+  width: 1200px;
+  margin-left: 50px;
+}
+
+.project__main{
+  display: flex;
+  justify-content: space-between;
+  color: rgb(115, 112, 107);
+  //border:solid 1px #ccc;
+}
+.project__top{
+  line-height: 200px;
+  height: 200px;
+  color: rgb(115, 112, 107);
+  
+  font-size: 40px;
+}
+
+.project__title{
+  color: rgb(115, 112, 107);
+  margin-bottom: 20px;
+  height: 150px;
+  background-color: rgb(241, 237, 220);
+  padding-top: 20px;
+  &__main{
+    font-size: 40px;
+    text-align: center;
+    height: 70%;
+  }
+  &__name{
+    font-size: 18px;
+    
+    height: 30%;
+    padding-left: 800px;
+
+  }
+}
+
+
+
+.project__right{
+  display: inline-block;
+  width: 55%;
+  &__image{
+    border:solid 5px #ccc;
+    height: 450px;
+    width: 100%;
+    background-color: rgb(115, 112, 107);
+  }
+  &__text {
+    border:solid 1px #ccc;
+    height: 400px;
+    
+    line-height: 30px;
+  }
+  &__text h2 {
+    background-color:  rgb(231, 229, 226);
+    text-align: center;
+  }
+  &__text p {
+    padding-left: 10px;
+  }
+  &__profile{
+    border:solid 1px #ccc;
+    height: 165px;
+    
+  }
+  &__profile h2 {
+    background-color:  rgb(231, 229, 226);
+    text-align: center;
+  }
+&__profile p {
+  padding-left: 10px;
+  }
+}
+
+
+
+.project__left{
+  display: inline-block;
+  width: 35%;
+  &__contents{
+    height: 300px;
+    width: 100%;
+    border:solid 1px #ccc;
+  }
+  &__return p{
+    background-color:  rgb(231, 229, 226);
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    background-color:rgb(239, 213, 173) ;
+  }
+  &__return{
+    margin-top: 40px;
+    border:solid 2px #ccc;
+    
+  }
+}
+
+.contents-pacent{
+  border:solid 1px #ccc;
+  height: 80px;
+  text-align: center;
+  font-size: 24px;
+}
+.contents-total{
+  border:solid 1px #ccc;
+  height: 120px;
+  text-align: center;
+  &__box1{
+  padding-top: 30px;
+  font-size: 18px;
+  }
+  &__box2{
+  font-size: 40px;
+  }
+}
+
+
+.contents-amount{
+  border:solid 1px #ccc;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  line-height: 50px;
+  font-size: 18px;
+  &__box1{
+    width: 40%;
+    background-color: rgb(231, 229, 226);
+  }
+  &__box2{
+    width: 60%;
+    text-align: center;
+    font-size: 21px;
+  }
+}
+.contents-turm{
+  border:solid 1px #ccc;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  line-height: 50px;
+  font-size: 18px;
+  &__box1{
+    width: 40%;
+    background-color: rgb(231, 229, 226);;
+  }
+  &__box2{
+    width: 60%;
+    text-align: center;
+  }
+}
+
+
+
+.box{
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.image{
+  width:  100%;
+  height: 100%;
+  border-radius: 3px;
+  //object-fit: cover;
+}
+
+.return{
+  //border:solid 1px #ccc;
+  height: 170px;
+  
+  &__price{
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 21px;
+    background-color:rgb(237, 231, 212); 
+    width: 100%;
+  }
+  &__content{
+    height: 100px;
+    padding-left: 20px;
+  }
+  &__btn{
+    height: 100px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  &__title{
+    background-color:  rgb(231, 229, 226);
+    text-align: center;
+  }
+}
+
+.donate{
+  text-decoration: none;
+  display: inline-block;
+  border:solid 3px rgb(246, 192, 110);
+  color: rgb(115, 112, 107);
+  padding: 7px 150px;
+  background-color: rgb(239, 213, 173);
+  border-radius: 10px;
+  font-size: 21px;
+}

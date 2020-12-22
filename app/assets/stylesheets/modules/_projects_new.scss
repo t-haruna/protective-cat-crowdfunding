@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+.contents-row{
+  
+}
+
+.container__title{
+  height: 80px;
+  width: 90%;
+  line-height: 80px;
+  color: rgb(242, 203, 86);
+  font-size: 32px;
+  font-weight: 800;
+  padding-left: 20px;
+  //background-color:rgb(242, 203, 86) ;
+  //opacity: 0.7;
+}
+
+.contents-line{
+  border:solid 1px rgb(242, 203, 86);
+}
+
+.project tr{
+  //border:solid 1px #ccc
+}
+.project th{
+  //border:solid 1px #ccc
+}
+
+.project{
+  margin-left: 20px;
+}
+
+.box1{
+  //width: 200px;
+  //padding-left: 10px;
+  color: rgb(115, 112, 107);
+  //background: #eee;
+  margin: 20px 0 5px 0;
+  display: inline-block;
+  font-weight: 700;
+  //border:solid 1px #ccc;
+}
+
+.Require{
+  padding: 2px 5px;
+  background-color: #ea352d;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.box2{
+  width: 600px;
+  border:solid 1px #ccc;
+  border-radius: 3px;
+}
+
+.input{
+  width: 100%;
+  border:none
+}
+.input2{
+  width: 100px;
+  border:solid 1px #ccc;
+  margin-left: 10px;
+  color: rgb(115, 112, 107);
+}
+
+.input3{
+  height: 400px;
+}
+
+.form-btn{
+  color: rgb(115, 112, 107);
+  margin-top: 20px;
+  padding: 5px 20px;
+  border:solid 1px #ccc;
+}
+
+.Donate__title{
+  height: 150px;
+  line-height: 150px;
+  color: rgb(115, 112, 107);
+  font-size: 24px;
+  margin-left: 20px;
+}
+.billing__box{
+  border:solid 1px #ccc;
+  width: 70%;
+  margin:0 0 30px 30px;
+  color: rgb(115, 112, 107);
+}
+
+.Form {
+  color: rgb(115, 112, 107);
+  margin-left: 30px;
+  width: 70%;
+  &__table{
+    border:solid 1px #ccc;
+    width: 30%;
+    height: 100px;
+    background-color:rgb(231, 229, 226);
+  }
+  &__btn {
+    border:solid 1px #ccc;
+    width: 70%;
+    padding-left: 10px;
+  }
+  &__count{
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.kifu{
+  color: rgb(115, 112, 107);
+  margin-top: 20px;
+  padding: 5px 20px;
+  border:solid 1px #ccc;
+}

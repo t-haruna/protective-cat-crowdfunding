@@ -1,0 +1,16 @@
+.Header
+  .Header__user
+    - if user_signed_in?
+      .Header__user__name
+        = "#{current_user.nickname} さん"
+      .Header__user__icon
+        = link_to edit_user_registration_path do
+          = icon('fas', 'cog',class: "icon")
+      .Header__user__btn
+        //= link_to "新規登録", new_user_registration_path, class: "Header__user__btn__new btn" 
+        //= link_to "ログイン", new_user_session_path, method: :get, class: "Header__user__btn__login btn" 
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Header__user__btn__login btn" 
+    - else
+      .Header__user__btn
+        = link_to "新規登録", new_user_registration_path, class: "Header__user__btn__new btn" 
+        = link_to "ログイン", new_user_session_path, method: :get, class: "Header__user__btn__login btn" 

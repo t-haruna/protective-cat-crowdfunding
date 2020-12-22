@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_20_094952) do
+ActiveRecord::Schema.define(version: 2020_12_21_224651) do
+
+  create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "title", null: false
+    t.text "image", null: false
+    t.text "text", null: false
+    t.text "profile", null: false
+    t.integer "target_amount", null: false
+    t.date "tarm", null: false
+    t.string "return_title_1", null: false
+    t.integer "return_price_1", null: false
+    t.string "return_title_2"
+    t.integer "return_price_2"
+    t.string "return_title_3"
+    t.integer "return_price_3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -26,4 +45,5 @@ ActiveRecord::Schema.define(version: 2020_12_20_094952) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "projects", "users"
 end
