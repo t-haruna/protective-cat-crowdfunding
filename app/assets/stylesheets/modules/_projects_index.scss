@@ -133,6 +133,7 @@
   margin: 10px;
   //background-color: #f9f7f7;
   opacity: 0.9;
+  
 }
 
 .Box1{
@@ -159,6 +160,7 @@
     line-height: 25px;
     font-size: 15px;
     background-color: #ffffff;
+    
   }
   &__percent{
     margin-top: 3px;
@@ -169,7 +171,10 @@
   }
   }
     
-
+  .Box3{
+    text-decoration: none ;
+    color: rgb(101, 99, 95);
+  }
   
 
 .Details{
@@ -179,6 +184,7 @@
   background-color: #e8e6df;
   height: 50px;
   
+ 
 }
 .detail{
   //display: inline-block;
@@ -191,7 +197,7 @@
 }
 
 .Contents{
-  color: rgb(101, 99, 95);
+  //color: rgb(101, 99, 95);
   &__expect{
     margin-left: 20px;
     margin-bottom: 30px;
