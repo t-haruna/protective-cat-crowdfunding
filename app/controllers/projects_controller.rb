@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @billings= Billing.where(project_id: @project.id)
+    # @billings= Billing.where(project_id: @project.id)
   end
 
   private
