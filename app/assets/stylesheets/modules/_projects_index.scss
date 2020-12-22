@@ -98,7 +98,7 @@
   opacity: 0.8;
   height: 50px;
   width: 100%;
-  border: 3px solid #ffffff;
+  //border: 3px solid #ffffff;
   display: inline-block;
   text-decoration: none;
   text-align: center;
@@ -110,7 +110,7 @@
 
 .Select{
   height: 50px;
-  border-bottom: 1px dotted rgb(217, 215, 212);
+  //border-bottom: 1px dotted rgb(217, 215, 212);
   margin-bottom: 50px;
 }
 
@@ -127,18 +127,18 @@
 .Projects{
   display: inline-block;
   text-align: center;
-  border: 1px solid rgb(217, 215, 212);
+  //border: 1px solid rgb(217, 215, 212);
   width: 400px;
   height: 435px;
   margin: 10px;
-  background-color: #f9f7f7;
+  //background-color: #f9f7f7;
   opacity: 0.9;
 }
 
 .Box1{
   width: 100%;
   height: 250px;
-  background-color: #e8e6df;
+  background-color: #ffffff;
   &__image{
     width: 95%;
     height: 90%;
@@ -147,7 +147,7 @@
 }
 
 .Box2{
-  border: 1px solid rgb(217, 215, 212);
+  //border: 1px solid rgb(217, 215, 212);
   background-color: #ffffff;
   width: 100%;
   height: 135px;
@@ -185,7 +185,7 @@
   text-align: center;
   width: 33%;
   height: 50px;
-  border-bottom: 1px solid rgb(217, 215, 212);
+  //border-bottom: 1px solid rgb(217, 215, 212);
   background-color: #ffffff;
   //padding-top: 5px;
 }
