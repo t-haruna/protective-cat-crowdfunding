@@ -1,0 +1,56 @@
+.contents-row
+  
+  .container__title プロジェクトを投稿する
+  %hr.contents-line
+
+  .project
+    = form_with(model: @project, local: true) do |form| 
+      
+      %label.project__titles.box1 タイトル
+      %span.Require 必須
+      .box2= form.text_area :title, class: "input" 
+      
+      .project__image.box1 画像
+      %span.Require 必須
+      .box2= form.text_field :image, placeholder: "Image Url", class: "input"
+      
+      .project__body.box1 本文
+      %span.Require 必須
+      .box2= form.text_area :text, class: "input input3"
+      
+      .project__profile.box1 プロフィール
+      %span.Require 必須
+      .box2= form.text_field :profile, class: "input"
+      
+      .project__price.box1 目標金額
+      %span.Require 必須
+      .box2= form.text_field :target_amount, class: "input", data: { autonumeric: { aSign: '¥ ', mDec: 0 } }
+      
+      .project__tarm.box1 募集期間
+      %span.Require 必須
+      //.box2= form.date_select :tarm, {use_month_numbers: true} , class: "input2"
+      .box2= raw sprintf(form.date_select(:tarm, use_month_numbers: true, with_css_classes:"input2", start_year: (Time.now.year), end_year: (Time.now.year + 1),  date_separator:'%s'),'年','月')+'日'
+      
+      .project__returnprice.box1 リターン① 寄付金額
+      %span.Require 必須
+      .box2= form.number_field :return_price_1, class: "input"
+      
+      .project__return.box1 リターン① 
+      %span.Require 必須
+      .box2= form.text_area :return_title_1, class: "input"
+      
+      .project__returnprice.box1 リターン② 寄付金額
+      .box2= form.number_field :return_price_2, class: "input"
+      
+      .project__return.box1 リターン②
+      .box2= form.text_area :return_title_2, class: "input"
+      
+      .project__returnprice.box1 リターン③ 寄付金額
+      .box2= form.number_field :return_price_3, class: "input"
+      
+      .project__return.box1 リターン③
+      .box2= form.text_area :return_title_3, class: "input"
+      
+      .project__btn= form.submit "SEND" ,class: "form-btn"
+      
+ 
