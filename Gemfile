@@ -64,3 +64,7 @@ gem 'devise'
 gem 'jquery-rails'
 
 gem 'autonumeric-rails'
+
+gem 'carrierwave'
+gem 'mini_magick'
+
