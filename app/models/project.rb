@@ -14,5 +14,11 @@ class Project < ApplicationRecord
   end
 
   belongs_to :user
+  has_one :draft
   mount_uploader :image, ImageUploader
+  mount_uploader :profile_image, ImageUploader
+  mount_uploader :return_image_1, ImageUploader
+  mount_uploader :return_image_2, ImageUploader
+  mount_uploader :return_image_3, ImageUploader
+
 end

@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true, uniqueness: true
   #空の文字列は保存不可
+
+  has_many :projects
+  has_many :drafts
 end
