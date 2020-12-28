@@ -1,0 +1,23 @@
+= render 'layouts/header'
+.Header-bar
+%hr.contents-line
+.Mypage
+  .Side-bar
+    .Side-bar__image
+    .Side-bar__name
+      = "#{current_user.nickname} さん"
+  .Main-bar
+    .Main-bar__title
+      プロジェクト
+    .Main-bar__page
+      =link_to "投稿中のプロジェクト", posting_project_projects_path
+    .Main-bar__page
+      =link_to "完了したプロジェクト", done_project_projects_path
+    .Main-bar__page
+      =link_to "下書き保存一覧", draft_display_projects_path
+    .Main-bar__title.setting
+      設定
+    .Main-bar__page
+      住所登録
+    .Main-bar__page
+      クレジットカード登録

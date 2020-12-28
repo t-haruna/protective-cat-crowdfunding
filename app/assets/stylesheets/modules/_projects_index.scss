@@ -1,8 +1,7 @@
 * {
   box-sizing: border-box;
 }
-
-.Header {
+.Header{
   position: absolute;
   z-index: 10;
   position: fixed;
@@ -18,6 +17,14 @@
     
     &__name{
     color: #ffffff;
+    display: inline-block;
+    line-height: 50px;
+    display: inline;
+    font-size: 18px;
+    }
+    &__mypage{
+
+    padding: 0 20px;
     display: inline-block;
     line-height: 50px;
     display: inline;
@@ -42,6 +49,11 @@
     }
     }
   }
+}
+
+.mypage-link{
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .btn{

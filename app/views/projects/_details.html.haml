@@ -1,0 +1,101 @@
+.project__title
+  .project__title__content
+    .project__title__main
+      = @project.title
+    .project__title__name
+      NAME:
+      = @project.user.nickname
+
+  .project__main
+    .project__right
+      .project__right__image
+        = image_tag @project.image.to_s, class: "image"
+
+      .project__right__text
+        %h2 プロジェクト詳細
+        %p= @project.text
+
+      %h2 Profile
+      .project__right__profile
+        .profile-image
+          = image_tag @project.profile_image.to_s, class: "image2"
+        .profile-expect
+          = @project.profile
+
+
+    .project__left
+      .project__left__contents
+        .contents-total
+          .contents-total__box1
+            現在の支援総額
+          .contents-total__box2
+           
+            -# - total1 = @billings.sum(:count_1)
+            -# - total2 = @billings.sum(:count_2)
+            -# - total3 = @billings.sum(:count_3)
+            -# - @total = total1*@project.return_price_1+total2*@project.return_price_2+total3*@project.return_price_3 
+            -# =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+            円
+
+        .contents-pacent
+          .contents-pacent__box1
+            進捗率
+          .contents-pacent__box2
+            = number_to_percentage(@total.to_f/@project.target_amount*100,precision: 1)
+        .contents-amount
+          .contents-amount__box1.box
+            目標金額
+          .contents-amount__box2.box
+            = @project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+            円
+        .contents-turm
+          .contents-turm__box1.box
+            募集期間
+          .contents-turm__box2.box
+            = @project.tarm.strftime("%Y年%m月%d日")
+            まで
+      
+      .project__left__return
+        %p return
+        .return
+          .return__title
+            リターン①
+          .return__price
+            寄付金額：
+            = @project.return_price_1.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+            円
+          .return__content
+            .return__image
+              = image_tag @project.return_image_1.to_s, class: "image3"
+            .return__text
+              = @project.return_title_1
+          .return__btn
+            = link_to '寄付をする', "#", class:'donate'
+        .return
+          .return__title
+            リターン②
+          .return__price
+            寄付金額：
+            = @project.return_price_2.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+            円
+          .return__content
+            .return__image
+              = image_tag @project.return_image_2.to_s, class: "image3"
+            .return__text
+              = @project.return_title_2
+          .return__btn
+            = link_to '寄付をする', "#", class:'donate'
+        .return
+          .return__title
+            リターン③
+          .return__price
+            寄付金額：
+            = @project.return_price_3.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+            円
+          .return__content
+            .return__image
+              = image_tag @project.return_image_3.to_s, class: "image3"
+            .return__text
+              = @project.return_title_3
+          .return__btn
+            = link_to '寄付をする', "#", class:'donate'

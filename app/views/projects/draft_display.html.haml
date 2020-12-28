@@ -1,0 +1,26 @@
+= render 'layouts/header'
+.Header-bar
+%hr.contents-line
+.Mypage
+  .Side-bar
+    .Side-bar__image
+    .Side-bar__name
+      = "#{current_user.nickname} さん"
+  .Main-bar
+    .Main-bar__title
+      下書き保存一覧
+    - @projects.each do |project|
+      .Main-bar__detaile
+        = link_to edit_project_path(project.id) do
+          .Main-bar__detaile__image
+            = image_tag project.image.to_s, class: "image"
+          .Main-bar__detaile__box
+            .Main-bar__detaile__box__title
+              =project.title
+            .Main-bar__detaile__box__term
+              募集期間
+              = project.tarm.strftime("%Y年%m月%d日")
+              まで
+            .Main-bar__detaile__box__pacent
+              進捗率
+    

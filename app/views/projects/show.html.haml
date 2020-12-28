@@ -1,85 +1,26 @@
 .project
   .project__top
     Project
-  .project__title
-    .project__title__main
-      = @project.title
-    .project__title__name
-      NAME:
-      = @project.user.nickname
-  .project__main
-    .project__right
-      .project__right__image
-        = image_tag(src= @project.image, class: "image")
-      .project__right__text
-        %h2 プロジェクト詳細
-        %p= @project.text
-      .project__right__profile
-        %h2 Profile
-        %p= @project.profile
-    .project__left
-      .project__left__contents
-        .contents-total
-          .contents-total__box1
-            現在の支援総額
-          .contents-total__box2
-           
-            -# - total1 = @billings.sum(:count_1)
-            -# - total2 = @billings.sum(:count_2)
-            -# - total3 = @billings.sum(:count_3)
-            -# - @total = total1*@project.return_price_1+total2*@project.return_price_2+total3*@project.return_price_3 
-            -# =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-            円
+  %hr.contents-line
 
-        .contents-pacent
-          .contents-pacent__box1
-            進捗率
-          .contents-pacent__box2
-            = number_to_percentage(@total.to_f/@project.target_amount*100,precision: 1)
-        .contents-amount
-          .contents-amount__box1.box
-            目標金額
-          .contents-amount__box2.box
-            = @project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-            円
-        .contents-turm
-          .contents-turm__box1.box
-            募集期間
-          .contents-turm__box2.box
-            = @project.tarm.strftime("%Y年%m月%d日")
-            まで
-      
-      .project__left__return
-        %p return
-        .return
-          .return__title
-            リターン①
-          .return__price
-            寄付金額：
-            = @project.return_price_1.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-            円
-          .return__content
-            = @project.return_title_1
-        .return
-          .return__title
-            リターン②
-          .return__price
-            寄付金額：
-            = @project.return_price_2.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-            円
-          .return__content
-            = @project.return_title_2
-        .return
-          .return__title
-            リターン③
-          .return__price
-            寄付金額：
-            = @project.return_price_3.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-            円
-          .return__content
-            = @project.return_title_3
-        .return__btn
-          -# = link_to '寄付をする', new_project_billing_path(@project.id), class:'donate'
+    = render "details"
+
+  %hr.contents-line
+  .project-confirmation 
+    %p.return-expect.confirmation 以上の内容でプロジェクトを開始してもよろしいですか？  
+    %p.return-expect.red-color ※一度開始するとリターンの内容を変更することはできません。
+    .project-btn  
+      .project-start.start
+        = link_to 'プロジェクトを開始する', project_drafts_path(@project,@draft), method: "post", class:'form-btn'
+      %hr.contents-line
+      .project-start.wait
+        = link_to '戻って修正する', "#", class:'form-btn edit-btn'
+      .project-start
+        = link_to '下書き保存', draft_display_projects_path, class:'form-btn save-btn'
+      .project-start
+        = link_to '削除する', "#", class:'form-btn delete-btn'
+
+  
 
 
 
