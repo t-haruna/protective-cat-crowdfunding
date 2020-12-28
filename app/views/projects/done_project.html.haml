@@ -1,0 +1,12 @@
+= render 'layouts/header'
+.Header-bar
+%hr.contents-line
+.Mypage
+  .Side-bar
+    .Side-bar__image
+    .Side-bar__name
+      = "#{current_user.nickname} さん"
+  .Main-bar
+    .Main-bar__title
+      完了したプロジェクト
+    .Main-bar__detaile
