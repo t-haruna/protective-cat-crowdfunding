@@ -18,11 +18,12 @@
       %span.Require 必須
       .box2.box-upload
         %label
-          = form.file_field :image,  class: 'hidden-field1'
+          = form.file_field :image,  class: 'hidden-field1', id:  "input-file"
           .image-box1
             = icon('far', 'image', class: 'Form__icon')
-            %p.qulick1-1 クリックしてファイルをアップロード
-            %p.qulick2-1.delete1 アップロード完了
+            %span.qulick1-1 クリックしてファイルをアップロード
+          //%p.qulick2-1.delete1 アップロード完了
+      #preview
             
         
       
@@ -37,11 +38,12 @@
       .project__return.box1 プロフィール 画像
       .box2.box-upload
         %label
-          = form.file_field :profile_image, class: 'hidden-field2'
+          = form.file_field :profile_image, class: 'hidden-field2', id:  "input-file2"
           .image-box2
             = icon('far', 'image', class: 'Form__icon')
-            %p.qulick1-2 クリックしてファイルをアップロード
-            %p.qulick2-2.delete2 アップロード完了
+            %span.qulick1-2 クリックしてファイルをアップロード
+            //%p.qulick2-2.delete2 アップロード完了
+      #preview2
       
       .project__price.box1 目標金額
       %span.Require 必須
@@ -72,11 +74,12 @@
       .project__return.box1 リターン① 画像
       .box2.box-upload
         %label
-          = form.file_field :return_image_1, class: 'hidden-field3'
+          = form.file_field :return_image_1, class: 'hidden-field3', id:  "input-file3"
           .image-box3
             = icon('far', 'image', class: 'Form__icon')
-            %p.qulick1-3 クリックしてファイルをアップロード
-            %p.qulick2-3.delete3 アップロード完了
+            %span.qulick1-3 クリックしてファイルをアップロード
+            //%p.qulick2-3.delete3 アップロード完了
+      #preview3
 
       .project__returnprice.box1 リターン② 寄付金額
       %p.return-expect （設定可能金額：500円〜10,0000円まで）
@@ -89,11 +92,12 @@
       .project__return.box1 リターン② 画像
       .box2.box-upload
         %label
-          = form.file_field :return_image_2, class: 'hidden-field4'
+          = form.file_field :return_image_2, class: 'hidden-field4', id:  "input-file4"
           .image-box4
             = icon('far', 'image', class: 'Form__icon')
-            %p.qulick1-4 クリックしてファイルをアップロード
-            %p.qulick2-4.delete4 アップロード完了
+            %span.qulick1-4 クリックしてファイルをアップロード
+            //%p.qulick2-4.delete4 アップロード完了
+      #preview4 
 
       .project__returnprice.box1 リターン③ 寄付金額
       %p.return-expect （設定可能金額：500円〜10,0000円まで）
@@ -106,11 +110,12 @@
       .project__return.box1 リターン③ 画像
       .box2.box-upload
         %label
-          = form.file_field :return_image_3, class: 'hidden-field5'
+          = form.file_field :return_image_3, class: 'hidden-field5', id:  "input-file5"
           .image-box5
             = icon('far', 'image', class: 'Form__icon')
-            %p.qulick1-5 クリックしてファイルをアップロード
-            %p.qulick2-5.delete5 アップロード完了
+            %span.qulick1-5 クリックしてファイルをアップロード
+            //%p.qulick2-5.delete5 アップロード完了
+      #preview5
 
       .project__btn= form.submit "確 認 画 面 へ" ,class: "form-btn"
       
