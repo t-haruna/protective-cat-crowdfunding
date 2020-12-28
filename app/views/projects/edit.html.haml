@@ -1,0 +1,122 @@
+.contents-row
+  
+  .container__title プロジェクトを投稿する
+  %hr.contents-line
+
+  
+  .project-configuration
+    
+    %h2.configuration プロジェクトの設定
+    = form_with(model: @project, local: true) do |form| 
+      
+      %label.project__titles.box1 タイトル
+      %span.Require 必須
+      %p.return-expect （最大文字数：40文字まで）
+      .box2= form.text_area :title, class: "input" 
+      
+      .project__image.box1 タイトル画像
+      %span.Require 必須
+      .box2.box-upload
+        %label
+          = form.file_field :image,  class: 'hidden-field1', id:  "input-file"
+          .image-box1
+            = icon('far', 'image', class: 'Form__icon')
+            %span.qulick1-1 クリックしてファイルをアップロード
+          //%p.qulick2-1.delete1 アップロード完了
+      #preview
+            
+        
+      
+      .project__body.box1 本文
+      %span.Require 必須
+      .box2= form.text_area :text, class: "input input3"
+      
+      .project__profile.box1 プロフィール
+      %span.Require 必須
+      .box2= form.text_field :profile, class: "input"
+
+      .project__return.box1 プロフィール 画像
+      .box2.box-upload
+        %label
+          = form.file_field :profile_image, class: 'hidden-field2', id:  "input-file2"
+          .image-box2
+            = icon('far', 'image', class: 'Form__icon')
+            %span.qulick1-2 クリックしてファイルをアップロード
+            //%p.qulick2-2.delete2 アップロード完了
+      #preview2
+      
+      .project__price.box1 目標金額
+      %span.Require 必須
+      .box2
+        = form.text_field :target_amount, class: "input-price", data: { autonumeric: { aSign: '¥ ', mDec: 0 } }
+        %a.return-expect 円
+      .project__tarm.box1 募集期間
+      %span.Require 必須
+      //.box2= form.date_select :tarm, {use_month_numbers: true} , class: "input2"
+      .box-tarm= raw sprintf(form.date_select(:tarm, use_month_numbers: true, with_css_classes:"input-tarm", start_year: (Time.now.year), end_year: (Time.now.year + 1),  date_separator:'%s'),'年','月')+'日'
+      %hr.contents-line
+
+
+      %h2.configuration リターンの設定
+      %p.return-expect 以下、リターンの設定はプロジェクト開始後に変更することはできませんのでご注意ください。
+      %p.return-expect リターンを停止することのみ可能です。
+
+      .project__returnprice.box1 リターン① 寄付金額
+      %span.Require 必須
+      %p.return-expect （設定可能金額：500円〜10,0000円まで）
+      .box2
+        = form.text_field :return_price_1, class: "input-price"
+        %a.return-expect 円
+      .project__return.box1 リターン① 
+      %span.Require 必須
+      .box2= form.text_area :return_title_1, class: "input"
+
+      .project__return.box1 リターン① 画像
+      .box2.box-upload
+        %label
+          = form.file_field :return_image_1, class: 'hidden-field3', id:  "input-file3"
+          .image-box3
+            = icon('far', 'image', class: 'Form__icon')
+            %span.qulick1-3 クリックしてファイルをアップロード
+            //%p.qulick2-3.delete3 アップロード完了
+      #preview3
+
+      .project__returnprice.box1 リターン② 寄付金額
+      %p.return-expect （設定可能金額：500円〜10,0000円まで）
+      .box2
+        = form.text_field :return_price_2, class: "input-price"
+        %a.return-expect 円
+      .project__return.box1 リターン②
+      .box2= form.text_area :return_title_2, class: "input"
+
+      .project__return.box1 リターン② 画像
+      .box2.box-upload
+        %label
+          = form.file_field :return_image_2, class: 'hidden-field4', id:  "input-file4"
+          .image-box4
+            = icon('far', 'image', class: 'Form__icon')
+            %span.qulick1-4 クリックしてファイルをアップロード
+            //%p.qulick2-4.delete4 アップロード完了
+      #preview4 
+
+      .project__returnprice.box1 リターン③ 寄付金額
+      %p.return-expect （設定可能金額：500円〜10,0000円まで）
+      .box2
+        = form.text_field :return_price_3, class: "input-price"
+        %a.return-expect 円
+      .project__return.box1 リターン③
+      .box2= form.text_area :return_title_3, class: "input"
+
+      .project__return.box1 リターン③ 画像
+      .box2.box-upload
+        %label
+          = form.file_field :return_image_3, class: 'hidden-field5', id:  "input-file5"
+          .image-box5
+            = icon('far', 'image', class: 'Form__icon')
+            %span.qulick1-5 クリックしてファイルをアップロード
+            //%p.qulick2-5.delete5 アップロード完了
+      #preview5
+
+      .project__btn= form.submit "確 認 画 面 へ" ,class: "form-btn"
+      
+ 
