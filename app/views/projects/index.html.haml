@@ -40,7 +40,7 @@
       - @projects.each do |project|
         
         .Projects   
-          = link_to project_path(project.id) , class: "Box3"do
+          = link_to display_project_path(project.id) , class: "Box3"do
             .Box1
               = image_tag project.image.url.to_s, class: "Box1__image"
             .Box2
