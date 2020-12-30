@@ -29,12 +29,11 @@
           .contents-total__box1
             現在の支援総額
           .contents-total__box2
-           
-            -# - total1 = @billings.sum(:count_1)
-            -# - total2 = @billings.sum(:count_2)
-            -# - total3 = @billings.sum(:count_3)
-            -# - @total = total1*@project.return_price_1+total2*@project.return_price_2+total3*@project.return_price_3 
-            -# =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+            - total1 = @billings.sum(:count_1)
+            - total2 = @billings.sum(:count_2)
+            - total3 = @billings.sum(:count_3)
+            - @total = total1*@project.return_price_1+total2*@project.return_price_2+total3*@project.return_price_3 
+            =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
             円
 
         .contents-pacent
@@ -70,7 +69,8 @@
             .return__text
               = @project.return_title_1
           .return__btn
-            = link_to '寄付をする', "#", class:'donate'
+            = link_to '寄付をする', new_return1_project_billing_path(@project.id), class:'donate'
+           
         .return
           .return__title
             リターン②
@@ -84,7 +84,7 @@
             .return__text
               = @project.return_title_2
           .return__btn
-            = link_to '寄付をする', "#", class:'donate'
+            = link_to '寄付をする', new_return2_project_billing_path(@project.id), class:'donate'
         .return
           .return__title
             リターン③
@@ -98,4 +98,4 @@
             .return__text
               = @project.return_title_3
           .return__btn
-            = link_to '寄付をする', "#", class:'donate'
+            = link_to '寄付をする', new_return3_project_billing_path(@project.id), class:'donate'
