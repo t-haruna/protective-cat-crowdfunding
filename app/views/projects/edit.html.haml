@@ -24,7 +24,7 @@
             %span.qulick1-1 クリックしてファイルをアップロード
           //%p.qulick2-1.delete1 アップロード完了
       #preview
-            
+        = image_tag @project.image.to_s, class:"resize-image1"
         
       
       .project__body.box1 本文
@@ -44,6 +44,7 @@
             %span.qulick1-2 クリックしてファイルをアップロード
             //%p.qulick2-2.delete2 アップロード完了
       #preview2
+        = image_tag @project.profile_image.to_s, class:"resize-image2"
       
       .project__price.box1 目標金額
       %span.Require 必須
@@ -80,6 +81,7 @@
             %span.qulick1-3 クリックしてファイルをアップロード
             //%p.qulick2-3.delete3 アップロード完了
       #preview3
+        = image_tag @project.return_image_1.to_s, class:"resize-image3"
 
       .project__returnprice.box1 リターン② 寄付金額
       %p.return-expect （設定可能金額：500円〜10,0000円まで）
@@ -97,7 +99,8 @@
             = icon('far', 'image', class: 'Form__icon')
             %span.qulick1-4 クリックしてファイルをアップロード
             //%p.qulick2-4.delete4 アップロード完了
-      #preview4 
+      #preview4
+        = image_tag @project.return_image_2.to_s, class:"resize-image4" 
 
       .project__returnprice.box1 リターン③ 寄付金額
       %p.return-expect （設定可能金額：500円〜10,0000円まで）
@@ -116,6 +119,7 @@
             %span.qulick1-5 クリックしてファイルをアップロード
             //%p.qulick2-5.delete5 アップロード完了
       #preview5
+        = image_tag @project.return_image_3.to_s, class:"resize-image5"
 
       .project__btn= form.submit "確 認 画 面 へ" ,class: "form-btn"
       
