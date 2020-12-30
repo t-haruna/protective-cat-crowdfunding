@@ -1,19 +1,22 @@
 .Header
   .Header__user
-    - if user_signed_in?
-      .Header__user__name
-        = "#{current_user.nickname} さん"
-      .Header__user__mypage
-        = icon('fas', 'cog',class: "icon")
-        = link_to "マイページ", mypage_projects_path,class:"mypage-link"
-      -# .Header__user__icon
-      -#   = link_to edit_user_registration_path do
-      -#     = icon('fas', 'cog',class: "icon")
-      .Header__user__btn
-        //= link_to "新規登録", new_user_registration_path, class: "Header__user__btn__new btn" 
-        //= link_to "ログイン", new_user_session_path, method: :get, class: "Header__user__btn__login btn" 
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Header__user__btn__login btn" 
-    - else
-      .Header__user__btn
-        = link_to "新規登録", new_user_registration_path, class: "Header__user__btn__new btn" 
-        = link_to "ログイン", new_user_session_path, method: :get, class: "Header__user__btn__login btn" 
+    .Header__user__title
+      = link_to "保護ネコ✖︎クラウドファンディング", root_path,class:"title-logo"
+    .Header__user__box
+      - if user_signed_in?
+        .Header__user__box__name
+          = "#{current_user.nickname} さん"
+        .Header__user__box__mypage
+          = icon('fas', 'cog',class: "icon")
+          = link_to "マイページ", mypage_projects_path,class:"mypage-link"
+        -# .Header__user__icon
+        -#   = link_to edit_user_registration_path do
+        -#     = icon('fas', 'cog',class: "icon")
+        .Header__user__box__btn
+          //= link_to "新規登録", new_user_registration_path, class: "Header__user__btn__new btn" 
+          //= link_to "ログイン", new_user_session_path, method: :get, class: "Header__user__btn__login btn" 
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Header__user__btn__login btn" 
+      - else
+        .Header__user__box__btn
+          = link_to "新規登録", new_user_registration_path, class: "Header__user__btn__new btn" 
+          = link_to "ログイン", new_user_session_path, method: :get, class: "Header__user__btn__login btn" 
