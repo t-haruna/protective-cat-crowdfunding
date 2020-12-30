@@ -15,6 +15,7 @@ class Project < ApplicationRecord
 
   belongs_to :user
   has_one :draft
+  has_many :billings
   mount_uploader :image, ImageUploader
   mount_uploader :profile_image, ImageUploader
   mount_uploader :return_image_1, ImageUploader

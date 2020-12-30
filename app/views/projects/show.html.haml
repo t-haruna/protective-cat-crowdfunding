@@ -18,7 +18,7 @@
       .project-start
         = link_to '下書き保存', draft_display_projects_path, class:'form-btn save-btn'
       .project-start
-        = link_to '削除する', "#", class:'form-btn delete-btn'
+        = link_to '削除する', project_path(@project.id), class:'form-btn delete-btn', method: :delete
 
   
 

@@ -113,7 +113,8 @@
   }
   &__return{
     margin-top: 20px;
-    border:solid 2px #ccc;
+    margin-bottom: 50px;
+    //border:solid 2px #ccc;
     
   }
 }
@@ -205,7 +206,8 @@
 .return{
   //border:solid 1px #ccc;
   //height: 170px;
-  
+  margin-top: 20px;
+  border:solid 2px #ccc;
   &__price{
     text-align: center;
     height: 50px;
@@ -228,6 +230,7 @@
   &__title{
     background-color:  rgb(231, 229, 226);
     text-align: center;
+    
   }
 }
 
