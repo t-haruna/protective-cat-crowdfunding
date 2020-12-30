@@ -30,6 +30,7 @@ $(function() {
   // ;})
 
   $('#input-file').on('change',function() {
+    $('.resize-image').remove();
     $('.preview-box').remove();
     var file =$(this).prop('files')[0];
     var fileReader = new FileReader();
@@ -40,12 +41,13 @@ $(function() {
       var image = fileReader.result
       $(`#preview-box`).attr('src', `${image}`);
       //$(`#preview`).html(`<img src='+ fileReader.result + '/>`)
-       $('img').addClass('resize-image');
+       $('img').addClass('resize-image1');
     }
     fileReader.readAsDataURL(file);
   });
 
   $('#input-file2').on('change',function() {
+    $('.resize-image').remove();
     $('.preview-box2').remove();
     var file =$(this).prop('files')[0];
     var fileReader = new FileReader();
@@ -56,12 +58,13 @@ $(function() {
       var image = fileReader.result
       $(`#preview-box2`).attr('src', `${image}`);
       //$(`#preview`).html(`<img src='+ fileReader.result + '/>`)
-       $('img').addClass('resize-image');
+       $('img').addClass('resize-image2');
     }
     fileReader.readAsDataURL(file);
   });
 
   $('#input-file3').on('change',function() {
+    $('.resize-image').remove();
     $('.preview-box3').remove();
     var file =$(this).prop('files')[0];
     var fileReader = new FileReader();
@@ -72,12 +75,13 @@ $(function() {
       var image = fileReader.result
       $(`#preview-box3`).attr('src', `${image}`);
       //$(`#preview`).html(`<img src='+ fileReader.result + '/>`)
-       $('img').addClass('resize-image');
+       $('img').addClass('resize-image3');
     }
     fileReader.readAsDataURL(file);
   });
 
   $('#input-file4').on('change',function() {
+    $('.resize-image').remove();
     $('.preview-box4').remove();
     var file =$(this).prop('files')[0];
     var fileReader = new FileReader();
@@ -88,12 +92,13 @@ $(function() {
       var image = fileReader.result
       $(`#preview-box4`).attr('src', `${image}`);
       //$(`#preview`).html(`<img src='+ fileReader.result + '/>`)
-       $('img').addClass('resize-image');
+       $('img').addClass('resize-image4');
     }
     fileReader.readAsDataURL(file);
   });
 
   $('#input-file5').on('change',function() {
+    $('.resize-image').remove();
     $('.preview-box5').remove();
     var file =$(this).prop('files')[0];
     var fileReader = new FileReader();
@@ -104,10 +109,12 @@ $(function() {
       var image = fileReader.result
       $(`#preview-box5`).attr('src', `${image}`);
       //$(`#preview`).html(`<img src='+ fileReader.result + '/>`)
-       $('img').addClass('resize-image');
+       $('img').addClass('resize-image5');
     }
     fileReader.readAsDataURL(file);
   });
+
+    
 });
 
 

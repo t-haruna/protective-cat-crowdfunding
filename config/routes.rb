@@ -7,7 +7,14 @@ Rails.application.routes.draw do
       get 'draft_display'
       get 'posting_project'
       get 'done_project'
+      
     end
+
+    member do
+      get 'display'
+    end
+
+    
     resources :drafts, only: [:new, :create ]
   end
   
