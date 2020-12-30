@@ -21,6 +21,13 @@ class ProjectsController < ApplicationController
     # @billings= Billing.where(project_id: @project.id)
   end
 
+  def display
+    @project = Project.find(params[:id])
+    # @billings= Billing.where(project_id: @project.id)
+  end
+
+  
+
   def edit
     @project = Project.find(params[:id])
   end
