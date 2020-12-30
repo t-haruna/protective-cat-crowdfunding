@@ -1,0 +1,33 @@
+.Donate
+  .Donate__title プロジェクトに寄付をする
+  %hr.contents-line
+
+  
+  
+  .Donate-configuration
+    %h2.configuration-verification 寄付内容の確認  
+    .project__left__return
+      %p return
+      .return
+        .return__title
+          リターン③
+        .return__price
+          寄付金額：
+          = @project.return_price_3.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+          円
+        .return__content
+          .return__image
+            = image_tag @project.return_image_3.to_s, class: "image3"
+          .return__text
+            = @project.return_title_3 
+    .Form 
+      = form_with model: [@project, @billing], local: true do |f|
+        .Form__contents   
+          = @project.return_price_3
+          円 ✖︎
+          = f.text_field :count_3, class: 'Form__count'
+          口 ＝
+          %span#sales_commission_price
+          円 寄付する
+        .Form__btn 
+        = f.submit "寄付をする",class:"donate billing_btn"
