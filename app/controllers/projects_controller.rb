@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
+    
   end
 
   def new
@@ -18,12 +19,12 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    # @billings= Billing.where(project_id: @project.id)
+    @billings= Billing.where(project_id: @project.id)
   end
 
   def display
     @project = Project.find(params[:id])
-    # @billings= Billing.where(project_id: @project.id)
+    @billings= Billing.where(project_id: @project.id)
   end
 
   
@@ -66,6 +67,15 @@ class ProjectsController < ApplicationController
     @drafts = Draft.all
     @drafts.each do |draft|
       @projects = Project.where(id:draft.project_id)
+    end
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    if @project.destroy
+      redirect_to root_path 
+    else
+      render :show
     end
   end
 
