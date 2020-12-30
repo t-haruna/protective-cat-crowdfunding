@@ -15,7 +15,14 @@ Rails.application.routes.draw do
     end
 
     
-    resources :drafts, only: [:new, :create ]
+    resources :drafts, only: [:new, :create]
+    resources :billings, only: :create do
+      member do
+        get 'new_return1'
+        get 'new_return2'
+        get 'new_return3'
+      end
+    end
+    
   end
-  
 end
