@@ -14,7 +14,7 @@
         = link_to 'プロジェクトを開始する', project_drafts_path(@project,@draft), method: "post", class:'form-btn'
       %hr.contents-line
       .project-start.wait
-        = link_to '戻って修正する', "#", class:'form-btn edit-btn'
+        = link_to '戻って修正する', edit_project_path, class:'form-btn edit-btn'
       .project-start
         = link_to '下書き保存', draft_display_projects_path, class:'form-btn save-btn'
       .project-start
