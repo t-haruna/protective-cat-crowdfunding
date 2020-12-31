@@ -7,14 +7,12 @@ Rails.application.routes.draw do
       get 'draft_display'
       get 'posting_project'
       get 'done_project'
-      
     end
 
     member do
       get 'display'
     end
 
-    
     resources :drafts, only: [:new, :create]
     resources :billings, only: :create do
       member do
@@ -23,6 +21,13 @@ Rails.application.routes.draw do
         get 'new_return3'
       end
     end
-    
+
+  end
+
+  resources :cards, only: [:new, :index, :show] do
+    collection do
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
   end
 end

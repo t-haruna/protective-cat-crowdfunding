@@ -1,0 +1,20 @@
+= render 'layouts/header'
+.Header-bar
+%hr.contents-line
+.Mypage
+  .Side-bar
+    .Side-bar__image
+    .Side-bar__name
+      = "#{current_user.nickname} さん" 
+  .Main-bar
+    .Main-bar__title
+      支払い情報
+    .Main-bar__contents
+      .Information
+        - if current_user.card
+          = link_to "クレジットカード詳細", card_path(@card.id), method: :get, class: 'Payment__inner__add-btn'
+        - else
+          = link_to new_card_path, class: 'Payment__inner__add-btn' do
+            -# = icon('far', 'credit-card')
+            クレジットカードを登録する
+                

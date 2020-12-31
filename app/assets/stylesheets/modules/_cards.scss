@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+//クレジットカード登録画面
+
+.Information{
+  //text-align: center;
+  margin-left: 10px;
+  margin-top: 50px;
+  width: 60%;
+}
+
+.Card-Information{
+  text-align: center;
+}
+
+.card-delete-btn{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin: 20px 0;
+  color: #ea352d;
+  background-color: #fff;
+  border: 1px solid #ea352d;
+  border-radius: 3px;
+  padding: 10px 10px;
+}
+
+.Payment__inner__add-btn{
+  text-decoration: none;
+  color: #0095ee;
+}
+
+
+
+.CreditCard-Expiration{
+  display: flex;
+  flex-direction: row;
+  //justify-content: space-between;
+  align-items: flex-end;
+
+}
+
+.card-input{
+  width: 100px;
+  color: rgb(115, 112, 107);
+}
+
+.security-input{
+  width: 300px;
+  color: rgb(115, 112, 107);
+}
+
+.CreditCard-Expiration{
+  margin: 0 10px;
+  
+}
+
+.CreditCard-Common__Send{
+  margin-top: 50px;
+  text-align: center;
+}
+
+.Button{
+  width: 50%;
+  color: rgb(115, 112, 107);
+}

@@ -1,0 +1,49 @@
+-#トップページヘッダー
+= render 'layouts/header'
+.Header-bar
+%hr.contents-line
+.Mypage
+  .Side-bar
+    .Side-bar__image
+    .Side-bar__name
+      = "#{current_user.nickname} さん" 
+  .Main-bar
+    .Main-bar__title
+      クレジットカード情報入力
+    .Main-bar__contents 
+      .Information
+        = form_with url: pay_cards_path, method: :post, id: 'charge-form', name: "inputForm"  do |f|
+          .CreditCard-Secondary
+            %section.CreditCard-Number
+              .CreditCard-Number__Zone
+                .CreditCard-Number__Zone__Title
+                  %label.box1 カード番号
+                  %span.Require 必須
+                  .CreditCard-Expiration
+                    = f.text_field :number, name: "card_number", id:"card_number", type: "text", placeholder: '半角数字のみ', class: "input" , maxlength: "16"
+              .CreditCard-Common
+                .CreditCard-Common__Term
+                  %label.box1 有効期限
+                  %span.Require 必須
+                .CreditCard-Expiration
+                  = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]], {}, class: "input card-input" , name: "exp_year", id:"exp_month"
+                  %span.CreditCard-Expiration 月
+                  .CreditCard-Expiration__Time{"data-test": "card-expiry-yy"}
+                    .CreditCard-Expiration__Time__Zone
+                      = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029],["30",2030]], {}, class: "input card-input" , name: "exp_year", id:"exp_year"
+                  %span.CreditCard-Expiration 年
+              #card_token
+                .CreditCard-Common
+                  .CreditCard-Common__Text
+                    %label.box1 セキュリティコード
+                    %span.Require 必須
+                  .CreditCard-Expiration
+                    = f.text_field :cvc, name: "cvc", id:"cvc", class:"cvc", type: "text", placeholder: 'カード背面4桁もしくは3桁の番号', class: "input security-input" , maxlength: "4"
+          .CreditCard-Common__Send  
+            = f.submit "登録する", class: "Button",  id: "token_submit"
+                
+
+
+
+
+
