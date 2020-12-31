@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
-    
+    @drafts = Draft.all
+    @drafts.each do |draft|
+      @projects = Project.where(id:draft.project_id)
+    end
   end
 
   def new
