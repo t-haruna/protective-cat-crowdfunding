@@ -68,3 +68,4 @@ gem 'autonumeric-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'payjp'
