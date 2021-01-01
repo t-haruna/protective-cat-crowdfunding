@@ -1,0 +1,12 @@
+= render 'layouts/header'
+.Header-bar
+%hr.contents-line
+.Main-bar
+  プロジェクトを投稿する前に以下をご確認ください。
+  
+    
+  .Main-bar__page
+    =link_to "ログイン未登録の方", new_user_registration_path
+  .Main-bar__page
+    =link_to "クレジット未登録の方", new_card_path
+
