@@ -69,8 +69,13 @@
             .return__text
               = @project.return_title_1
           .return__btn
-            = link_to '寄付をする', new_return1_project_billing_path(@project.id), class:'donate'
-           
+            - if user_signed_in? 
+              - if current_user.id == @project.user_id
+                = link_to '寄付をする', "#", class:'donate'
+              - else
+                = link_to '寄付をする', new_return1_project_billing_path(@project.id), class:'donate'
+            - else
+              = link_to '寄付をする', new_user_registration_path, class:'donate'
         .return
           .return__title
             リターン②
@@ -84,7 +89,13 @@
             .return__text
               = @project.return_title_2
           .return__btn
-            = link_to '寄付をする', new_return2_project_billing_path(@project.id), class:'donate'
+            - if user_signed_in? 
+              - if current_user.id == @project.user_id
+                = link_to '寄付をする', "#", class:'donate'
+              - else
+                = link_to '寄付をする', new_return2_project_billing_path(@project.id), class:'donate'
+            - else
+              = link_to '寄付をする', new_user_registration_path, class:'donate'
         .return
           .return__title
             リターン③
@@ -98,4 +109,10 @@
             .return__text
               = @project.return_title_3
           .return__btn
-            = link_to '寄付をする', new_return3_project_billing_path(@project.id), class:'donate'
+            - if user_signed_in? 
+              - if current_user.id == @project.user_id
+                = link_to '寄付をする', "#", class:'donate'
+              - else
+                = link_to '寄付をする', new_return3_project_billing_path(@project.id), class:'donate'
+            - else
+              = link_to '寄付をする', new_user_registration_path, class:'donate'
