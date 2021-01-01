@@ -1,6 +1,9 @@
+= render 'layouts/header'
 .project
   .project__top
     Project
   %hr.contents-line
-
     = render "details"
+  %hr.contents-line
+  .project__return
+    =link_to "トップ画面へ戻る", root_path, class: "Payment__inner__add-btn"

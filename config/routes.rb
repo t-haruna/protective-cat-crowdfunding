@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'draft_display'
       get 'posting_project'
       get 'done_project'
+      get 'confirmation'
     end
 
     member do
