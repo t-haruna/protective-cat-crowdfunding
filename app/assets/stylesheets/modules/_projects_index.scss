@@ -250,3 +250,29 @@
   }
   
 }
+
+//図形作成
+.Achievement  {
+  position: relative;
+  width: 400px;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+
+.trapezoid {
+  width: 185px;
+  border-bottom: 40px solid#ea352d;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  height: 0;
+  z-index: 5;
+  transform: rotate(45deg);
+  position: absolute;
+  top:38px;
+  left: 270px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
