@@ -1,12 +1,30 @@
 class ProjectsController < ApplicationController
   def index
+    
     @drafts = Draft.all
     @drafts.each do |draft|
       @projects = Project.where(id:draft.project_id)
+      @projects.each do |project|
+        @billings= Billing.where(project_id: project.id)
+        total1 = @billings.sum(:count_1)
+        total2 = @billings.sum(:count_2)
+        total3 = @billings.sum(:count_3)
+        @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
+        @target_amount = project.target_amount
+      end
     end
+    
   end
 
   def new
+    @card = Card.find_by(user_id: current_user.id)
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+    if @card.blank?
+      redirect_to confirmation_projects_path
+    else
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    @default_card_information = customer.cards.retrieve(@card.payjp_id)
+    end
     @project = Project.new
   end
 
@@ -47,10 +65,15 @@ class ProjectsController < ApplicationController
   def mypage
   end
 
+  def confirmation
+  end
+
+  
+
   def draft_display
     @drafts = Draft.all
+    @projects = Project.where(user_id:current_user)
     @drafts.each do |draft|
-      @projects = Project.all
       @rets = @projects.ids.reject {|v| v== draft.project_id}
       # prijectのidの中で、draft.project_idと一致しないものをrejectメソッドで抽出
       @projects = Project.where(id:@rets)
@@ -59,17 +82,14 @@ class ProjectsController < ApplicationController
   end
 
   def posting_project
-    @drafts = Draft.all
+    @drafts = Draft.where(user_id:current_user)
     @drafts.each do |draft|
-      @projects = Project.where(id:draft.project_id)
+      @projects = Project.where(id:draft.project_id )
     end
   end
 
   def done_project
     @drafts = Draft.all
-    @drafts.each do |draft|
-      @projects = Project.where(id:draft.project_id)
-    end
   end
 
   def destroy
