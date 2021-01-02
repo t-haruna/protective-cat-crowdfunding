@@ -17,8 +17,11 @@
           円
         .return__content
           .return__image
-            = image_tag @project.return_image_2.to_s, class: "image3"
-          .return__text
+            - if  @project.return_image_2.blank?
+              = image_tag "/48094.jpg", alt: "プレゼント",  class: "nill_image"
+            - else
+              = image_tag @project.return_image_2.to_s, class: "image3"
+          .return__text.scroll
             = @project.return_title_2 
     .Form 
       = form_with model: [@project, @billing], local: true do |f|
