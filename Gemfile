@@ -69,3 +69,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'payjp'
+
+gem 'devise-i18n'
+gem 'devise-i18n-views'
