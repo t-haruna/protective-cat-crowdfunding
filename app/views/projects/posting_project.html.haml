@@ -12,19 +12,22 @@
     - @drafts.each do |draft|
       - @projects = Project.where(id:draft.project_id)
       - @projects.each do |project|
-        .Main-bar__detaile
-          = link_to project_path(project.id) do
-            .Main-bar__detaile__image
-              = image_tag project.image.to_s, class: "image"
-            .Main-bar__detaile__box
-              .Main-bar__detaile__box__title
-                =project.title
-              .Main-bar__detaile__box__term
-                募集期間
-                = project.tarm.strftime("%Y年%m月%d日")
-                まで
-              .Main-bar__detaile__box__pacent
-                進捗率
+        - @turm= project.tarm
+        - if @today < @turm
+          .Main-bar__detaile
+            = link_to project_path(project.id) do
+              .Main-bar__detaile__image
+                = image_tag project.image.to_s, class: "image"
+              .Main-bar__detaile__box
+                .Main-bar__detaile__box__title
+                  =project.title
+                .Main-bar__detaile__box__term
+                  募集期間
+                  = project.tarm.strftime("%Y年%m月%d日")
+                  まで
+                .Main-bar__detaile__box__pacent
+                  進捗率
+        - else
     .Main-bar__return
       =link_to "戻る", mypage_projects_path, class: "Payment__inner__add-btn"
          
