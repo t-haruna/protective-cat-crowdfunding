@@ -40,7 +40,78 @@
       - @projects = Project.where(id:draft.project_id)
         - @projects.each do |project|
         - @target_amount = project.target_amount
-          - if @total >= @target_amount
+        - @turm= project.tarm
+        - @billings= Billing.where(project_id: project.id)
+        - total1 = @billings.sum(:count_1)
+        - total2 = @billings.sum(:count_2)
+        - total3 = @billings.sum(:count_3)
+        - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
+          - if @today >= @turm && @total >= @target_amount     
+            .Achievement
+              %span.trapezoid 達 成 
+              %span.square 期間終了 
+              %span.triangle
+              .Projects 
+                = link_to display_project_path(project.id) , class: "Box3"do
+                  .Box1
+                    = image_tag project.image.url.to_s, class: "Box1__image"
+                  .Box2
+                    %p.Box2__title= project.title
+                    %p 支援総額
+                    - @billings= Billing.where(project_id: project.id)
+                    - total1 = @billings.sum(:count_1)
+                    - total2 = @billings.sum(:count_2)
+                    - total3 = @billings.sum(:count_3)
+                    - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
+                    =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+                    円
+                    
+                  .Details
+                    .Details__total.detail
+                      %p.Box2__percent__contents 進捗率
+                      %p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
+                      
+                    .Details__suppoter.detail
+                      %p 目標金額
+                      = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+                      円
+                    .Details__term.detail
+                      %p 募集期間
+                      = project.tarm.strftime("%Y年%m月%d日")
+                      まで
+          - elsif @today >= @turm
+            .Achievement
+              %span.square 期間終了 
+              %span.triangle
+              .Projects 
+                = link_to display_project_path(project.id) , class: "Box3"do
+                  .Box1
+                    = image_tag project.image.url.to_s, class: "Box1__image"
+                  .Box2
+                    %p.Box2__title= project.title
+                    %p 支援総額
+                    - @billings= Billing.where(project_id: project.id)
+                    - total1 = @billings.sum(:count_1)
+                    - total2 = @billings.sum(:count_2)
+                    - total3 = @billings.sum(:count_3)
+                    - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
+                    =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+                    円
+                    
+                  .Details
+                    .Details__total.detail
+                      %p.Box2__percent__contents 進捗率
+                      %p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
+                      
+                    .Details__suppoter.detail
+                      %p 目標金額
+                      = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+                      円
+                    .Details__term.detail
+                      %p 募集期間
+                      = project.tarm.strftime("%Y年%m月%d日")
+                      まで
+          - elsif @total >= @target_amount 
             .Achievement
               %span.trapezoid 達 成 
               .Projects 
@@ -101,6 +172,7 @@
                       %p 募集期間
                       = project.tarm.strftime("%Y年%m月%d日")
                       まで
+
               
       
 

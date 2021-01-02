@@ -11,15 +11,15 @@
       .project__right__image
         = image_tag @project.image.to_s, class: "image"
 
-      .project__right__text
+      .project__right__text.scroll
         %h2 プロジェクト詳細
-        %p= @project.text
+        = @project.text
 
       %h2 Profile
       .project__right__profile
         .profile-image
           = image_tag @project.profile_image.to_s, class: "image2"
-        .profile-expect
+        .profile-expect.scroll
           = @project.profile
 
 
@@ -65,17 +65,23 @@
             円
           .return__content
             .return__image
-              = image_tag @project.return_image_1.to_s, class: "image3"
-            .return__text
+              - if  @project.return_image_1.blank?
+                = image_tag "/48094.jpg", alt: "プレゼント",  class: "nill_image"
+              - else
+                = image_tag @project.return_image_1.to_s, class: "image3"
+            .return__text.scroll
               = @project.return_title_1
           .return__btn
-            - if user_signed_in? 
-              - if current_user.id == @project.user_id
-                = link_to '寄付をする', "#", class:'donate'
-              - else
-                = link_to '寄付をする', new_return1_project_billing_path(@project.id), class:'donate'
+            - if @today >= @project.tarm
+              = link_to '募集期間終了', "#", class:'donate'
             - else
-              = link_to '寄付をする', new_user_registration_path, class:'donate'
+              - if user_signed_in? 
+                - if current_user.id == @project.user_id
+                  = link_to '寄付をする', "#", class:'donate'
+                - else
+                  = link_to '寄付をする', new_return1_project_billing_path(@project.id), class:'donate'
+              - else
+                = link_to '寄付をする', new_user_registration_path, class:'donate'
         .return
           .return__title
             リターン②
@@ -85,17 +91,23 @@
             円
           .return__content
             .return__image
-              = image_tag @project.return_image_2.to_s, class: "image3"
-            .return__text
+              - if  @project.return_image_2.blank?
+                = image_tag "/48094.jpg", alt: "プレゼント",  class: "nill_image"
+              - else
+                = image_tag @project.return_image_2.to_s, class: "image3"
+            .return__text.scroll
               = @project.return_title_2
           .return__btn
-            - if user_signed_in? 
-              - if current_user.id == @project.user_id
-                = link_to '寄付をする', "#", class:'donate'
-              - else
-                = link_to '寄付をする', new_return2_project_billing_path(@project.id), class:'donate'
+            - if @today >= @project.tarm
+              = link_to '募集期間終了', "#", class:'donate'
             - else
-              = link_to '寄付をする', new_user_registration_path, class:'donate'
+              - if user_signed_in? 
+                - if current_user.id == @project.user_id
+                  = link_to '寄付をする', "#", class:'donate'
+                - else
+                  = link_to '寄付をする', new_return2_project_billing_path(@project.id), class:'donate'
+              - else
+                = link_to '寄付をする', new_user_registration_path, class:'donate'
         .return
           .return__title
             リターン③
@@ -105,14 +117,20 @@
             円
           .return__content
             .return__image
-              = image_tag @project.return_image_3.to_s, class: "image3"
-            .return__text
+              - if  @project.return_image_3.blank?
+                = image_tag "/48094.jpg", alt: "プレゼント",  class: "nill_image"
+              - else
+                = image_tag @project.return_image_3.to_s, class: "image3"
+            .return__text.scroll
               = @project.return_title_3
           .return__btn
-            - if user_signed_in? 
-              - if current_user.id == @project.user_id
-                = link_to '寄付をする', "#", class:'donate'
-              - else
-                = link_to '寄付をする', new_return3_project_billing_path(@project.id), class:'donate'
+            - if @today >= @project.tarm
+              = link_to '募集期間終了', "#", class:'donate'
             - else
-              = link_to '寄付をする', new_user_registration_path, class:'donate'
+              - if user_signed_in? 
+                - if current_user.id == @project.user_id
+                  = link_to '寄付をする', "#", class:'donate'
+                - else
+                  = link_to '寄付をする', new_return3_project_billing_path(@project.id), class:'donate'
+              - else
+                = link_to '寄付をする', new_user_registration_path, class:'donate'

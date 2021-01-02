@@ -276,3 +276,31 @@
   font-size: 24px;
   font-weight: 700;
 }
+
+
+.square{
+  padding: 8px 28px;
+  background-color:  #5fe3dc;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  top: 15px;
+  left: 6px;
+  z-index: 5;
+  
+}
+
+.triangle{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 25px 45px 25px; 
+  //square root of 3 / 2 * (border-left-width(25px) + border-right-width(25px))
+  border-color: transparent transparent #5fe3dc transparent;
+  position: absolute;
+  top:15px;
+  left: 118px;
+  z-index: 5;
+  
+}

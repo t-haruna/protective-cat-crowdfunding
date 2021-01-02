@@ -8,7 +8,7 @@
   %hr.contents-line
   .project-confirmation 
     %p.return-expect.confirmation 以上の内容でプロジェクトを開始してもよろしいですか？  
-    %p.return-expect.red-color ※一度開始するとリターンの内容を変更することはできません。
+    %p.return-expect.red-color ※目標金額、募集期間、リターンの内容は開始後に変更はできません。
     .project-btn  
       .project-start.start
         = link_to 'プロジェクトを開始する', project_drafts_path(@project,@draft), method: "post", class:'form-btn'
@@ -16,9 +16,13 @@
       .project-start.wait
         = link_to '戻って修正する', edit_project_path, class:'form-btn edit-btn'
       .project-start
-        = link_to '下書き保存', draft_display_projects_path, class:'form-btn save-btn'
+        - if @project.draft.blank?
+          = link_to '下書き保存', draft_display_projects_path, class:'form-btn save-btn'
       .project-start
-        = link_to '削除する', project_path(@project.id), class:'form-btn delete-btn', method: :delete
+        - if @project.draft.blank?
+          = link_to '削除する', project_path(@project.id), class:'form-btn delete-btn', method: :delete
+  .project__return
+    =link_to "トップ画面へ戻る", root_path, class: "Payment__inner__add-btn"
 
   
 
