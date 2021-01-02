@@ -53,12 +53,12 @@ ActiveRecord::Schema.define(version: 2020_12_30_221129) do
     t.date "tarm", null: false
     t.string "return_title_1", null: false
     t.integer "return_price_1", null: false
-    t.string "return_image_1", null: false
-    t.string "return_title_2"
-    t.integer "return_price_2"
+    t.string "return_image_1"
+    t.string "return_title_2", null: false
+    t.integer "return_price_2", null: false
     t.string "return_image_2"
-    t.string "return_title_3"
-    t.integer "return_price_3"
+    t.string "return_title_3", null: false
+    t.integer "return_price_3", null: false
     t.string "return_image_3"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
