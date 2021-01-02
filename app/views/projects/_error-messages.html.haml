@@ -1,0 +1,6 @@
+- if @project.errors.any?
+  - unless @project.valid?
+    - if errors = @project.errors.full_messages_for(column.to_sym)
+      %ul
+        - errors.each do |error|
+          %li{style: "color:red"}=error
