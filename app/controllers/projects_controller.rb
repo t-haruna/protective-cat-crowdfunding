@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
+  require "date"
+
   def index
-    
+    @today = Date.today
     @drafts = Draft.all
     @drafts.each do |draft|
       @projects = Project.where(id:draft.project_id)
@@ -11,6 +13,7 @@ class ProjectsController < ApplicationController
         total3 = @billings.sum(:count_3)
         @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
         @target_amount = project.target_amount
+        @turm= project.tarm
       end
     end
     
@@ -38,11 +41,13 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @today = Date.today
     @project = Project.find(params[:id])
     @billings= Billing.where(project_id: @project.id)
   end
 
   def display
+    @today = Date.today
     @project = Project.find(params[:id])
     @billings= Billing.where(project_id: @project.id)
   end
@@ -82,14 +87,25 @@ class ProjectsController < ApplicationController
   end
 
   def posting_project
+    @today = Date.today
     @drafts = Draft.where(user_id:current_user)
     @drafts.each do |draft|
       @projects = Project.where(id:draft.project_id )
+      @projects.each do |project|
+        @turm= project.tarm
+      end
     end
   end
 
   def done_project
-    @drafts = Draft.all
+    @today = Date.today
+    @drafts = Draft.where(user_id:current_user)
+    @drafts.each do |draft|
+      @projects = Project.where(id:draft.project_id )
+      @projects.each do |project|
+        @turm= project.tarm
+      end
+    end
   end
 
   def destroy
