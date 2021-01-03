@@ -3,6 +3,7 @@ class Project < ApplicationRecord
   validates :title,
     length: {maximum: 40},
     presence: true
+  validates :image, presence: true
   validates :text, presence: true
   validates :profile, 
     length: {maximum: 1000},
@@ -35,6 +36,7 @@ class Project < ApplicationRecord
   # validatesではなくvalidateなので注意
   belongs_to :user
   has_one :draft
+  has_one :execute
   has_many :billings
   mount_uploader :image, ImageUploader
   mount_uploader :profile_image, ImageUploader
