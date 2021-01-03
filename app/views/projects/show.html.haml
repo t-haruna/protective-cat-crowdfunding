@@ -21,7 +21,7 @@
       .project-start
         - if @project.draft.blank?
           = link_to '削除する', project_path(@project.id), class:'form-btn delete-btn', method: :delete
-  .project__return
+  .project__return__index
     =link_to "トップ画面へ戻る", root_path, class: "Payment__inner__add-btn"
 
   
