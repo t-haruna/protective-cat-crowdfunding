@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: protective_cat_crowdfunding_production
-  username: protective_cat_crowdfunding
-  password: <%= ENV['PROTECTIVE_CAT_CROWDFUNDING_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
