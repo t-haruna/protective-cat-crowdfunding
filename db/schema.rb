@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_221129) do
+ActiveRecord::Schema.define(version: 2021_01_02_094726) do
 
   create_table "billings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "count_1"
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 2020_12_30_221129) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_drafts_on_project_id"
     t.index ["user_id"], name: "index_drafts_on_user_id"
+  end
+
+  create_table "executes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "project_id"
+    t.text "execute_title", null: false
+    t.string "execute_image", null: false
+    t.text "execute_text", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_executes_on_project_id"
+    t.index ["user_id"], name: "index_executes_on_user_id"
   end
 
   create_table "projects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -84,5 +96,7 @@ ActiveRecord::Schema.define(version: 2020_12_30_221129) do
   add_foreign_key "cards", "users"
   add_foreign_key "drafts", "projects"
   add_foreign_key "drafts", "users"
+  add_foreign_key "executes", "projects"
+  add_foreign_key "executes", "users"
   add_foreign_key "projects", "users"
 end
