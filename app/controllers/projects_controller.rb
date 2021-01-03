@@ -42,7 +42,6 @@ class ProjectsController < ApplicationController
 
   def show
     @today = Date.today
-    @project = Project.find(params[:id])
     @billings= Billing.where(project_id: @project.id)
   end
 
@@ -50,6 +49,7 @@ class ProjectsController < ApplicationController
     @today = Date.today
     @project = Project.find(params[:id])
     @billings= Billing.where(project_id: @project.id)
+    @executes= Execute.where(project_id: @project.id)
   end
 
   
