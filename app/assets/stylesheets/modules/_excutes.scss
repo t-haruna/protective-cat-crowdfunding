@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+.project__excute{
+  &__amount{
+    height: 30px;
+    padding-left: 170px;
+    padding-top: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(213, 239, 230);
+  }
+  &__total-amount{
+    height: 70px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    background-color: rgb(213, 239, 230);
+    margin-bottom: 10px;
+  }
+  &__image{
+    border:solid 5px #ccc;
+    height: 450px;
+    width: 70%;
+    background-color: rgb(115, 112, 107);
+    margin: 0 auto;
+  }
+  &__report{
+    //border:solid 1px #ccc;
+    height: 500px;
+    margin: 10px 0;
+    line-height: 30px;
+    &__title{
+      text-align: center;
+      font-size: 28px;
+      //font-weight: 600;
+      padding: 15px 0;
+      background-color: rgb(213, 239, 230);
+    }
+    &__text{
+      border:solid 1px #ccc;
+      margin-top: 10px;
+      height: 420px;
+      padding: 10px 0 0 10px;
+      font-size: 20px;
+    }
+  }
+}
+
+.project__excute__edit-btn{
+  height: 50px;
+}

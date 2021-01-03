@@ -85,6 +85,24 @@ $(function() {
     fileReader.readAsDataURL(file);
   });
 
+  //実行報告画像のプレビュー表示
+  $('#input-file6').on('change',function() {
+    $('.resize-image6').remove();
+    $('.preview-box6').remove();
+    var file =$(this).prop('files')[0];
+    var fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      console.log(fileReader.result)
+      //$('.image-box1').remove();
+      $(`#preview6`).html(`<img src='' id='preview-box6' class='preview-box6'/>`)
+      var image = fileReader.result
+      $(`#preview-box6`).attr('src', `${image}`);
+      //$(`#preview`).html(`<img src='+ fileReader.result + '/>`)
+       $('img').addClass('resize-image6');
+    }
+    fileReader.readAsDataURL(file);
+  });
+
     
 });
 
