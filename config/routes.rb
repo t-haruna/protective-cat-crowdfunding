@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
 
     resources :drafts, only: [:new, :create]
+    resources :executes, only: [:new, :create, :show, :edit, :update]
     resources :billings, only: :create do
       member do
         get 'new_return1'
