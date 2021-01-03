@@ -1,0 +1,41 @@
+.contents-row
+  
+  .container__title 実行報告をする
+  %hr.contents-line
+
+  
+  .project-configuration
+    
+    %h2.configuration 実行報告
+    = form_with model: [@project, @execute], local: true do |form|
+      
+      %label.project__titles.box1 実行報告タイトル
+      %span.Require 必須
+      %p.return-expect （最大文字数：40文字まで）
+      -# .error-box
+      -#   = render partial: 'error-messages', locals: {user: @project, column: "title"}
+      .box2= form.text_area :execute_title, class: "input" 
+      
+      .project__image.box1 実行報告画像
+      %span.Require 必須
+      -# .error-box
+      -#   = render partial: 'error-messages', locals: {user: @project, column: "image"}
+      .box2.box-upload
+        %label
+          = form.file_field :execute_image,  class: 'hidden-field6', id:  "input-file6"
+          .image-box1
+            = icon('far', 'image', class: 'Form__icon')
+            %span.qulick1-1 クリックしてファイルをアップロード
+      #preview6
+            
+      .project__body.box1 実行報告本文
+      %span.Require 必須
+      -# .error-box
+      -#   = render partial: 'error-messages', locals: {user: @project, column: "text"}
+      .box2= form.text_area :execute_text, class: "input input3"
+      
+      .project__btn= form.submit "実行報告を投稿する" ,class: "form-btn"
+
+      .project__return__index
+        =link_to "トップ画面へ戻る", root_path, class: "Payment__inner__add-btn"
+      

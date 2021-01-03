@@ -1,0 +1,44 @@
+= render 'layouts/header'
+.project
+  .project__top
+    実行報告
+  %hr.contents-line
+  .project__title
+    .project__title__content
+      .project__title__main
+        = @project.title
+      .project__title__name
+        NAME:
+        = @execute.user.nickname
+
+    .project__excute
+      .project__excute__amount
+        目標金額:
+        = @project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse 
+        円
+      .project__excute__total-amount
+        支援総額:
+        - total1 = @billings.sum(:count_1)
+        - total2 = @billings.sum(:count_2)
+        - total3 = @billings.sum(:count_3)
+        - @total = total1*@project.return_price_1+total2*@project.return_price_2+total3*@project.return_price_3 
+        =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+        円
+      .project__excute__image
+        = image_tag @execute.execute_image.to_s, class: "image"
+      .project__excute__report
+        .project__excute__report__title
+          = @execute.execute_title
+        .project__excute__report__text.scroll
+          = @execute.execute_text
+  %hr.contents-line
+  .project__excute__edit-btn
+  - if current_user.id == @execute.user_id
+    .project__execute-btn
+      =link_to "編集する", edit_project_execute_path(@project.id), class: "form-btn"
+  - else
+    .project__execute-btn
+  .project__return__index
+    =link_to "トップ画面へ戻る", root_path, class: "Payment__inner__add-btn"
+
+    
