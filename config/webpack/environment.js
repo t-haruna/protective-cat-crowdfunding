@@ -7,5 +7,12 @@ environment.plugins.prepend('Provide',
     jQuery: 'jquery/src/jquery'
   })
 )
+
+environment.config.merge({
+  performance: {
+    hints: false
+  }
+})
+
 // ここまで
 module.exports = environment
