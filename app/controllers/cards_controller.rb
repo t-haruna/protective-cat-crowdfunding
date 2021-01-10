@@ -14,7 +14,7 @@ class CardsController < ApplicationController
     # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
     if params['payjp-token'].blank?
-      redirect_to new_card_url 
+      redirect_to new_card_path 
     else
       customer = Payjp::Customer.create(
       description: '登録テスト', #なくてもOK
