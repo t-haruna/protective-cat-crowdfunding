@@ -15,38 +15,16 @@ class BillingsController < ApplicationController
 
   end
 
-  def test
+  def create_return1
     @billing = Billing.create(billing_params)
-    
     if  @billing.save 
-      # @totale = @billing.count_1*@project.return_price_1.to_s+@billing.count_2*@project.return_price_2.to_s+@billing.count_3*@project.return_price_3.to_s 
-      if @billing.count_1 = 1 && @billing.count_2 = "" && @billing.count_3 = ""
-        Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-        Payjp::Charge.create(
-        amount: @project.return_price_1,
-        customer: @card.customer_id, #顧客ID
-        currency: 'jpy', #日本円
-        )
-        redirect_to display_project_path(@project.id) 
-      elsif  @billing.count_1 = "" && @billing.count_2 = 1 && @billing.count_3 = ""
-        Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-        Payjp::Charge.create(
-        amount: @project.return_price_2,
-        customer: @card.customer_id, #顧客ID
-        currency: 'jpy', #日本円
-        )
-        redirect_to display_project_path(@project.id) 
-      elsif  @billing.count_1 = "" && @billing.count_2 = "" && @billing.count_3 = 1
-        Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-        Payjp::Charge.create(
-        amount: @project.return_price_3,
-        customer: @card.customer_id, #顧客ID
-        currency: 'jpy', #日本円
-        )
-        redirect_to display_project_path(@project.id) 
-      else
-        redirect_to display_project_path(@project.id) 
-      end
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      Payjp::Charge.create(
+      amount: @project.return_price_1,
+      customer: @card.customer_id, #顧客ID
+      currency: 'jpy', #日本円
+      )
+      redirect_to display_project_path(@project.id) 
     end
   end
 
@@ -63,6 +41,19 @@ class BillingsController < ApplicationController
     end
   end
 
+  def create_return2
+    @billing = Billing.create(billing_params)
+    if  @billing.save 
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      Payjp::Charge.create(
+      amount: @project.return_price_2,
+      customer: @card.customer_id, #顧客ID
+      currency: 'jpy', #日本円
+      )
+      redirect_to display_project_path(@project.id) 
+    end
+  end
+
   def new_return3
     @billing = Billing.new
     @billings = @project.billings.includes(:user)
@@ -75,6 +66,19 @@ class BillingsController < ApplicationController
     @default_card_information = customer.cards.retrieve(@card.payjp_id)
     end
     
+  end
+
+  def create_return3
+    @billing = Billing.create(billing_params)
+    if  @billing.save 
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      Payjp::Charge.create(
+      amount: @project.return_price_3,
+      customer: @card.customer_id, #顧客ID
+      currency: 'jpy', #日本円
+      )
+      redirect_to display_project_path(@project.id) 
+    end
   end
 
 

@@ -16,15 +16,17 @@ Rails.application.routes.draw do
 
     resources :drafts, only: [:new, :create]
     resources :executes, only: [:new, :create, :show, :edit, :update]
-    resources :billings, only: :create do
+    resources :billings do
       member do
         get 'new_return1'
         get 'new_return2'
         get 'new_return3'
-        
       end
+      
       collection do
-        post 'test', to: 'billings#test'
+        post 'create_return1', to: 'billings#create_return1'
+        post 'create_return2', to: 'billings#create_return2'
+        post 'create_return3', to: 'billings#create_return3'
       end
     end
 

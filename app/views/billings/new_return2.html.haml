@@ -24,7 +24,7 @@
           .return__text.scroll
             = @project.return_title_2 
     .Form 
-      = form_with model: [@project, @billing], local: true do |f|
+      = form_with model: [@project, @billing], url: create_return2_project_billings_path, local: true do |f|
         .Form__contents   
           -# = @project.return_price_2
           -# 円 ✖︎

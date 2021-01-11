@@ -24,13 +24,13 @@
           .return__text.scroll
             = @project.return_title_3 
     .Form 
-      = form_with model: [@project, @billing], local: true do |f|
+      = form_with model: [@project, @billing], url: create_return3_project_billings_path, local: true do |f|
         .Form__contents   
-          = @project.return_price_3
-          円 ✖︎
-          = f.text_field :count_3, class: 'Form__count'
-          口 ＝
-          %span#sales_commission_price
-          円 寄付する
+          -# = @project.return_price_3
+          -# 円 ✖︎
+          = f.text_field :count_3, class: 'Form__count', type:'hidden', value:1
+          -# 口 ＝
+          -# %span#sales_commission_price
+          -# 円 寄付する
         .Form__btn 
         = f.submit "寄付をする",class:"donate billing_btn"
