@@ -21,6 +21,10 @@ Rails.application.routes.draw do
         get 'new_return1'
         get 'new_return2'
         get 'new_return3'
+        
+      end
+      collection do
+        post 'create_return1', to: 'billings#create_return1'
       end
     end
 

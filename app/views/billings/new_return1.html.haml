@@ -26,13 +26,15 @@
     .Form 
       = form_with model: [@project, @billing], local: true do |f|
         .Form__contents   
-          = @project.return_price_1
-          円 ✖︎
-          = f.text_field :count_1, class: 'Form__count'
-          口 ＝
-          %span#sales_commission_price
-          円 寄付する
+          -# = @project.return_price_1
+          -# 円 ✖︎
+          = f.text_field :count_1, class: 'Form__count', type:'hidden', value:1
+          -# 口 ＝
+          -# %span#sales_commission_price
+          -# 円 寄付する
         .Form__btn 
         = f.submit "寄付をする",class:"donate billing_btn"
+
+      -# = button_to "寄付をする", project_billings_path { class:"donate billing_btn", controller: 'billings', action: 'create', params: {count_1: 1} }
 
     
