@@ -24,7 +24,7 @@ Rails.application.routes.draw do
         
       end
       collection do
-        post 'create_return1', to: 'billings#create_return1'
+        post 'test', to: 'billings#test'
       end
     end
 

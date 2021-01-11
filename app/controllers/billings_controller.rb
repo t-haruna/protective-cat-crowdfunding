@@ -15,7 +15,7 @@ class BillingsController < ApplicationController
 
   end
 
-  def create_return1
+  def test
     @billing = Billing.create(billing_params)
     
     if  @billing.save 
