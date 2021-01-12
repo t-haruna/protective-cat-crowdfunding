@@ -34,15 +34,16 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.create(project_params)
     if  @project.save
-      redirect_to project_path(@project.id) 
+      redirect_to project_path(@project) 
     else
       render :new
     end
   end
 
   def show
+    @project = Project.find(params[:id])
     @today = Date.today
-    @billings= Billing.where(project_id: @project.id)
+    @billings= Billing.where(project_id: @project)
   end
 
   def display

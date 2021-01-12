@@ -82,29 +82,6 @@ class BillingsController < ApplicationController
   end
 
 
-
-  # def create
-   
-  #   @billing = Billing.create(billing_params)
-  #   @billings= Billing.where(project_id: @project.id)
-  #   @total1 = @billings.sum(:count_1)
-  #   @total2 = @billings.sum(:count_2)
-  #   @total3 = @billings.sum(:count_3)
-  #   @total = @total1*@project.return_price_1+@total2*@project.return_price_2+@total3*@project.return_price_3 
-
-  #   if  @billing.save
-  #     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-  #     Payjp::Charge.create(
-  #     amount: @total.price,
-  #     customer: @card.customer_id, #顧客ID
-  #     currency: 'jpy', #日本円
-  #   )
-  #     redirect_to display_project_path(@project.id) 
-  #   else
-  #     render :new_return1
-  #   end
-  # end
-
   private
   def billing_params
     params.require(:billing).permit(:count_1,:count_2,:count_3).merge(user_id: current_user.id, project_id: params[:project_id])
