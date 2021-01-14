@@ -15,6 +15,8 @@ CarrierWave.configure do |config|
   # config.fog_directory  = 'protective-cat-crowdfunding'
   # config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/protective-cat-crowdfunding'
 
+
+
   case Rails.env
     when 'production'
       config.fog_credentials = {
