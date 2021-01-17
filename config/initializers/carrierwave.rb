@@ -6,37 +6,37 @@ CarrierWave.configure do |config|
   config.storage = :fog
   config.fog_provider = 'fog/aws'
   config.fog_public = false
-  # config.fog_credentials = {
-  #   provider: 'AWS',
-  #   aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-  #   aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-  #   region: 'ap-northeast-1'
-  # }
+  config.fog_credentials = {
+    provider: 'AWS',
+    aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+    aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
+    region: 'ap-northeast-1'
+  }
 
-  # config.fog_directory  = 'protective-cat-crowdfunding'
-  # config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/protective-cat-crowdfunding'
+  config.fog_directory  = 'protective-cat-crowdfunding'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/protective-cat-crowdfunding'
 
 
 
-  case Rails.env
-    when 'production'
-      config.fog_credentials = {
-      provider: 'AWS',
-      aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-      region: 'ap-northeast-1'
-      }
-        config.fog_directory = 'protective-cat-crowdfunding'
-        config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/protective-cat-crowdfunding'
+  # case Rails.env
+  #   when 'production'
+  #     config.fog_credentials = {
+  #     provider: 'AWS',
+  #     aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+  #     aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
+  #     region: 'ap-northeast-1'
+  #     }
+  #       config.fog_directory = 'protective-cat-crowdfunding'
+  #       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/protective-cat-crowdfunding'
 
-      when 'staging'
-      config.fog_credentials = {
-      provider:                'AWS',
-      aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-      aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-      region: 'ap-northeast-1'
-    }
-        config.fog_directory = 'protective-cat-crowdfunding'
-        config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/protective-cat-crowdfunding'
-  end
+  #     when 'staging'
+  #     config.fog_credentials = {
+  #     provider:                'AWS',
+  #     aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+  #     aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
+  #     region: 'ap-northeast-1'
+  #   }
+  #       config.fog_directory = 'protective-cat-crowdfunding'
+  #       config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/protective-cat-crowdfunding'
+  # end
 end
