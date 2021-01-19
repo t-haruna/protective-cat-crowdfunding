@@ -8,7 +8,7 @@ class ExecutesController < ApplicationController
   def create
     @execute = Execute.create(execute_params)
     if  @execute.save
-      redirect_to project_execute_path(@project, execute.id) 
+      redirect_to project_execute_path(@project, @execute.id) 
     else
       render :new
     end
