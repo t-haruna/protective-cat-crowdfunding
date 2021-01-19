@@ -107,19 +107,26 @@
 }
 
 .expect{
-  background: rgb(156, 162, 168,);
-  opacity: 0.7;
+  background: rgba(156, 162, 168,0.7);
+  //opacity: 0.7;
   position: absolute;
   top:200px;
   left:160px;
-  
+  margin: 0 auto;
+  overflow:auto;
   display: inline-block;
-  height: 400px;
-  width: 850px;
+  height: 50%;
+  width: 70%;
+  // height: 400px;
+  // width: 850px;
   color: #ffffff;
+  &__contents{
+    margin-top: 20px;
+  }
   &__title{
-    font-size: 35px;
+    font-size: 38px;
     margin-bottom: 20px;
+    font-weight: 700;
   }
   &__body{
     font-size: 20px;
