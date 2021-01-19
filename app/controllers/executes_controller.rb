@@ -1,5 +1,6 @@
 class ExecutesController < ApplicationController
   before_action :set_project
+
   def new
     @execute = Execute.new
     # @executes = @project.executes.includes(:user)
@@ -15,9 +16,8 @@ class ExecutesController < ApplicationController
   end
 
   def show
-    
-    @project= Project.find(params[:id])
-    @execute = Execute.find_by(execute_id: @project.execute.id)
+    # @project= Project.find(params[:id])
+    @execute = Execute.find(params[:id])
     @billings= Billing.where(project_id: @execute.project_id)
   end
 
