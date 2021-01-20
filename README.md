@@ -1,5 +1,5 @@
 ## アプリ名
- 保護ネコ<<font color="Yellow">✖︎</font>クラウドファンディング
+ 保護ネコ<font color="Yellow">✖︎</font>クラウドファンディング
   [![Image from Gyazo](https://i.gyazo.com/31208c02f54f25be385e7676954909eb.jpg)](https://gyazo.com/31208c02f54f25be385e7676954909eb)
 
 ## usersテーブル
