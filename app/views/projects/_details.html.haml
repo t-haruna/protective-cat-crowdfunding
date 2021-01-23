@@ -13,14 +13,15 @@
 
       .project__right__text.scroll
         %h2 プロジェクト詳細
-        =safe_join(@project.text.split("\n"),tag(:br))
-
-      %h2 Profile
+        .project__right__text__detail
+          =safe_join(@project.text.split("\n"),tag(:br))
       .project__right__profile
-        .profile-image
-          = image_tag @project.profile_image.to_s, class: "image2"
-        .profile-expect.scroll
-          = @project.profile
+        %h2 Profile
+        .project__right__profile__detail
+          .profile-image
+            = image_tag @project.profile_image.to_s, class: "image2"
+          .profile-expect.scroll
+            = @project.profile
 
 
     .project__left

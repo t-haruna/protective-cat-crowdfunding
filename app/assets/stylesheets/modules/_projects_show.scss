@@ -77,7 +77,9 @@
     height: 500px;
     margin: 10px 0;
     line-height: 30px;
-    
+    &__detail{
+      padding:0 7px;
+    } 
   }
   &__text h2 {
     background-color:  rgb(231, 229, 226);
@@ -88,9 +90,10 @@
   }
   &__profile{
     border:solid 1px #ccc;
-    height: 165px;
-    display: flex;
-    
+    &__detail{
+      height: 165px;
+      display: flex;
+    }
   }
   
 &__profile p {
