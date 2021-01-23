@@ -15,7 +15,7 @@
         - @turm= project.tarm
         - if @today < @turm
           .Main-bar__detaile
-            = link_to project_path(project.id) do
+            = link_to project_path(project.id) ,class: "link-title" do
               .Main-bar__detaile__image
                 = image_tag project.image.to_s, class: "image"
               .Main-bar__detaile__box

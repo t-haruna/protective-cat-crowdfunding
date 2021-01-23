@@ -10,17 +10,17 @@
     .Main-bar__title
       プロジェクト
     .Main-bar__page
-      =link_to "投稿中のプロジェクト", posting_project_projects_path
+      =link_to "投稿中のプロジェクト", posting_project_projects_path, class: "link-title"
     .Main-bar__page
-      =link_to "完了したプロジェクト", done_project_projects_path
+      =link_to "完了したプロジェクト", done_project_projects_path, class: "link-title"
     .Main-bar__page
-      =link_to "下書き保存一覧", draft_display_projects_path
+      =link_to "下書き保存一覧", draft_display_projects_path, class: "link-title"
     .Main-bar__title.setting
       設定
     .Main-bar__page
       住所登録
     .Main-bar__page
-      =link_to "クレジットカード登録", new_card_path
+      =link_to "クレジットカード登録", new_card_path, class: "link-title"
     .Main-bar__page
       =link_to "トップ画面へ戻る", root_path, class: "Payment__inner__add-btn"
       

@@ -1,8 +1,8 @@
 = render 'layouts/header'
 .Phot
-  .phot__image    
+  .phot__image.fade-in-bottom   
     = image_tag '/下町ネコ.jpg',class: "phot__image--background"
-    .expect
+    .expect.fade-in-bottom
       .expect__contents
         %h2.expect__title ネコと人が共存できる世界のために
         %p.expect__body 現在、多くの保護団体や個人のボランティアの方々は支援者の援助や自身の貯金を切り崩して
@@ -15,9 +15,8 @@
         %P 今私たちができることを
         %p 改めて考えてみませんか？
 
-.Tag
+.Tag.fade-in-top
   Let's Crowd Funding !!
-  
   
 .Body
   .Select
@@ -48,9 +47,9 @@
         - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
           - if @today >= @turm && @total >= @target_amount     
             .Achievement
-              %span.trapezoid 達 成 
-              %span.square 期間終了 
-              %span.triangle
+              %span.trapezoid.fade-in01 達 成 
+              %span.square.fade-in01 期間終了 
+              
               .Projects 
                 = link_to display_project_path(project.id) , class: "Box3"do
                   .Box1
@@ -81,8 +80,8 @@
                       まで
           - elsif @today >= @turm
             .Achievement
-              %span.square 期間終了 
-              %span.triangle
+              %span.square.fade-in01 期間終了 
+              %span.triangle.fade-in01
               .Projects 
                 = link_to display_project_path(project.id) , class: "Box3"do
                   .Box1
@@ -113,7 +112,7 @@
                       まで
           - elsif @total >= @target_amount 
             .Achievement
-              %span.trapezoid 達 成 
+              %span.trapezoid.fade-in01 達 成 
               .Projects 
                 = link_to display_project_path(project.id) , class: "Box3"do
                   .Box1

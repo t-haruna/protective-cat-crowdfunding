@@ -68,13 +68,7 @@
   text-decoration: none;
 }
 
-.Header__user__title :hover {
-  background-color: rgb(80, 86, 91);
-  color: rgb(242, 203, 86);
-  width: 300px;
-  display: inline-block;
-  text-align: center;
-}
+
 
 .mypage-link{
   color: #ffffff;
@@ -146,7 +140,7 @@
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  color: #ffffff;
+  color: rgb(242, 203, 86);
   line-height: 50px;
   font-size: 24px;
   opacity: 0.8;
@@ -155,17 +149,22 @@
 .Select{
   height: 50px;
   //border-bottom: 1px dotted rgb(217, 215, 212);
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  background-color:#f3f0f0 ;
+  display: inline-block;
+  margin-top: 15px;
+  line-height: 25px;
+  
 }
 
 .select{
   text-decoration: none;
-  color: rgb(242, 203, 86);
+  color: rgb(115, 112, 107);
   font-size: 18px;
   display: inline-block;
   margin: 15px;
   font-weight: 700;
-
+  transition: all 1s;
 }
 
 .Projects{
@@ -241,7 +240,7 @@
 }
 
 .Contents{
-  //color: rgb(101, 99, 95);
+  color: rgb(74, 73, 70);
   &__expect{
     margin-left: 20px;
     margin-bottom: 30px;
@@ -249,6 +248,7 @@
     &__title{
       font-size: 28px;
       margin-bottom: 5px;
+      font-weight: 600;
     }
   }
   &__projects{
@@ -269,7 +269,7 @@
 
 .trapezoid {
   width: 185px;
-  border-bottom: 40px solid#ea352d;
+  border-bottom: 40px solid#ea662d;
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   height: 0;
@@ -286,28 +286,105 @@
 
 
 .square{
-  padding: 8px 28px;
-  background-color:  #5fe3dc;
   color: #ffffff;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
+  //font-weight: 700;
   position: absolute;
-  top: 15px;
+  top: 25px;
   left: 6px;
   z-index: 5;
-  
+  margin: 0 10px;
+	width: 140px;/* 幅 */
+	height: 0px;/* y位置 */
+	border-bottom: 40px solid#69c3be;/* 高さ */
+	//border-left: 30px solid transparent;/* 左側の角度 */
+  border-right: 10px solid transparent;/* 右側の角度 */
+  text-align: center;
 }
 
-.triangle{
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 25px 45px 25px; 
-  //square root of 3 / 2 * (border-left-width(25px) + border-right-width(25px))
-  border-color: transparent transparent #5fe3dc transparent;
-  position: absolute;
-  top:15px;
-  left: 118px;
-  z-index: 5;
-  
+.link-title{
+  text-decoration: none;
+  color: rgb(101, 99, 95);
+  font-weight: 700;
 }
+
+
+//アニメーション設定
+.fade-in-bottom {
+  opacity: 0;
+  animation: fadein-bottom .5s .1s ease-out forwards;
+}
+@keyframes fadein-bottom {
+  0% {
+     opacity: 0;
+     transform: translateY(20px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+}
+
+.fade-in-top {
+  opacity: 0;
+  animation: fadein-top 1.5s .3s ease-out forwards;
+}
+@keyframes fadein-top {
+  0% {
+     opacity: 0;
+     transform: translateY(-20px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+}
+
+.fade-in-right {
+  opacity: 0;
+  animation: fadein-right 1.5s 0 ease-out forwards;
+}
+@keyframes fadein-right {
+  0% {
+     opacity: 0;
+     transform: translateX(20px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateX(0);
+  }
+}
+
+.fade-in01{ 
+  opacity:0;
+  animation-name: sample01; 
+  animation-duration: 3s; 
+  animation-fill-mode: forwards; 
+}
+@keyframes sample01 {
+0% {
+  opacity: 0;
+}
+ 100% {
+  opacity: 1;
+} 
+}
+
+.select:hover {
+  color: rgb(242, 203, 86);
+  //transform: rotateX(360deg);
+  font-size: 24px;
+  padding:0 5px;
+  }
+
+  .Select:hover {
+    background-color:rgb(115, 112, 107) ;
+    opacity: 0.8;
+
+  }
+
+  .Header__user__title :hover {
+    color: rgb(242, 203, 86);
+    font-size: 18px;
+   
+  }
