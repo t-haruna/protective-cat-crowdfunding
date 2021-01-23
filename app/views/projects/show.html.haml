@@ -14,7 +14,7 @@
         - if @project.draft.blank?
           = link_to 'プロジェクトを開始する', project_drafts_path(@project,@draft), method: "post", class:'form-btn'
         - else
-          = link_to '確定する', display_project_path(@project.id), method: "post", class:'form-btn'
+          = link_to '確定する', display_project_path(@project.id),  class:'form-btn'
       %hr.contents-line
       .project-start.wait
         = link_to '戻って修正する', edit_project_path, class:'form-btn edit-btn'
