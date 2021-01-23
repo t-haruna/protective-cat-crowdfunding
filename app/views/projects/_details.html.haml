@@ -13,7 +13,7 @@
 
       .project__right__text.scroll
         %h2 プロジェクト詳細
-        = @project.text
+        =safe_join(@project.text.split("\n"),tag(:br))
 
       %h2 Profile
       .project__right__profile
