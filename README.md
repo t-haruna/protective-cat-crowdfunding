@@ -1,6 +1,6 @@
 # アプリ名
  # :cat::feet:保護ネコ<font color="Yellow">✖︎</font>クラウドファンディング
-  [![Image from Gyazo](https://i.gyazo.com/31208c02f54f25be385e7676954909eb.jpg)](https://gyazo.com/31208c02f54f25be385e7676954909eb)
+  [![Image from Gyazo](https://i.gyazo.com/af338fe1bbcd3876dd0a7e23b01ed292.gif)](https://gyazo.com/af338fe1bbcd3876dd0a7e23b01ed292)
 
 # :pushpin:概要
  ネコの保護活動を行っている団体または個人がその活動費用をクラウドファンディングを通して募るサイトです。
