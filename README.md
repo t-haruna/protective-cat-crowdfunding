@@ -3,6 +3,7 @@
   [![Image from Gyazo](https://i.gyazo.com/31208c02f54f25be385e7676954909eb.jpg)](https://gyazo.com/31208c02f54f25be385e7676954909eb)
 
 # 概要
+　:bowtie:
   ネコの保護活動を行っている団体または個人がその活動費用をクラウドファンディングを通して募るサイトです。
 
 # 本番環境
