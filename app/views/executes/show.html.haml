@@ -33,7 +33,8 @@
           = @execute.execute_text
   %hr.contents-line
   .project__excute__edit-btn
-  - if current_user.id == @execute.user_id
+
+  -if user_signed_in? && current_user.id == @execute.user_id
     .project__execute-btn
       =link_to "編集する", edit_project_execute_path(@project.id), class: "form-btn"
   - else
