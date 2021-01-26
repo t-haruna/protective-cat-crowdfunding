@@ -86,6 +86,14 @@ PassWord:1234567
 トップ画面より期間が終了したプロジェクトの詳細画面をクリックします。  
 画面下に出現する”実行報告”ボタンをクリックします。  
 
+# :earth_africa:開発環境
+VScode
+Ruby 2.6.5
+Rails 6.0.3.4
+mysql2 0.5.3
+AWS
+
+# DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
