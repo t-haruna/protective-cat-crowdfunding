@@ -44,6 +44,8 @@ mail：pom.gmail.com
 PassWord:1234567   
 (ニックネームはぽん吉です) 
 
+[![Image from Gyazo](https://i.gyazo.com/0bf524bcc30f05fa8279cddd3fd0dcd3.gif)](https://gyazo.com/0bf524bcc30f05fa8279cddd3fd0dcd3)
+
 ## ②クレジット登録機能
 トップページよりマイページに行きます。  
 設定のクレジットカード登録へ行きます。  
