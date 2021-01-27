@@ -5,10 +5,11 @@
   %hr.contents-line
     = render "details"
   %hr.contents-line
-  - if @executes.present? 
+  - @execute=Execute.where(project_id:@project.id)
+  - if @execute.present? 
     .project__execute-btn
-      =link_to "実行報告", project_execute_path(@project.id), class: "form-btn"
-  - elsif @today >= @project.tarm && current_user.id == @project.user_id
+      =link_to "実行報告", project_execute_path(@project.execute.id), class: "form-btn"
+  - elsif @today >= @project.tarm && user_signed_in? && current_user.id == @project.user_id
     .project__execute-report
       %p.return-expect.red-color 期間が終了いたしました。
       %p.return-expec.red-color プロジェクトの実行報告を以下より投稿してください
@@ -16,6 +17,5 @@
       =link_to "実行報告をする", new_project_execute_path(@project.id), class: "form-btn"
     %hr.contents-line
   - else
-  
-  .project__return__index
-    =link_to "トップ画面へ戻る", root_path, class: "Payment__inner__add-btn"
+    .project__return__index
+      =link_to "トップ画面へ戻る", root_path, class: "Payment__inner__add-btn"

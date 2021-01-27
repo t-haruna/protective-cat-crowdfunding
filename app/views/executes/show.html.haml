@@ -30,7 +30,7 @@
         .project__excute__report__title
           = @execute.execute_title
         .project__excute__report__text.scroll
-          = @execute.execute_text
+          =safe_join(@execute.execute_text.split("\n"),tag(:br))
   %hr.contents-line
   .project__excute__edit-btn
 
