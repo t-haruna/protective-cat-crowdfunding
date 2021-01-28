@@ -16,9 +16,8 @@ class ExecutesController < ApplicationController
   end
 
   def show
-    # @project= Project.find(params[:id])
     @execute = Execute.find(params[:id])
-    @billings= Billing.where(project_id: @execute.project_id)
+    @billings= Billing.where(project_id: @project.id)
   end
 
   def edit

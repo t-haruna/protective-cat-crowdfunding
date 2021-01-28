@@ -8,7 +8,7 @@
   - @execute=Execute.where(project_id:@project.id)
   - if @execute.present? 
     .project__execute-btn
-      =link_to "実行報告", project_execute_path(@project.execute.id), class: "form-btn"
+      =link_to "実行報告", project_execute_path(@project, @project.execute.id), class: "form-btn"
   - elsif @today >= @project.tarm && user_signed_in? && current_user.id == @project.user_id
     .project__execute-report
       %p.return-expect.red-color 期間が終了いたしました。
