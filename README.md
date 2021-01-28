@@ -102,7 +102,7 @@ PassWord:1234567
 トップ画面より期間が終了したプロジェクトの詳細画面をクリックします。  
 画面下に出現する”実行報告”ボタンをクリックします。  
 
-[![Image from Gyazo](https://i.gyazo.com/9b0a707f7763d491ba3f0d45623d61bc.gif)](https://gyazo.com/9b0a707f7763d491ba3f0d45623d61bc)
+[![Image from Gyazo](https://i.gyazo.com/32a4ac47d3b15c9b9cc03d926480b72b.gif)](https://gyazo.com/32a4ac47d3b15c9b9cc03d926480b72b)
 
 # :earth_africa:開発環境
 VScode  
