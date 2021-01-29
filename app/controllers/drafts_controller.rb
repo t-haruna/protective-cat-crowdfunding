@@ -6,10 +6,7 @@ class DraftsController < ApplicationController
   end
 
   def create
-    @draft = Draft.new(user_id:   current_user.id,
-      project_id:  @project.id
-     )
-
+    @draft = Draft.new(user_id:current_user.id, project_id:@project.id)
      if @draft.save
       redirect_to root_path, notice: "プロジェクトを開始しました"
     else

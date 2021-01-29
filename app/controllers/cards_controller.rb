@@ -6,14 +6,11 @@ class CardsController < ApplicationController
   end
 
   def new
-    # card = Card.where(user_id: current_user.id)
     redirect_to card_path(@card) if @card.present?
   end
 
   def pay #payjpとCardsテーブルへのcreate
-    # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
-    
     if params['payjp-token'].blank?
       redirect_to new_card_path 
     else
@@ -24,7 +21,6 @@ class CardsController < ApplicationController
       metadata: {user_id: current_user.id}
       ) #念のためmetadataにuser_idを入れたが、なくてもOK
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, payjp_id: customer.default_card)
-      
       if @card.save
         redirect_to root_path
       else
@@ -36,7 +32,6 @@ class CardsController < ApplicationController
   def delete #PayjpとCardsテーブルからの削除（destroy）
     if @card.blank?
     else
-      # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
@@ -49,7 +44,6 @@ class CardsController < ApplicationController
     if @card.blank?
       redirect_to new_card_url 
     else
-      # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.payjp_id)

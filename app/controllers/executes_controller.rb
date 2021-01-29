@@ -1,5 +1,6 @@
 class ExecutesController < ApplicationController
   before_action :set_project
+  before_action :set_execute, only: [:show, :edit, :update]
 
   def new
     @execute = Execute.new
@@ -16,16 +17,13 @@ class ExecutesController < ApplicationController
   end
 
   def show
-    @execute = Execute.find(params[:id])
     @billings= Billing.where(project_id: @project.id)
   end
 
   def edit
-    @execute = Execute.find(params[:id])
   end
 
   def update
-    @execute = Execute.find(params[:id])
     if @execute.update(execute_params)
       redirect_to project_execute_path{@execute.id}
     else
@@ -41,6 +39,10 @@ class ExecutesController < ApplicationController
 
   def set_project
     @project = Project.find(params[:project_id])
+  end
+
+  def set_execute
+    @execute = Execute.find(params[:id])
   end
   
   
