@@ -62,7 +62,10 @@ PassWord:1234567
 [![Image from Gyazo](https://i.gyazo.com/90c5df381c32469731500f25bbef7ebd.gif)](https://gyazo.com/90c5df381c32469731500f25bbef7ebd)
 
 ## ③プロジェクト投稿機能
-トップページより画面中程の”クラウドファンディングを始める”をクリックします。  
+トップページより画面中程の”クラウドファンディングを始める”をクリックします。 
+
+[![Image from Gyazo](https://i.gyazo.com/620f4ea26adb03a9422e19b8b9cb9607.gif)](https://gyazo.com/620f4ea26adb03a9422e19b8b9cb9607)
+
 プロジェクトの詳細を入力後,”確認画面へ”をクリックします。  
 確認画面を見て問題なければ”プロジェクトを開始する”をクリックします。  
 →トップ画面に投稿内容が表示されます。  
@@ -72,6 +75,8 @@ PassWord:1234567
 →マイページの”下書き保存一覧”より保存内容を見れるようになります。  
 削除したい場合は”削除”をクリックします。  
 →削除されます。  
+
+[![Image from Gyazo](https://i.gyazo.com/813b09c020b7547b898bd1476b07765e.gif)](https://gyazo.com/813b09c020b7547b898bd1476b07765e)
 
 ## ④寄付機能
 トップ画面より寄付をしたいプロジェクトをクリックします。  
@@ -96,6 +101,8 @@ PassWord:1234567
 【プロジェクト投稿者以外】  
 トップ画面より期間が終了したプロジェクトの詳細画面をクリックします。  
 画面下に出現する”実行報告”ボタンをクリックします。  
+
+[![Image from Gyazo](https://i.gyazo.com/32a4ac47d3b15c9b9cc03d926480b72b.gif)](https://gyazo.com/32a4ac47d3b15c9b9cc03d926480b72b)
 
 # :earth_africa:開発環境
 VScode  
