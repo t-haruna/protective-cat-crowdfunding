@@ -12,11 +12,10 @@
   - elsif @today >= @project.tarm && user_signed_in? && current_user.id == @project.user_id
     .project__execute-report
       %p.return-expect.red-color 期間が終了いたしました。
-      %p.return-expec.red-color プロジェクトの実行報告を以下より投稿してください
+      %p.return-expect.red-color プロジェクトの実行報告を以下より投稿してください
     .project__execute-btn
       =link_to "実行報告をする", new_project_execute_path(@project.id), class: "form-btn"
     %hr.contents-line
   - else
     .project__return__index
-      %p 実行報告の投稿をお待ちください。
       =link_to "トップ画面へ戻る", root_path, class: "Payment__inner__add-btn"
