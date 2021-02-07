@@ -7,10 +7,16 @@ require("@rails/ujs").start()
 
 require("@rails/activestorage").start()
 require("channels")
-require("jquery")  // ←の1行を追加
-require("project_new.js")  // ←の1行を追加
-require("billing_new.js")  // ←の1行を追加
-require("payjp.js")  // ←の1行を追加
+require("jquery")  
+require("project_new.js")  
+require("billing_new.js")  
+require("payjp.js")  
+require("project_detail.js")  
+
+require("chartkick") // グラフ描写
+require("chart.js") // グラフ描写
+
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

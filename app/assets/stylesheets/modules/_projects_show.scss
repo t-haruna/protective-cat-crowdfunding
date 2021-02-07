@@ -72,6 +72,7 @@
 .project__right{
   display: inline-block;
   width: 65%;
+  position: relative;
   &__image{
     border:solid 5px #ccc;
     height: 450px;
@@ -155,16 +156,40 @@
 
 .contents-pacent{
   border:solid 1px #ccc;
-  height: 80px;
+  height: 100px;
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
 }
+
+.contents-pacent__box2__graph1{
+  background-color: rgb(231, 229, 226);
+  height: 15px;
+  margin:0 5px 5px 5px;
+  border-radius: 6px;
+  position: relative;
+}
+.contents-pacent__box2__graph2{
+  background-color: #ea662d;
+  height: 15px;
+  //width: 50%;
+  border-radius: 6px;
+  //position: absolute;
+  // top: 0;
+  // left: 0;
+  // z-index: 10;
+}
+
+.test{
+  width: 20%;
+ 
+}
+
 .contents-total{
   border:solid 1px #ccc;
-  height: 120px;
+  height: 100px;
   text-align: center;
   &__box1{
-  padding-top: 30px;
+  padding-top: 10px;
   font-size: 18px;
   }
   &__box2{
@@ -344,4 +369,38 @@
 .delete-btn{
   background-color: #ea352d;
   padding: 15px 80px;
+}
+
+.square-display__achievement{
+  color: #ffffff;
+  font-size: 24px;
+  //font-weight: 700;
+  position: absolute;
+  top: 20px;
+  left: -22px;
+  z-index: 5;
+  margin: 0 10px;
+	width: 140px;/* 幅 */
+	height: 0px;/* y位置 */
+	border-bottom: 40px solid#69c3be;/* 高さ */
+	//border-left: 30px solid transparent;/* 左側の角度 */
+  border-right: 10px solid transparent;/* 右側の角度 */
+  text-align: center;
+}
+
+.trapezoid-display__achievement {
+  width: 220px;
+  border-bottom: 45px solid#ea662d;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  height: 0;
+  z-index: 5;
+  transform: rotate(45deg);
+  position: absolute;
+  top:40px;
+  left: 600px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
 }
