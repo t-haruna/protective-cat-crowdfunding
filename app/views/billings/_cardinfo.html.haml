@@ -1,0 +1,13 @@
+%h2.Billing-Card 登録クレジットカード情報
+.Billing-Card-Information
+  .Billing-Information
+    %label カード番号
+    = "**** **** **** " + @default_card_information.last4
+    %br
+    %label 有効期限
+    - exp_month = @default_card_information.exp_month.to_s
+    - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+    = exp_month + " / " + exp_year
+    %br
+
+  = link_to 'クレジットカードを変更する', card_path, class:"card-change"

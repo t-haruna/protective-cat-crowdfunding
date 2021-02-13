@@ -7,7 +7,6 @@
   .Donate-configuration
     %h2.configuration-verification 寄付内容の確認  
     .project__left__return
-      %p return
       .return
         .return__title
           リターン③
@@ -23,6 +22,10 @@
               = image_tag @project.return_image_3.to_s, class: "image3"
           .return__text.scroll
             = @project.return_title_3 
+            
+    %hr.contents-line
+    = render "cardinfo"
+
     .Form 
       = form_with model: [@project, @billing], url: create_return3_project_billings_path, local: true do |f|
         .Form__contents   

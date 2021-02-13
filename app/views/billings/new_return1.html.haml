@@ -7,14 +7,14 @@
   .Donate-configuration
     %h2.configuration-verification 寄付内容の確認  
     .project__left__return
-      %p return
       .return
-        .return__title
+        .return__title.billing-return
           リターン①
         .return__price
           寄付金額：
           = @project.return_price_1.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
           円
+
         .return__content
           .return__image
             - if  @project.return_image_1.blank?
@@ -23,18 +23,17 @@
               = image_tag @project.return_image_1.to_s, class: "image3"
           .return__text.scroll
             = @project.return_title_1 
+
+    %hr.contents-line
+    = render "cardinfo"
+
+      
     .Form 
       = form_with model: [@project, @billing], url: create_return1_project_billings_path, local: true do |f|
         .Form__contents   
-          -# = @project.return_price_1
-          -# 円 ✖︎
           = f.text_field :count_1, class: 'Form__count', type:'hidden', value:1
-          -# 口 ＝
-          -# %span#sales_commission_price
-          -# 円 寄付する
         .Form__btn 
         = f.submit "寄付をする",class:"donate billing_btn"
 
-      -# = button_to "寄付をする", project_billings_path { class:"donate billing_btn", controller: 'billings', action: 'create', params: {count_1: 1} }
 
     
