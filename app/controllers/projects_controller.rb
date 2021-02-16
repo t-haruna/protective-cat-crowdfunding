@@ -43,6 +43,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    
     @billings= Billing.where(project_id: @project)
   end
 

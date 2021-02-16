@@ -12,6 +12,7 @@ require("project_new.js")
 require("billing_new.js")  
 require("payjp.js")  
 require("project_detail.js")  
+require("slick.js")  
 
 require("chartkick") // グラフ描写
 require("chart.js") // グラフ描写

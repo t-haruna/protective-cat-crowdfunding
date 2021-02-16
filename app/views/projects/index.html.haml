@@ -5,7 +5,8 @@
     .expect.fade-in-bottom
       .expect__contents
         %h2.expect__title ネコと人が共存できる世界のために
-        %p.expect__body 現在、多くの保護団体や個人のボランティアの方々は支援者の援助や自身の貯金を切り崩して
+        %p.expect__body 現在、多くの保護団体や個人のボランティアの方々は
+        %p.expect__body 支援者の援助や自身の貯金を切り崩して
         %p.expect__body 自身の生活を犠牲にして保護活動を行っています。
         %p.expect__body そのような中、新型コロナウイルスによる影響により
         %p.expect__body 保護ネコカフェの経営困難、譲渡会の中止など
@@ -14,6 +15,20 @@
         %p 小さな命を救うために
         %P 今私たちができることを
         %p 改めて考えてみませんか？
+  .phot__image.fade-in-bottom 
+    = image_tag '/寝転がるねこ.jpg',class: "phot__image--background phot__image--background-2"
+    .expect.fade-in-bottom.expect-2
+      .expect__contents
+        %h2.expect__title 一匹のネコを保護するためにかかる費用
+        %p.expect__body 避妊手術代  15,000〜3,0000円
+        %p.expect__body 健康診断    5,000～10,000
+        %p.expect__body 血液検査    4,000〜10,500
+        %p.expect__body 入院料      2,000〜5,000
+        %p.expect__body 予防接種料   4,000～6,000
+        %p.expect__body 計         30,000~61,500
+      .expect__ask
+        %p 上記に加え、フードやネコ砂などの費用も加算されます。
+        %p ひとつの命を守るだけでもこれだけのお金がかかります。
 
 .Tag.fade-in-top
   Let's Crowd Funding !!
@@ -45,80 +60,34 @@
         - total2 = @billings.sum(:count_2)
         - total3 = @billings.sum(:count_3)
         - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
-          - if @today >= @turm && @total >= @target_amount     
-            .Achievement
-              %span.trapezoid.fade-in01 達 成 
-              %span.square.fade-in01 期間終了 
+        
               
-              .Projects 
-                = link_to display_project_path(project.id) , class: "Box3"do
-                  .Box1
-                    = image_tag project.image.url.to_s, class: "Box1__image"
-                  .Box2
-                    %p.Box2__title= project.title
-                    %p 支援総額
-                    - @billings= Billing.where(project_id: project.id)
-                    - total1 = @billings.sum(:count_1)
-                    - total2 = @billings.sum(:count_2)
-                    - total3 = @billings.sum(:count_3)
-                    - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
-                    =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-                    円
-                    
-                  .Details
-                    .Details__total.detail
-                      %p.Box2__percent__contents 進捗率
-                      %p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
-                      
-                    .Details__suppoter.detail
-                      %p 目標金額
-                      = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-                      円
-                    .Details__term.detail
-                      %p 募集期間
-                      = project.tarm.strftime("%Y年%m月%d日")
-                      まで
-          - elsif @today >= @turm
-            .Achievement
-              %span.square.fade-in01 期間終了 
-              %span.triangle.fade-in01
-              .Projects 
-                = link_to display_project_path(project.id) , class: "Box3"do
-                  .Box1
-                    = image_tag project.image.url.to_s, class: "Box1__image"
-                  .Box2
-                    %p.Box2__title= project.title
-                    %p 支援総額
-                    - @billings= Billing.where(project_id: project.id)
-                    - total1 = @billings.sum(:count_1)
-                    - total2 = @billings.sum(:count_2)
-                    - total3 = @billings.sum(:count_3)
-                    - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
-                    =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-                    円
-                    
-                  .Details
-                    .Details__total.detail
-                      %p.Box2__percent__contents 進捗率
-                      %p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
-                      
-                    .Details__suppoter.detail
-                      %p 目標金額
-                      = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-                      円
-                    .Details__term.detail
-                      %p 募集期間
-                      = project.tarm.strftime("%Y年%m月%d日")
-                      まで
-          - elsif @total >= @target_amount 
-            .Achievement
+          .Achievement
+            - if @today >= @turm && @total >= @target_amount 
               %span.trapezoid.fade-in01 達 成 
-              .Projects 
-                = link_to display_project_path(project.id) , class: "Box3"do
-                  .Box1
-                    = image_tag project.image.url.to_s, class: "Box1__image"
-                  .Box2
-                    %p.Box2__title= project.title
+              %span.square.fade-in01 期間終了 
+            - elsif @today >= @turm
+              %span.square.fade-in01 期間終了 
+            - elsif @total >= @target_amount 
+              %span.trapezoid.fade-in01 達 成 
+            - else
+            .Projects 
+              = link_to display_project_path(project.id) , class: "Box3"do
+                .Box1
+                  = image_tag project.image.url.to_s, class: "Box1__image"
+                .Box2
+                  %p.Box2__title= project.title
+                  %p.Box2__percent__contents 進捗率
+                  %p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
+                  -# - @ratio = @total.to_f/project.target_amount*100
+                  -# - @percent = number_to_percentage(@ratio,precision: 1)
+                  -# = @percent
+                  -# %input{name: "ratio", type: "hidden", value:@ratio, class: 'ratio' }
+                  -# %input{name: "percent", type: "hidden", value:@percent, class: 'percent' }
+                  -# .contents-pacent__box2__graph1
+                  -#   .contents-pacent__box2__graph2
+                .Details
+                  .Details__total.detail
                     %p 支援総額
                     - @billings= Billing.where(project_id: project.id)
                     - total1 = @billings.sum(:count_1)
@@ -127,50 +96,106 @@
                     - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
                     =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
                     円
-                    
-                  .Details
-                    .Details__total.detail
-                      %p.Box2__percent__contents 進捗率
-                      %p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
-                      
-                    .Details__suppoter.detail
-                      %p 目標金額
-                      = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-                      円
-                    .Details__term.detail
-                      %p 募集期間
-                      = project.tarm.strftime("%Y年%m月%d日")
-                      まで
-          - else
-            .Achievement
-              .Projects 
-                = link_to display_project_path(project.id) , class: "Box3"do
-                  .Box1
-                    = image_tag project.image.url.to_s, class: "Box1__image"
-                  .Box2
-                    %p.Box2__title= project.title
-                    %p 支援総額
-                    - @billings= Billing.where(project_id: project.id)
-                    - total1 = @billings.sum(:count_1)
-                    - total2 = @billings.sum(:count_2)
-                    - total3 = @billings.sum(:count_3)
-                    - @total = total1*project.return_price_1+total2*project.return_price_2+total3*project.return_price_3 
-                    =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+                  .Details__suppoter.detail
+                    %p 目標金額
+                    = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
                     円
-                    
-                  .Details
-                    .Details__total.detail
-                      %p.Box2__percent__contents 進捗率
-                      %p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
-                      
-                    .Details__suppoter.detail
-                      %p 目標金額
-                      = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
-                      円
-                    .Details__term.detail
-                      %p 募集期間
-                      = project.tarm.strftime("%Y年%m月%d日")
-                      まで
+                  .Details__term.detail
+                    %p 募集期間
+                    = project.tarm.strftime("%Y年%m月%d日")
+                    まで
+          -# - elsif @today >= @turm
+          -#   .Achievement
+          -#     %span.square.fade-in01 期間終了 
+          -#     .Projects 
+          -#       = link_to display_project_path(project.id) , class: "Box3"do
+          -#         .Box1
+          -#           = image_tag project.image.url.to_s, class: "Box1__image"
+          -#         .Box2
+          -#           %p.Box2__title= project.title
+          -#           %p.Box2__percent__contents 進捗率
+          -#           //%p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
+          -#           -# - @ratio = @total.to_f/project.target_amount*100
+          -#           -# - @percent = number_to_percentage(@ratio,precision: 1)
+          -#           = @percent
+          -#           %input{name: "ratio", type: "hidden", value:@ratio, class: 'ratio' }
+          -#           %input{name: "percent", type: "hidden", value:@percent, class: 'percent' }
+          -#           .contents-pacent__box2__graph1
+          -#             .contents-pacent__box2__graph2
+          -#         .Details
+          -#           .Details__total.detail
+          -#             %p 支援総額
+          -#             =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+          -#             円
+          -#           .Details__suppoter.detail
+          -#             %p 目標金額
+          -#             = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+          -#             円
+          -#           .Details__term.detail
+          -#             %p 募集期間
+          -#             = project.tarm.strftime("%Y年%m月%d日")
+          -#             まで
+          -# - elsif @total >= @target_amount 
+          -#   .Achievement
+          -#     %span.trapezoid.fade-in01 達 成 
+          -#     .Projects 
+          -#       = link_to display_project_path(project.id) , class: "Box3"do
+          -#         .Box1
+          -#           = image_tag project.image.url.to_s, class: "Box1__image"
+          -#         .Box2
+          -#           %p.Box2__title= project.title
+          -#           %p.Box2__percent__contents 進捗率
+          -#           //%p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1)
+          -#           -# - @ratio = @total.to_f/project.target_amount*100
+          -#           -# - @percent = number_to_percentage(@ratio,precision: 1)
+          -#           = @percent
+          -#           %input{name: "ratio", type: "hidden", value:@ratio, class: 'ratio' }
+          -#           %input{name: "percent", type: "hidden", value:@percent, class: 'percent' }
+          -#           .contents-pacent__box2__graph1
+          -#             .contents-pacent__box2__graph2
+          -#         .Details
+          -#           .Details__total.detail
+          -#             %p 支援総額
+          -#             =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+          -#             円
+          -#           .Details__suppoter.detail
+          -#             %p 目標金額
+          -#             = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+          -#             円
+          -#           .Details__term.detail
+          -#             %p 募集期間
+          -#             = project.tarm.strftime("%Y年%m月%d日")
+          -#             まで
+          -# - else
+          -#   .Achievement
+          -#     .Projects 
+          -#       = link_to display_project_path(project.id) , class: "Box3"do
+          -#         .Box1
+          -#           = image_tag project.image.url.to_s, class: "Box1__image"
+          -#         .Box2
+          -#           %p.Box2__title= project.title
+          -#           %p.Box2__percent__contents 進捗率
+          -#           //%p.Box2__percent__contents= number_to_percentage(@total.to_f/project.target_amount*100,precision: 1) 
+          -#           -# - @ratio = @total.to_f/project.target_amount*100
+          -#           -# - @percent = number_to_percentage(@ratio,precision: 1)
+          -#           = @percent
+          -#           %input{name: "ratio", type: "hidden", value:@ratio, class: 'ratio' }
+          -#           %input{name: "percent", type: "hidden", value:@percent, class: 'percent' }
+          -#           .contents-pacent__box2__graph1
+          -#             .contents-pacent__box2__graph2
+          -#         .Details
+          -#           .Details__total.detail
+          -#             %p 支援総額
+          -#             =@total.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+          -#             円
+          -#           .Details__suppoter.detail
+          -#             %p 目標金額
+          -#             = project.target_amount.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+          -#             円
+          -#           .Details__term.detail
+          -#             %p 募集期間
+          -#             = project.tarm.strftime("%Y年%m月%d日")
+          -#             まで
 
               
       
