@@ -15,8 +15,9 @@
         %p 小さな命を救うために
         %P 今私たちができることを
         %p 改めて考えてみませんか？
-  .phot__image.fade-in-bottom 
-    = image_tag '/寝転がるねこ.jpg',class: "phot__image--background phot__image--background-2"
+  .phot__image.fade-in-bottom
+    = image_tag asset_path("/寝転がるねこ.jpg", class: "phot__image--background phot__image--background-2") 
+    //= image_tag '/寝転がるねこ.jpg',class: "phot__image--background phot__image--background-2"
     .expect.fade-in-bottom.expect-2
       .expect__contents
         %h2.expect__title 一匹のネコを保護するためにかかる費用
