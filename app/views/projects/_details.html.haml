@@ -56,13 +56,11 @@
           .contents-pacent__box1
             進捗率
           .contents-pacent__box2
-            - @ratio = @total.to_f/@project.target_amount*100
-            - @percent = number_to_percentage(@ratio,precision: 1)
+            - @percent = number_to_percentage(@total.to_f/@project.target_amount*100,precision: 1)
             = @percent
-            %input{name: "ratio", type: "hidden", value:@ratio, class: 'ratio' }
-            %input{name: "percent", type: "hidden", value:@percent, class: 'percent' }
             .contents-pacent__box2__graph1
               .contents-pacent__box2__graph2
+                %input{name: "percent", type: "hidden", value:@percent, class: 'percent' }
 
         .contents-amount
           .contents-amount__box1.box

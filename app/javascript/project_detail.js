@@ -3,9 +3,6 @@ $(function() {
   let percent = $( ".percent" ).val();
   let ratio = $( ".ratio" ).val();
   //viewにてinputを用いて関数をvalueに当てることでJSで使用できるようにする
-  if(ratio > 100){
-    percent = "100%"
-  }
   window.onload = function(){
     $(".contents-pacent__box2__graph2").css({ 'width' : percent } );
     }
@@ -13,35 +10,20 @@ $(function() {
 
 //トップ画面での進捗率メーター表示
 $(function() {
-  //let percent = $( ".percent-top" ).val();
-  //let ratio = $( ".ratio-top" ).val();
-  
- 
-
   $('.percent').each(function(i){
-    $(this).attr('id',i+1);
-    var percentid = $(this).attr('id').replace(/[^0-9]/g, '');
+    $(this).attr('id', `percent_${i}`);
   });
-
   $('.contents-pacent__box2__graph2').each(function(i){
-    $(this).attr('id',i+1);
-    var id = $(this).attr('id').replace(/[^0-9]/g, '');
-    //$('.percent').attr({id:`box-${id}`});
-    console.log(id)
+    $(this).attr('id', `graph_${i}`);
   });
-  
-
-  if (id == percentid ) {
-    let percent = $( ".percent" ).val();
-    //let ratio = $( ".ratio" ).val();
-    //console.log(id)
-    // if(ratio > 100){
-    //   percent = "100%"
-    // }
-    window.onload = function(){
-      $(".contents-pacent__box2__graph2").css({ 'width' : percent } );
-     }
-    }
+  //idをそれぞれにふる
+  (window.onload = function() {
+    var ele = document.getElementsByClassName("Achievement");
+    for(var i = 0; i < ele.length; i++){
+      $("#graph_"+i).css({ 'width' : $( "#percent_"+ i).val() } );
+  //Achievementの数を数えてプロジェクト数をカウントしその回数繰り返すようfor文で設定
+    };
+    });
 });
 
   
