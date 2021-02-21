@@ -12,6 +12,7 @@
   justify-content: space-between;
   color: rgb(115, 112, 107);
   margin-bottom: 60px;
+  
 }
 .project__top{
   line-height: 200px;
@@ -73,11 +74,13 @@
   display: inline-block;
   width: 65%;
   position: relative;
+  
   &__image{
     border:solid 5px #ccc;
     height: 450px;
     width: 100%;
     background-color: rgb(115, 112, 107);
+    
   }
   &__text {
     border:solid 1px #ccc;
@@ -150,6 +153,8 @@
       background-color:rgb(239, 199, 148) ;
       color: #ffffff;
       font-weight: 700;
+      box-shadow: 0 0 5px rgb(239, 199, 148);
+      margin-bottom: 10px;
     }
     &__title p{
       display: inline-block;
@@ -276,8 +281,7 @@
 }
 
 .return{
-  //border:solid 1px #ccc;
-  //height: 170px;
+  box-shadow: 0 0 5px rgb(239, 199, 148);
   margin-top: 5px;
   border:solid 2px rgb(239, 199, 148);
   &__price{
@@ -285,19 +289,14 @@
     height: 40px;
     line-height: 40px;
     font-size: 21px;
-    //background-color:rgb(237, 231, 212); 
     width: 95%;
     border-bottom:solid 2px rgb(239, 199, 148);
     margin: 0 auto;
   }
   &__content{
-    //height: 100px;
-    //padding-left: 20px;
     display: flex;
   }
   &__btn{
-    //width: 90%;
-    //height: 100px;
     text-align: center;
     margin: 10px;
   }
