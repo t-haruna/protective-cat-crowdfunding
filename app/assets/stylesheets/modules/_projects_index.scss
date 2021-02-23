@@ -112,7 +112,7 @@
 .expect{
   background: rgba(156, 162, 168, 0.7);
   position: absolute;
-  top:140px;
+  top:150px;
   left:350px;
   margin: 0 auto;
   overflow:auto;
@@ -140,11 +140,45 @@
 }
 
 .expect-2{
-  background-color: rgba(229, 229, 187, 0.6);
+  //background-color: rgba(160, 223, 156, 0.6);
+  color:  rgba(90, 88, 85, 0.83);
+  background: rgba(253, 253, 253, 0.4);
+  position: absolute;
+  //top:150px;
+  left:200px;
+  margin: 0 auto;
+  overflow:auto;
+  display: inline-block;
+  //height: 50%;
+  //width: 70%;
+  height: 100%;
+  width: 80%;
+  font-weight: 700;
+  
+  
 }
 
-.phot__image--background{
-  background-color: rgb(69, 242, 184);
+.expect__title-2{
+  background: linear-gradient( rgba(255, 144, 144, 0.864),  rgba(250, 87, 11, 0.822));
+  //background-color: rgba(169, 68, 68, 0.864);
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  width: 70%;
+  margin: 0 auto;
+  color: #ffffff;
+  margin-bottom: 50px;
+  box-shadow: 0 0 10px rgba(250, 87, 11, 0.822);
+}
+
+.expect__contents-2{
+  margin-top: 200px;
+  .expect__box{
+    background: rgba(253, 253, 253, 0.7);
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
 }
 
 .Tag{
