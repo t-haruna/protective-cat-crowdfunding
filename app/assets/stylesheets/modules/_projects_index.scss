@@ -140,22 +140,20 @@
 }
 
 .expect-2{
-  //background-color: rgba(160, 223, 156, 0.6);
   color:  rgba(90, 88, 85, 0.83);
-  background: rgba(253, 253, 253, 0.4);
+  //background: rgba(253, 253, 253, 0.4);
   position: absolute;
   //top:150px;
   left:200px;
   margin: 0 auto;
   overflow:auto;
   display: inline-block;
-  //height: 50%;
-  //width: 70%;
-  height: 100%;
+ // height: 100%;
   width: 80%;
   font-weight: 700;
-  
-  
+  position: absolute;
+  top:10px;
+  left:150px;
 }
 
 .expect__title-2{
@@ -175,9 +173,10 @@
   margin-top: 200px;
   .expect__box{
     background: rgba(253, 253, 253, 0.7);
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
     padding: 20px 0;
+    height: 70%;
   }
 }
 
@@ -199,17 +198,20 @@
 .Select{
   height: 50px;
   //border-bottom: 1px dotted rgb(217, 215, 212);
-  margin-bottom: 30px;
-  background-color:#f3f0f0 ;
+  margin-bottom: 35px;
+  background-color: rgb(220, 80, 99);
   display: inline-block;
-  margin-top: 15px;
+  //margin-top: 50px;
   line-height: 25px;
+  margin-left: 20px;
+  border-radius: 4px;
   
 }
 
 .select{
   text-decoration: none;
-  color: rgb(115, 112, 107);
+  //color: rgb(115, 112, 107);
+  color: #ffffff;
   font-size: 18px;
   display: inline-block;
   margin: 15px;
@@ -292,9 +294,7 @@
 .Contents{
   color: rgb(74, 73, 70);
   &__expect{
-    margin-left: 20px;
-    margin-bottom: 30px;
-
+    margin: 30px 20px;
     &__title{
       font-size: 28px;
       margin-bottom: 5px;
@@ -421,16 +421,23 @@
 }
 
 .select:hover {
-  color: rgb(242, 203, 86);
+  color: rgb(253, 192, 7);
   //transform: rotateX(360deg);
   font-size: 24px;
   padding:0 5px;
+  
+
+
   }
 
   .Select:hover {
-    background-color:rgb(115, 112, 107) ;
+    //background-color:rgb(115, 112, 107) ;
     opacity: 0.8;
-
+    //border: 1px solid rgb(217, 215, 212);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgb(168, 165, 161);
+    //background-color: rgb(255, 69, 93);
+    
   }
 
   .Header__user__title :hover {

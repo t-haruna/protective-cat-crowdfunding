@@ -1,20 +1,20 @@
 = render 'layouts/header'
 .Phot
-  -# .phot__image.fade-in-bottom   
-  -#   = image_tag '/下町ネコ.jpg',class: "phot__image--background"
-  -#   .expect.fade-in-bottom
-  -#     .expect__contents
-  -#       %h2.expect__title ネコと人が共存できる世界のために
-  -#       %p.expect__body 現在、多くの保護団体や個人のボランティアの方々は
-  -#       %p.expect__body 支援者の援助や自身の貯金を切り崩して
-  -#       %p.expect__body 自身の生活を犠牲にして保護活動を行っています。
-  -#       %p.expect__body そのような中、新型コロナウイルスによる影響により
-  -#       %p.expect__body 保護ネコカフェの経営困難、譲渡会の中止など
-  -#       %p.expect__body 活動の継続が難しく、また運営資金の調達も今まで厳しい状況となっています。
-  -#     .expect__ask
-  -#       %p 小さな命を救うために
-  -#       %P 今私たちができることを
-  -#       %p 改めて考えてみませんか？
+  .phot__image.fade-in-bottom   
+    = image_tag '/下町ネコ.jpg',class: "phot__image--background"
+    .expect.fade-in-bottom
+      .expect__contents
+        %h2.expect__title ネコと人が共存できる世界のために
+        %p.expect__body 現在、多くの保護団体や個人のボランティアの方々は
+        %p.expect__body 支援者の援助や自身の貯金を切り崩して
+        %p.expect__body 自身の生活を犠牲にして保護活動を行っています。
+        %p.expect__body そのような中、新型コロナウイルスによる影響により
+        %p.expect__body 保護ネコカフェの経営困難、譲渡会の中止など
+        %p.expect__body 活動の継続が難しく、また運営資金の調達も今まで厳しい状況となっています。
+      .expect__ask
+        %p 小さな命を救うために
+        %P 今私たちができることを
+        %p 改めて考えてみませんか？
   .phot__image.fade-in-bottom
     //= image_tag asset_path("寝転がるねこ.jpg", class: "phot__image--background phot__image--background-2") 
     = image_tag '/寝転がるねこver2.jpg',class: "phot__image--background phot__image--background-2"
@@ -23,24 +23,26 @@
         %h2.expect__title-2 一匹のネコを保護するためにかかる費用
         .expect__box
           %p.expect__body 避妊手術代  15,000〜3,0000円
-          %p.expect__body 健康診断    5,000～10,000
-          %p.expect__body 血液検査    4,000〜10,500
-          %p.expect__body 入院料      2,000〜5,000
-          %p.expect__body 予防接種料   4,000～6,000
-          %p.expect__body 計         30,000~61,500
-      .expect__ask
-        %p 上記に加え、フードやネコ砂などの費用も加算されます。
-        %p ひとつの命を守るだけでもこれだけのお金がかかります。
+          %p.expect__body 健康診断    5,000～10,000円
+          %p.expect__body 血液検査    4,000〜10,500円
+          %p.expect__body 入院料      2,000〜5,000円
+          %p.expect__body 予防接種料   4,000～6,000円
+          %p.expect__body 計         30,000~61,500円
+          .expect__ask
+            %p.expect__body 上記に加え、フードやネコ砂などの費用も加算されます。
+            %p.expect__body ひとつの命を守るだけでもこれだけのお金がかかります。
+      
+        
 
 .Tag.fade-in-top
   Let's Crowd Funding !!
   
 .Body
-  .Select
-    - if user_signed_in? 
-      = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
-    - else
-      = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
+  -# .Select
+  -#   - if user_signed_in? 
+  -#     = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
+  -#   - else
+  -#     = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
     
   .Contents
     .Contents__expect 
@@ -50,6 +52,13 @@
       %p 病気の保護ネコを治療したい、保護シェルターを建設したい・・
       %p 保護ネコを救うための多くのプロジェクトを
       %p 支援という形でともに実現して行きませんか？
+    
+    .Select
+      - if user_signed_in? 
+        = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
+      - else
+        = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
+    
 
     .Contents__projects
       - @drafts.each do |draft|
