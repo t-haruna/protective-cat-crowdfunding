@@ -8,7 +8,7 @@
   width: 100vw;
   height: 50px;
   background-color: rgb(43, 49, 55);
-  opacity: 0.9;
+  opacity: 0.8;
   //display: flex;
   //justify-content: flex-end;
   &__user{
@@ -93,7 +93,7 @@
 .phot__image--background{
   width: 100%;
   height: 60vw;
-  opacity: 0.5;
+  //opacity: 0.5;
   object-fit: cover;
 }
 
@@ -108,9 +108,13 @@
   overflow: hidden;
 }
 
+.background-color{
+  background-color: #ffffff;
+}
 
 .expect{
-  background: rgba(156, 162, 168, 0.7);
+  font-family: "ヒラギノ明朝 Pro W3";
+  background: rgba(239, 235, 223, 0.8);
   position: absolute;
   top:150px;
   left:350px;
@@ -119,16 +123,19 @@
   display: inline-block;
   //height: 50%;
   //width: 70%;
-  height: 440px;
-  width: 750px;
-  color: #ffffff;
+  height: 60%;
+  width: 50%;
+  color: rgb(0, 0, 0);
+  padding-bottom: 50px;
   &__contents{
-    margin-top: 20px;
+    margin-top: 50px;
+    font-weight: 800;
+    
   }
   &__title{
     font-size: 38px;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 800;
   }
   &__body{
     font-size: 20px;
@@ -136,9 +143,13 @@
   &__ask{
     padding-top: 40px;
     font-size: 20px;
+    font-weight: 900;
   }
 }
-
+.expect__contents a{
+  color: rgb(252, 20, 51);
+  font-size: 50px;
+}
 .expect-2{
   color:  rgba(90, 88, 85, 0.83);
   //background: rgba(253, 253, 253, 0.4);
@@ -179,6 +190,23 @@
     height: 70%;
   }
 }
+
+.expect__contents{
+  position: relative;
+}
+
+.expect__title__crowdfunding{
+  color:rgb(74, 73, 70);
+  font-size: 36px;
+  //text-align: center;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(150%) translateX(-50%);
+}
+
+
 
 .Tag{
   background-color:rgb(115, 112, 107) ;
@@ -445,3 +473,5 @@
     font-size: 18px;
    
   }
+
+  
