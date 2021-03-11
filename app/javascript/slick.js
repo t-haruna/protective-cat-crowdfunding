@@ -1,18 +1,16 @@
 $(function() {
   $('.Phot').slick({
-      // dots: true,
-    //autoplay: true,
-      // fade: true,
-      // cssEase: 'linear',
+    autoplay: true,
     autoplaySpeed: 5000,
     pauseOnFocus: false,
-      
     dots: true,
     infinite: true,
     fade: true,
     speed: 3000,
-    
-    //slide: 'div',
     cssEase: 'linear'
   });
+});
+
+$('.phot__image').on('beforeChange', function(){
+  $('.expect__title__crowdfunding').addClass('fade-in-right');
 });
