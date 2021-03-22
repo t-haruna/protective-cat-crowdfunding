@@ -37,9 +37,19 @@
         %p 小さな命を救うために
         %P 今私たちができることを
         %p 改めて考えてみませんか？
-  .phot__image.background-color
+  .phot__image
+    = image_tag '/背景画像.jpg',class: "phot__image--background phot__image--background-2"
     #expect__title__crowdfunding
       保護猫✖︎クラウドファンディング
+    .Btn-box
+      .Select
+        - if user_signed_in? 
+          = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
+        - else
+          = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
+      .Select
+        = link_to "クラウドファンディングとは", "#", method: :get, class: "Select__start select"
+
     -# .fade-in-bottom.expect-2
       -# .expect__contents-2
       -#   %h2.expect__title-2 一匹のネコを保護するためにかかる費用
@@ -60,12 +70,6 @@
   Let's Crowd Funding !!
   
 .Body
-  -# .Select
-  -#   - if user_signed_in? 
-  -#     = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
-  -#   - else
-  -#     = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
-    
   .Contents
     .Contents__expect 
       %h1.Contents__expect__title クラウドファンディングとは

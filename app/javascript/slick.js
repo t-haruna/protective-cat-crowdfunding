@@ -11,9 +11,6 @@ $(function() {
     fade: true,
     speed: 1000,
     cssEase: 'linear',
-    //pauseOnHover:true,
-     
-     
   }).on('afterChange', function(  ){
     //最後のスライドでストップ
     var $self = $(this);
@@ -24,19 +21,15 @@ $(function() {
         $slider.slick('slickPause');
       }
 
-
-
-      //最後のスライドで文字を１文字づつ出現させる
+    //最後のスライドで文字を１文字づつ出現させる
       if($self.slick('slickCurrentSlide') == 2){
       var $allMsg = $('#expect__title__crowdfunding');
       //splitメソッドを使って、文章を１文字づつに分解する
       var $wordList = $('#expect__title__crowdfunding').html().split("");
-      console.log($wordList); 
       $('#expect__title__crowdfunding').html("");
-      
       $.each($wordList, function(idx, elem) {
+      //はじめは見えないようにopacityを０にしてあるので1にして見えるようにする
         $('#expect__title__crowdfunding').css({'opacity':1});
-
         var newEL = $(`<span/>`).text(elem).css({ opacity: 0 });
         newEL.appendTo($allMsg);
         //文字を浮かび上がらせる時間をdeplayで指定
