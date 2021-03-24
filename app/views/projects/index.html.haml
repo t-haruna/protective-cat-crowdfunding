@@ -1,7 +1,7 @@
 = render 'layouts/header'
 .Phot
   .phot__image
-    = image_tag '/下町ネコ.jpg',class: "phot__image--background"
+    = image_tag '/下町ネコ.jpg',class: "phot__image--background-1"
     .expect.fade-in-bottom
       .expect__contents
         %h2.expect__title 
@@ -20,7 +20,7 @@
         %p 改めて考えてみませんか？
   .phot__image
     //= image_tag asset_path("寝転がるねこ.jpg", class: "phot__image--background phot__image--background-2") 
-    = image_tag '/寝転がるねこver2.jpg',class: "phot__image--background phot__image--background-2"
+    = image_tag '/寝転がるねこver2.jpg',class: "phot__image--background-2"
     .expect.fade-in-bottom
       .expect__contents
         %h2.expect__title 
@@ -40,15 +40,15 @@
   .phot__image
     = image_tag '/背景画像.jpg',class: "phot__image--background phot__image--background-2"
     #expect__title__crowdfunding
-      保護猫✖︎クラウドファンディング
+      保護猫 ✖︎ クラウドファンディング
     .Btn-box
-      .Select
+      .Start-crowdfunding
         - if user_signed_in? 
           = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
         - else
           = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
-      .Select
-        = link_to "クラウドファンディングとは", "#", method: :get, class: "Select__start select"
+      .Understand-crowdfunding
+        = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "Select__start select"
 
     -# .fade-in-bottom.expect-2
       -# .expect__contents-2
@@ -66,25 +66,28 @@
       
         
 
-.Tag.fade-in-top
+.Tag
   Let's Crowd Funding !!
   
 .Body
   .Contents
     .Contents__expect 
       %h1.Contents__expect__title クラウドファンディングとは
+      %hr.contents-line.title-line
       %p クラウドファンディングとはインターネットを通して自分の活動を発信することで
       %p その活動を応援したいと思ってくれる人から資金を募るシステムのことです。
       %p 病気の保護ネコを治療したい、保護シェルターを建設したい・・
       %p 保護ネコを救うための多くのプロジェクトを
       %p 支援という形でともに実現して行きませんか？
     
-    .Select
-      - if user_signed_in? 
-        = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
-      - else
-        = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
-    
+    .Btn-box
+      .Start-crowdfunding
+        - if user_signed_in? 
+          = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select-2"
+        - else
+          = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select-2"
+      .Understand-crowdfunding
+        = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "Select__start select-2"
 
     .Contents__projects
       - @drafts.each do |draft|
@@ -138,4 +141,7 @@
                     %p 募集期間
                     = project.tarm.strftime("%Y年%m月%d日")
                     まで
+  
+     
+  
         

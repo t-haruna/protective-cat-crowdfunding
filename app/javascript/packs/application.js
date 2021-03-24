@@ -13,10 +13,7 @@ require("billing_new.js")
 require("payjp.js")  
 require("project_detail.js")  
 require("slick.js")  
-
-require("chartkick") // グラフ描写
-require("chart.js") // グラフ描写
-
+require("scrollreveal.js")  
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

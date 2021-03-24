@@ -92,6 +92,7 @@
   .phot__image{
     width: 100%;
     height: 100%;
+    //animation: animationZoom1 5s ease-in-out forwards;
     position: relative;
     .expect{
       font-family: "ヒラギノ明朝 Pro W3";
@@ -130,26 +131,75 @@
     }
     
     #expect__title__crowdfunding{
+      width: 100%;
       font-weight: 700;
       position: absolute;
-      top: 300px;
-      left: 475px;
-      //transform: translateY(-50%) translateX(-50%);
+      top: 40%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      color: rgb(101, 99, 95);
+      font-size: 50px;
     }
   }
 }
 
-.phot__image--background{
+.phot__image--background-1{
   width: 100%;
-  height: 60vw;
+  height: 55vw;
   object-fit: cover;
+  animation: animationZoom 10s ease-in-out forwards;
+}
+
+.phot__image--background-2{
+  width: 100%;
+  height: 55vw;
+  object-fit: cover;
+  animation: animationZoom 10s ease-in-out forwards;
 }
 
 .Btn-box{
+  width: 100%;
   text-align: center;
   position: absolute;
-  top:50%;
-  left:25%;
+  top:70%;
+  left:50%;
+  transform: translateY(-50%) translateX(-50%);
+  .Select{
+    height: 50px;
+    background-color: rgb(220, 80, 99);
+    display: inline-block;
+    line-height: 25px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(250, 87, 11, 0.822);
+  }
+  .Start-crowdfunding{
+    margin-right: 30px;
+  }
+  .Understand-crowdfunding{
+    margin-left: 30px;
+  }
+}
+
+.select{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  display: inline-block;
+  margin: 15px;
+  font-weight: 700;
+  transition: all 1s;
+  opacity: 0;
+}
+
+.select-2{
+  text-decoration: none;
+  color: rgb(74, 73, 70);
+  font-size: 18px;
+  display: inline-block;
+  margin: 15px;
+  font-weight: 700;
+  transition: all 1s;
+  
 }
 
 // .expect-2{
@@ -199,95 +249,90 @@
   display: inline-block;
   text-decoration: none;
   text-align: center;
-  color: rgb(242, 203, 86);
+  color: #ffffff;
   line-height: 50px;
   font-size: 24px;
   opacity: 0.8;
 }
 
-.Select{
-  height: 50px;
-  margin-bottom: 35px;
-  background-color: rgb(220, 80, 99);
-  display: inline-block;
-  line-height: 25px;
-  margin-left: 20px;
-  border-radius: 4px;
+.Contents{
+  color: rgb(74, 73, 70);
+  &__expect{
+    margin: 30px 20px 50px 20px;
+    &__title{
+      font-family: "ヒラギノ明朝 Pro W3";
+      font-size: 36px;
+      font-weight: 600;
+    }
+  }
+  &__projects{
+    background-color: rgb(243, 240, 240);
+    height: 1000px;
+    text-align: center;
+  }
 }
 
-.select{
-  text-decoration: none;
-  //color: rgb(115, 112, 107);
-  color: #ffffff;
+.title-line{
+  margin-bottom: 45px;
+}
+
+.Contents__expect p{
   font-size: 18px;
-  display: inline-block;
-  margin: 15px;
-  font-weight: 700;
-  transition: all 1s;
 }
 
+  //プロジェクトの配列部分
 .Projects{
   display: inline-block;
   text-align: center;
-  //border: 1px solid rgb(217, 215, 212);
   width: 400px;
   height: 435px;
   margin: 10px;
-  //background-color: #f9f7f7;
   opacity: 0.9;
   box-shadow: 0 0 5px rgb(168, 165, 161);
-}
-
-.Box1{
-  width: 100%;
-  height: 250px;
-  background-color: #ffffff;
-  &__image{
-    width: 95%;
-    height: 90%;
-    margin-top: 10px;
-  }
-}
-
-.Box2{
-  //border: 1px solid rgb(217, 215, 212);
-  background-color: #ffffff;
-  width: 100%;
-  height: 135px;
-  &__title{
-    text-align: center;
-    border-bottom: 1px solid rgb(217, 215, 212);
+  .Box1{
     width: 100%;
-    height: 60px;
-    line-height: 25px;
-    font-size: 15px;
+    height: 250px;
     background-color: #ffffff;
-    
+    &__image{
+      width: 95%;
+      height: 90%;
+      margin-top: 10px;
+    }
   }
-  &__percent{
-    margin-top: 3px;
-    //border: 1px solid rgb(217, 215, 212);
-    height: 60px;
-    line-height: 25px;
+  .Box2{
     background-color: #ffffff;
+    width: 100%;
+    height: 135px;
+    &__title{
+      text-align: center;
+      border-bottom: 1px solid rgb(217, 215, 212);
+      width: 100%;
+      height: 60px;
+      line-height: 25px;
+      font-size: 15px;
+      background-color: #ffffff;
+    }
+    &__percent{
+      margin-top: 3px;
+      height: 60px;
+      line-height: 25px;
+      background-color: #ffffff;
+    }
   }
+  .Details{
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    background-color: #e8e6df;
+    height: 50px;
   }
-    
-  .Box3{
-    text-decoration: none ;
-    color: rgb(101, 99, 95);
-  }
-  
-
-.Details{
-  display: flex;
-  justify-content: space-around;
-  font-size: 12px;
-  background-color: #e8e6df;
-  height: 50px;
-  
- 
 }
+  
+.Box3{
+  text-decoration: none ;
+  color: rgb(101, 99, 95);
+}
+
 .detail{
   text-align: center;
   width: 33%;
@@ -295,21 +340,7 @@
   background-color: #ffffff;
 }
 
-.Contents{
-  color: rgb(74, 73, 70);
-  &__expect{
-    margin: 30px 20px;
-    &__title{
-      font-size: 28px;
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
-  }
-  &__projects{
-    background-color: rgb(243, 240, 240);
-    height: 1000px;
-  }
-}
+
 
 //図形作成
 .Achievement  {
@@ -335,6 +366,7 @@
   text-align: center;
   font-size: 24px;
   font-weight: 700;
+  box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.5);
 }
 
 
@@ -351,8 +383,9 @@
 	height: 0px;/* y位置 */
 	border-bottom: 40px solid#69c3be;/* 高さ */
 	//border-left: 30px solid transparent;/* 左側の角度 */
-  border-right: 10px solid transparent;/* 右側の角度 */
+  border-right: 10px solid transparent;/* 側の角度 */
   text-align: center;
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
 }
 
 .link-title{
@@ -363,13 +396,16 @@
 
 
 //アニメーション設定
-
+  //文字が浮き出るアニメーション
 #expect__title__crowdfunding {
   opacity: 0;
-  color: rgb(101, 99, 95);
-  font-size: 42px;
 }
 
+  //だんだんズームしてくるアニメーション
+  @keyframes animationZoom {
+    100% { transform: scale(1.1)}
+    }
+    
 .fade-in-bottom {
   opacity: 0;
   animation: fadein-bottom .5s .1s ease-out forwards;
@@ -431,29 +467,19 @@
 }
 
 .select:hover {
-  color: rgb(253, 192, 7);
-  //transform: rotateX(360deg);
   font-size: 24px;
-  padding:0 5px;
-  
-
-
+  padding:0 15px;
   }
 
   .Select:hover {
-    //background-color:rgb(115, 112, 107) ;
     opacity: 0.8;
-    //border: 1px solid rgb(217, 215, 212);
     border-radius: 4px;
-    box-shadow: 0 0 5px rgb(168, 165, 161);
-    //background-color: rgb(255, 69, 93);
-    
+    box-shadow: 0 0 15px rgba(250, 87, 11, 0.822);
   }
 
   .Header__user__title :hover {
-    color: rgb(242, 203, 86);
+    //color: rgb(242, 203, 86);
     font-size: 18px;
-   
   }
 
   

@@ -4,6 +4,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title ProtectiveCatCrowdfunding
     %script{src: "https://js.pay.jp/", type: "text/javascript"}
+    %script{src: "https://unpkg.com/scrollreveal"}
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -12,7 +13,9 @@
     /Swiperの全ての機能を使いたい方はこちらを使用
     = stylesheet_link_tag "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     = stylesheet_link_tag "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    = stylesheet_link_tag "https://unpkg.com/scrollreveal"
     = javascript_include_tag "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
 
   %body
     = yield
+    

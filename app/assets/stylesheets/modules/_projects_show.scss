@@ -389,6 +389,7 @@
 	//border-left: 30px solid transparent;/* 左側の角度 */
   border-right: 10px solid transparent;/* 右側の角度 */
   text-align: center;
+  box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.5);
 }
 
 .trapezoid-display__achievement {
@@ -406,4 +407,5 @@
   text-align: center;
   font-size: 24px;
   font-weight: 700;
+  box-shadow: 0px 10px 10px -10px rgba(0,0,0,0.5);
 }
