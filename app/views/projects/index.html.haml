@@ -48,29 +48,42 @@
         - else
           = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
       .Understand-crowdfunding
-        = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "Select__start select"
+        = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "Select__start select"        
 
-    -# .fade-in-bottom.expect-2
-      -# .expect__contents-2
-      -#   %h2.expect__title-2 一匹のネコを保護するためにかかる費用
-      -#   .expect__box
-      -#     %p.expect__body 避妊手術代  15,000〜3,0000円
-      -#     %p.expect__body 健康診断    5,000～10,000円
-      -#     %p.expect__body 血液検査    4,000〜10,500円
-      -#     %p.expect__body 入院料      2,000〜5,000円
-      -#     %p.expect__body 予防接種料   4,000～6,000円
-      -#     %p.expect__body 計         30,000~61,500円
-      -#     .expect__ask
-      -#       %p.expect__body 上記に加え、フードやネコ砂などの費用も加算されます。
-      -#       %p.expect__body ひとつの命を守るだけでもこれだけのお金がかかります。
-      
-        
 
-.Tag
-  Let's Crowd Funding !!
   
 .Body
   .Contents
+    .Contents__expect 
+      %h1.Contents__expect__title 保護ネコ活動にかかる費用について
+      %hr.contents-line.title-line
+      .expect__box-2 
+        %p.expense 一匹のネコを保護するためにかかる費用
+      .expect__box-2 
+        %table
+          %tr
+          %th 避妊手術代
+          %td 15,000〜3,0000円
+          %tr
+          %th 健康診断
+          %td 5,000～10,000円
+          %tr
+          %th 血液検査
+          %td 4,000〜10,500円
+          %tr
+          %th 入院料
+          %td 2,000〜5,000円
+          %tr
+          %th 予防接種料
+          %td 4,000～6,000円
+          %tr
+          %th.totale 計
+          %td.totale 30,000~61,500円
+      .expect__ask-2
+        %p 上記に加え、フードやネコ砂などの費用も加算されます。
+        %p ひとつの命を守るだけでもこれだけのお金がかかります。
+        %p 保護活動を行っている方々は活動と並行して資金調達もしなければ活動を継続できません。
+          
     .Contents__expect 
       %h1.Contents__expect__title クラウドファンディングとは
       %hr.contents-line.title-line
@@ -78,16 +91,30 @@
       %p その活動を応援したいと思ってくれる人から資金を募るシステムのことです。
       %p 病気の保護ネコを治療したい、保護シェルターを建設したい・・
       %p 保護ネコを救うための多くのプロジェクトを
-      %p 支援という形でともに実現して行きませんか？
+      %p プロジェクトに賛同していただいた支援者の方々と共に実現していきます。
     
-    .Btn-box
-      .Start-crowdfunding
-        - if user_signed_in? 
-          = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select-2"
-        - else
-          = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select-2"
-      .Understand-crowdfunding
-        = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "Select__start select-2"
+      .Btn-box-2
+        .Start-crowdfunding.btn-color
+          = icon('fas', 'angle-double-right')
+          - if user_signed_in? 
+            = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: " select-2"
+          - else
+            = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "select-2"
+        .Understand-crowdfunding.btn-color
+          = icon('fas', 'angle-double-right')
+          = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "select-2"
+
+
+    .Contents__expect 
+      %h1.Contents__expect__title 寄付をする
+      %hr.contents-line.title-line
+      %p ユーザーは支援をしたいプロジェクトに寄付をすることができます。
+      %p 寄付金額は投稿者が設定しているリターンの種類から選択できます。
+      %p 寄付をしていただくと、投稿者からリターンとしてささやかなお礼が届きます。
+      %p また、寄付金を使ったプロジェクトの実行報告を後日確認することができます。
+    
+    .Tag
+      Let's Crowd Funding !!
 
     .Contents__projects
       - @drafts.each do |draft|

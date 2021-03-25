@@ -124,11 +124,13 @@
         font-size: 20px;
       }
       &__ask{
-        padding-top: 40px;
+        margin-top: 40px;
         font-size: 20px;
         font-weight: 900;
       }
     }
+
+    
     
     #expect__title__crowdfunding{
       width: 100%;
@@ -142,6 +144,45 @@
     }
   }
 }
+
+.expect__ask-2{
+  margin-top: 50px;
+}
+
+.expect__box-2{
+  background-color: rgb(243,247,253);
+  width: 450px;
+  text-align: center;
+  padding: 15px 30px;
+  margin-left: 10px;
+  box-shadow: 0 2px 5px rgb(168, 165, 161);
+}
+
+.expect__box-2 table{
+  //font-weight: 700;
+  font-size: 18px;
+}
+
+.expect__box-2 td{
+  width: 200px; 
+  text-align: center;
+}
+
+.expect__box-2 th{
+  width: 200px;
+  height: 30px; 
+  padding-left: 20px;
+}
+
+.totale{
+  border-top: solid 1px;   
+}
+
+.expense{
+  font-size: 21px!important;
+    
+}
+
 
 .phot__image--background-1{
   width: 100%;
@@ -174,9 +215,11 @@
   }
   .Start-crowdfunding{
     margin-right: 30px;
+    display: inline-block;
   }
   .Understand-crowdfunding{
     margin-left: 30px;
+    display: inline-block;
   }
 }
 
@@ -191,16 +234,7 @@
   opacity: 0;
 }
 
-.select-2{
-  text-decoration: none;
-  color: rgb(74, 73, 70);
-  font-size: 18px;
-  display: inline-block;
-  margin: 15px;
-  font-weight: 700;
-  transition: all 1s;
-  
-}
+
 
 // .expect-2{
 //   color:  rgba(90, 88, 85, 0.83);
@@ -256,9 +290,11 @@
 }
 
 .Contents{
+  //background-color: rgb(227, 224, 224);
   color: rgb(74, 73, 70);
   &__expect{
-    margin: 30px 20px 50px 20px;
+    margin: 30px 20px 150px 20px;
+    background-color: #ffffff;
     &__title{
       font-family: "ヒラギノ明朝 Pro W3";
       font-size: 36px;
@@ -267,8 +303,7 @@
   }
   &__projects{
     background-color: rgb(243, 240, 240);
-    height: 1000px;
-    text-align: center;
+    padding: 0 60px;
   }
 }
 
@@ -278,6 +313,33 @@
 
 .Contents__expect p{
   font-size: 18px;
+}
+
+.select-2{
+  text-decoration: none;
+  color: rgb(74, 73, 70);
+  font-size: 18px;
+  display: inline-block;
+  font-weight: 700;
+  transition: all 1s;
+  
+}
+
+.Btn-box-2{
+  display: flex;
+  justify-content: space-around;
+  margin: 80px 0 20px 0;
+  
+}
+
+.btn-color{
+  background-color: #f6f3f3;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 25px;
+  border-radius: 10px;
+  border: 2px solid #e3e1e1;
+  
 }
 
   //プロジェクトの配列部分
@@ -471,15 +533,19 @@
   padding:0 15px;
   }
 
-  .Select:hover {
-    opacity: 0.8;
-    border-radius: 4px;
-    box-shadow: 0 0 15px rgba(250, 87, 11, 0.822);
-  }
+.select-2:hover {
+  font-size: 24px;
+  padding:0 15px;
+}
 
-  .Header__user__title :hover {
-    //color: rgb(242, 203, 86);
-    font-size: 18px;
-  }
+.Achievement:hover {
+  opacity: 0.5;
+  //transform: translate(5px, 0);
+}
+
+.Header__user__title :hover {
+  //color: rgb(242, 203, 86);
+  font-size: 18px;
+}
 
   
