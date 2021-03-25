@@ -21,7 +21,7 @@ $(function() {
         $slider.slick('slickPause');
       }
     //最後のスライドで文字を１文字づつ出現させる
-      if($self.slick('slickCurrentSlide') == 3){
+      if($self.slick('slickCurrentSlide') == 2){
       var $allMsg = $('#expect__title__crowdfunding');
       //splitメソッドを使って、文章を１文字づつに分解する
       var $wordList = $('#expect__title__crowdfunding').html().split("");
