@@ -96,41 +96,51 @@
     position: relative;
     .expect{
       font-family: "ヒラギノ明朝 Pro W3";
-      background: rgba(239, 235, 223, 0.8);
-      position: absolute;
-      top: 20%;
-      left: 26%;
+      background: rgba(239, 235, 223, 0.6);
       //transform: translateY(-50%) translateX(-50%);
       margin: 0 auto;
       overflow:auto;
-      height: 60%;
-      width: 50%;
-      color: rgb(0, 0, 0);
-      padding-bottom: 50px;
-      &__contents{
-        margin-top: 50px;
-        font-weight: 800;
-      }
-      &__contents a{
+      height: 70px;
+      //width: 50%;
+      color: rgb(0,0,0);
+      font-size: 38px;
+      padding: 0 15px;
+      //font-weight: 900;
+      box-shadow: 0 0 20px rgb(247, 246, 242);
+      border-radius: 5px;
+      //padding-bottom: 50px;
+      line-height: 70px;
+      &__title a{
         color: rgb(252, 20, 51);
        font-size: 50px;
       }
       &__title{
-        font-size: 38px;
-        margin-bottom: 20px;
+        
+        //margin-bottom: 20px;
         font-weight: 800;
       }
-      &__body{
-        font-size: 20px;
-      }
-      &__ask{
-        margin-top: 40px;
-        font-size: 20px;
-        font-weight: 900;
-      }
+      // &__body{
+      //   font-size: 20px;
+      // }
+      // &__ask{
+      //   margin-top: 40px;
+      //   font-size: 20px;
+      //   font-weight: 900;
+      // }
     }
 
-    
+    .expect-1{
+      position: absolute;
+      top: 25%;
+      left: 15%;
+    }
+
+    .expect-2{
+      position: absolute;
+      top: 50%;
+      left: 56%;
+      
+    }
     
     #expect__title__crowdfunding{
       width: 100%;
