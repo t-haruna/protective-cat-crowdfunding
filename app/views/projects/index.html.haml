@@ -2,8 +2,8 @@
 .Phot
   .phot__image
     = image_tag '/下町ネコ.jpg',class: "phot__image--background-1"
-    .expect.expect-1
-      %h2.expect__title 
+    .expect.expect-1.fade-in-1
+      %h2.expect__title.fade-in-2 
         ネコと人が
         %a共存
         できる世界のために
@@ -43,42 +43,70 @@
         - else
           = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
       .Understand-crowdfunding
-        = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "Select__start select"        
+        = link_to "クラウドファンディングについて知る", "#", method: :get, class: "Select__start select"        
 
 
   
 .Body
   .Contents
-    .Contents__expect 
-      %h1.Contents__expect__title 保護ネコ活動にかかる費用について
-      %hr.contents-line.title-line
-      .expect__box-2 
-        %p.expense 一匹のネコを保護するためにかかる費用
-      .expect__box-2 
-        %table
-          %tr
-          %th 避妊手術代
-          %td 15,000〜3,0000円
-          %tr
-          %th 健康診断
-          %td 5,000～10,000円
-          %tr
-          %th 血液検査
-          %td 4,000〜10,500円
-          %tr
-          %th 入院料
-          %td 2,000〜5,000円
-          %tr
-          %th 予防接種料
-          %td 4,000～6,000円
-          %tr
-          %th.totale 計
-          %td.totale 30,000~61,500円
-      .expect__ask-2
-        %p 上記に加え、フードやネコ砂などの費用も加算されます。
-        %p ひとつの命を守るだけでもこれだけのお金がかかります。
-        %p 保護活動を行っている方々は活動と並行して資金調達もしなければ活動を継続できません。
-          
+    .Contents__expect
+      .Contents__expect__title
+        .About 
+          %p About
+        %h1 保護ネコ活動✖︎クラウドファンディングについて
+      //%hr.contents-line.title-line
+      .About-box
+        .About-box__countent
+          .About-box__countent__message
+            %p 現在、多くの保護団体や個人のボランティアの方々は
+            %p 支援者の援助や自身の貯金を切り崩して
+            %p 自身の生活を犠牲にして保護活動を行っています。
+            %p そのような中、新型コロナウイルスによる影響により
+            %p 保護ネコカフェの経営困難、譲渡会の中止など活動の継続が難しく、
+            %p また運営資金の調達も今まで以上に厳しい状況となっています。
+          .circle-money
+            = image_tag '/money-gray2.svg',class: "icon-money"
+        .About-box__grath
+          .expect__box-2 
+            %p 一匹のネコを保護するためにかかる費用
+            %table
+              %tr
+              %th 避妊手術代
+              %td 15,000~3,0000円
+              %tr
+              %th 健康診断
+              %td 5,000~10,000円
+              %tr
+              %th 血液検査
+              %td 4,000~10,500円
+              %tr
+              %th 入院料
+              %td 2,000~5,000円
+              %tr
+              %th 予防接種料
+              %td 4,000~6,000円
+              %tr
+              %th.totale 計
+              %td.totale 30,000~61,500円
+          .expect__ask-2
+            %p 保護猫活動には非常にお金がかかります。
+            %p この表は、一匹のネコを保護するためにかかる費用です。
+            %p これらに加え、フードやネコ砂などの費用も加算されます。
+            %p ひとつの命を守るだけでもこれだけのお金がかかります。
+            %p 保護活動を行っている方々は活動と並行して
+            %p 資金調達もしなければ活動を継続できません。
+        .circle-inspiration.inspiration-animation
+          = image_tag '/Inspiration-soft.svg',class: "icon-inspiration"
+
+        .About-box__crowdfunding
+          %p そこで、保護猫活動に興味を持っている多くのユーザーがネット上で気軽に募金ができる
+          %p 保護ネコ活動専用のクラウドファンディングサイトを立ち上げることにいたしました！！
+          %p このサイトを通して一つでも多くの小さな命が救われることを祈ります・・・
+        .circle-handshake
+          = image_tag '/handshake-gray.svg',class: "icon-handshake"
+        
+        
+
     .Contents__expect 
       %h1.Contents__expect__title クラウドファンディングとは
       %hr.contents-line.title-line

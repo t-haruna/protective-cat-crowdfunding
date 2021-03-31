@@ -12,6 +12,7 @@ $(function() {
     speed: 1000,
     cssEase: 'linear',
   }).on('afterChange', function(  ){
+    console.log("slickCurrentSlide")
     //最後のスライドでストップ
     var $self = $(this);
       if((slideLen - 1) <= $self.slick('slickCurrentSlide')){
@@ -19,6 +20,13 @@ $(function() {
         $self.slick('slickSetOption', 'autoplay', false);
         //クリックしても再開しないように一時停止設定
         $slider.slick('slickPause');
+      }
+      if($self.slick('slickCurrentSlide') == 0){
+        
+        $('.expect-1').animate({ opacity: 1 }, 1100);
+      }
+      if($self.slick('slickCurrentSlide') == 1){
+        $('.expect-2').animate({ opacity: 1 }, 1100);
       }
     //最後のスライドで文字を１文字づつ出現させる
       if($self.slick('slickCurrentSlide') == 2){
@@ -43,6 +51,7 @@ $(function() {
         $(this).addClass('Select');
         $('.select').css({opacity: 1 });
     });
+      
 
      }
   });

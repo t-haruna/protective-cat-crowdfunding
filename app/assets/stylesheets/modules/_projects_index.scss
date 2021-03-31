@@ -96,7 +96,7 @@
     position: relative;
     .expect{
       font-family: "ヒラギノ明朝 Pro W3";
-      background: rgba(239, 235, 223, 0.6);
+      background: rgba(239, 235, 223, 0.5);
       //transform: translateY(-50%) translateX(-50%);
       margin: 0 auto;
       overflow:auto;
@@ -107,7 +107,7 @@
       padding: 0 15px;
       //font-weight: 900;
       box-shadow: 0 0 20px rgb(247, 246, 242);
-      border-radius: 5px;
+      border-radius: 7px;
       //padding-bottom: 50px;
       line-height: 70px;
       &__title a{
@@ -133,13 +133,17 @@
       position: absolute;
       top: 25%;
       left: 15%;
+      opacity: 0;
+      
     }
+    
+
 
     .expect-2{
       position: absolute;
       top: 50%;
       left: 56%;
-      
+      opacity: 0;
     }
     
     #expect__title__crowdfunding{
@@ -156,42 +160,51 @@
 }
 
 .expect__ask-2{
-  margin-top: 50px;
-}
-
-.expect__box-2{
-  background-color: rgb(243,247,253);
-  width: 450px;
-  text-align: center;
-  padding: 15px 30px;
-  margin-left: 10px;
-  box-shadow: 0 2px 5px rgb(168, 165, 161);
-}
-
-.expect__box-2 table{
-  //font-weight: 700;
+  margin: 0 0 0 40px;
   font-size: 18px;
 }
 
+.expect__box-2{
+  //background-color: rgb(243,247,253);
+  width: 35%;
+  text-align: center;
+  padding: 24px ;
+  box-shadow: 0 2px 5px rgb(168, 165, 161);
+  background-color: #ffffff;
+}
+
+.expect__box-2 p{
+  padding-bottom: 10px;
+  font-weight: 700;
+  font-size: 18px!important;
+}
+
+.grath-line{
+  color: rgb(243,247,253);
+}
+
+.expect__box-2 table{
+  margin: 0 auto;
+  
+}
+
 .expect__box-2 td{
-  width: 200px; 
+  width: 45%; 
   text-align: center;
 }
 
+
 .expect__box-2 th{
-  width: 200px;
+  width: 40%;
   height: 30px; 
-  padding-left: 20px;
+  //padding-left: 20px;
 }
 
 .totale{
   border-top: solid 1px;   
 }
 
-.expense{
-  font-size: 21px!important;
-    
-}
+
 
 
 .phot__image--background-1{
@@ -207,6 +220,7 @@
   object-fit: cover;
   animation: animationZoom 10s ease-in-out forwards;
 }
+
 
 .Btn-box{
   width: 100%;
@@ -302,14 +316,20 @@
 .Contents{
   //background-color: rgb(227, 224, 224);
   color: rgb(74, 73, 70);
+  margin: 200px 0 0 0;
   &__expect{
-    margin: 30px 20px 150px 20px;
+    width: 100%;
+    margin: 70px 0px 150px 0px;
     background-color: #ffffff;
-    &__title{
-      font-family: "ヒラギノ明朝 Pro W3";
-      font-size: 36px;
-      font-weight: 600;
-    }
+    position: relative;
+  }
+  &__expect h1{
+    font-family: "ヒラギノ明朝 Pro W3";
+    font-size: 32px;
+    font-weight: 600;
+    padding: 0 30px;
+    margin: 0 0 50px 0;
+    text-align: center;
   }
   &__projects{
     background-color: rgb(243, 240, 240);
@@ -317,12 +337,116 @@
   }
 }
 
+
+
+
 .title-line{
   margin-bottom: 45px;
 }
 
-.Contents__expect p{
+.Contents__expect__title{
+  width: 100%;
+  position: absolute;
+  top:-75px;
+  z-index: 10;
+}
+
+.Contents__expect__title h1{
+  padding-left: 60px;
+  //text-shadow: 1px 2px 3px #808080;
+}
+
+.About p{
+  font-size: 30px!important;
+  font-family: "ヒラギノ明朝 Pro W3";
+  padding: 0 7px;
+  color: rgb(72, 65, 58);
+  font-weight: 700;
+  //text-shadow: 1px 2px 3px #808080;
+}
+
+.About{
+  display: flex;
+  align-items: center;
+  width: 15%;
+  
+}
+
+
+// .Contents__expect p{
+//   font-size: 18px;
+  
+// }
+
+.About:before {
+	content: "";
+	flex-grow: 1;
+	height: 2px;
+	display: block;
+  
+}
+
+.About:before {
+	margin-left: .4em;
+	background:  rgb(72, 65, 58);
+}
+
+.About-box{
+  //display: flex;
+  // justify-content: space-around;
+  position: relative;
+  height: 2000px;
+  
+  
+}
+
+// .Contents__expect__box-1{
+//   background-color: rgb(237, 241, 246);
+//   width: 15%;
+//   padding-top: 12%;
+//   position: absolute;
+//   top:-45px;
+//   left:920px;
+//   z-index: 5;
+// }
+
+.About-box__countent{
+  background-color: rgb(243,247,253);
+  padding: 50px 0 50px 0;
+  //text-align: center;
+  width: 95%;
+  //margin-left: 50px;
+  line-height: 40px;
   font-size: 18px;
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+}
+
+.About-box__grath{
+  background-color: rgb(237, 241, 246);
+  padding: 50px 50px 50px 100px;
+  line-height: 40px;
+  width: 95%;
+  margin: 70px 0;
+  //float: right;
+  display: inline-block;
+  display: flex;
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
+}
+
+.About-box__crowdfunding{
+  background-color: rgb(243,247,253);
+  padding: 50px 0px 50px 150px;
+  line-height: 40px;
+  font-size: 18px;
+  width: 95%;
+  height: 10%;
+  line-height: 40px;
+  // position: absolute;
+  // top:900px;
+  text-align: center;
+  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
 }
 
 .select-2{
@@ -460,6 +584,122 @@
   box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
 }
 
+.circle-gray{
+  width: 150px;
+	height: 150px;
+	background:rgb(237, 241, 246);
+	-moz-border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-o-border-radius: 150px;
+	-ms-border-radius: 150px; 
+	border-radius: 150px;
+  position:relative;
+  overflow: hidden;
+  position: absolute;
+  top:240px;
+  left: 1000px;
+  z-index: 4;
+}
+
+.circle-money{
+  width: 240px;
+	height: 240px;
+	background:#ffffff;
+	-moz-border-radius: 240px;
+	-webkit-border-radius: 240px;
+	-o-border-radius: 240px;
+	-ms-border-radius: 240px; 
+	border-radius: 240px;
+  position:relative;
+  overflow: hidden;
+  border:10px solid rgb(243,247,253);
+  margin-left: 50px;
+  // position: absolute;
+  // top:80px;
+  // left: 1020px;
+  // z-index: 5;
+  //box-shadow: 0 0 10px rgb(168, 165, 161);
+}
+
+.icon-money{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  height:100%;
+  width: 80%;
+  height: 80%;
+  z-index: 5;
+}
+
+.circle-handshake{
+  width: 220px;
+	height: 220px;
+	background:#ffffff;
+	-moz-border-radius: 220px;
+	-webkit-border-radius: 220px;
+	-o-border-radius: 220px;
+	-ms-border-radius: 220px; 
+	border-radius: 220px;
+  position:relative;
+  overflow: hidden;
+  border:10px solid rgb(243,247,253);
+  position: absolute;
+  
+  top:1000px;
+  left: 75%;
+  z-index: 5;
+  //box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
+}
+
+.icon-handshake{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  height:100%;
+  width: 80%;
+  height: 80%;
+  z-index: 5;
+}
+
+.circle-inspiration{
+  width: 220px;
+	height: 220px;
+	background:#ffffff;
+	-moz-border-radius: 180px;
+	-webkit-border-radius: 180px;
+	-o-border-radius: 180px;
+	-ms-border-radius: 180px; 
+	border-radius: 180px;
+  position:relative;
+  overflow: hidden;
+  border:10px solid rgb(243,247,253);
+  position: absolute;
+  top:800px;
+  left: 10%;
+  z-index: 5;
+  //box-shadow: 10px 10px rgb(247, 249, 251);
+}
+
+.icon-inspiration{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  height:100%;
+  width: 80%;
+  height: 80%;
+  z-index: 5;
+}
+
+
 .link-title{
   text-decoration: none;
   color: rgb(101, 99, 95);
@@ -471,72 +711,114 @@
   //文字が浮き出るアニメーション
 #expect__title__crowdfunding {
   opacity: 0;
+  text-shadow: 1px 2px 3px #808080;
 }
 
   //だんだんズームしてくるアニメーション
-  @keyframes animationZoom {
-    100% { transform: scale(1.1)}
+@keyframes animationZoom {
+  100% { transform: scale(1.1)}
+  }
+
+  // .inspiration-animation{
+  //   animation: inspiration .10s .100s forwards;
+  // }
+  // @keyframes inspiration {
+  //   0% {
+  //     transform: translate(-50%, -50%) scale(1, 1);
+  //     background-color: rgba(252, 244, 161, 1);
+  //   }
+  //   100% {
+  //     transform: translate(-50%, -50%) scale(1.5, 1.5);
+  //     background-color: rgb(254, 254, 254);
+  //  }
+  // }
+
+  //フェードイン
+  .fade-in-1{
+    opacity: 0;
+    animation: fadein-1 .6s .3s ease-out forwards;
+  }
+  @keyframes fadein-1 {
+    0% {
+       opacity: 0;
     }
-    
-.fade-in-bottom {
-  opacity: 0;
-  animation: fadein-bottom .5s .1s ease-out forwards;
-}
-@keyframes fadein-bottom {
-  0% {
-     opacity: 0;
-     transform: translateY(20px);
+    100% {
+       opacity: 1;
+    }
   }
-  100% {
-     opacity: 1;
-     transform: translateY(0);
-  }
-}
 
-.fade-in-top {
-  opacity: 0;
-  animation: fadein-top 1.5s .3s ease-out forwards;
-}
-@keyframes fadein-top {
-  0% {
-     opacity: 0;
-     transform: translateY(-20px);
+  .fade-in-2{
+    opacity: 0;
+    animation: fadein-2 .6s .1s ease-out forwards;
   }
-  100% {
-     opacity: 1;
-     transform: translateY(0);
+  @keyframes fadein-2 {
+    0% {
+       opacity: 0;
+    }
+    100% {
+       opacity: 1;
+    }
   }
-}
 
-.fade-in-right {
-  opacity: 0;
-  animation: fadein-right 1.5s 0 ease-out forwards;
-}
-@keyframes fadein-right {
-  0% {
-     opacity: 0;
-     transform: translateX(20px);
-  }
-  100% {
-     opacity: 1;
-     transform: translateX(0);
-  }
-}
+// .fade-in-bottom {
+//   opacity: 0;
+//   animation: fadein-bottom .5s .1s ease-out forwards;
+// }
+// @keyframes fadein-bottom {
+//   0% {
+//      opacity: 0;
+//      transform: translateY(20px);
+//   }
+//   100% {
+//      opacity: 1;
+//      transform: translateY(0);
+//   }
+// }
 
-.fade-in01{ 
-  opacity:0;
-  animation-name: sample01; 
-  animation-duration: 3s; 
-  animation-fill-mode: forwards; 
-}
-@keyframes sample01 {
-0% {
-  opacity: 0;
-}
- 100% {
-  opacity: 1;
-} 
-}
+// .fade-in-top {
+//   opacity: 0;
+//   animation: fadein-top 1.5s .3s ease-out forwards;
+// }
+// @keyframes fadein-top {
+//   0% {
+//      opacity: 0;
+//      transform: translateY(-20px);
+//   }
+//   100% {
+//      opacity: 1;
+//      transform: translateY(0);
+//   }
+// }
+
+// .fade-in-right {
+//   opacity: 0;
+//   animation: fadein-right 1.5s 0 ease-out forwards;
+// }
+// @keyframes fadein-right {
+//   0% {
+//      opacity: 0;
+//      transform: translateX(20px);
+//   }
+//   100% {
+//      opacity: 1;
+//      transform: translateX(0);
+//   }
+// }
+
+// .fade-in01{ 
+//   opacity:0;
+//   animation-name: sample01; 
+//   animation-duration: 3s; 
+//   animation-fill-mode: forwards; 
+// }
+// @keyframes sample01 {
+// 0% {
+//   opacity: 0;
+// }
+//  100% {
+//   opacity: 1;
+// } 
+// }
 
 .select:hover {
   font-size: 24px;
