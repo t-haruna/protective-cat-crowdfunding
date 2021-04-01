@@ -27,23 +27,14 @@ ScrollReveal().reveal('.expect__box-2',{
   reset: false // フレームインの度に動かすか
   });
 
-
-
-  var option = {
-    rotate: {
-      x: 100,
-      y: -100,
-      
-    }
-  };
-  ScrollReveal().reveal('.circle-inspiration', option);
+  
   ScrollReveal().reveal('.circle-inspiration',{
+    duration: 500, 
     delay: 1000,
-    duration: 1600, 
-    scale: 0.1,
-    reset: false // フレームインの度に動かすか
+    scale: 0.5,
+    reset: false
     });
-    //$('.circle-inspiration').addClass('.inspiration-animation');
+    $('.circle-inspiration').addClass('inspiration-animation');
 
   ScrollReveal().reveal('.circle-money',{
     delay: 1000,
