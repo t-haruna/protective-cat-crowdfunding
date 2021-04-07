@@ -44,13 +44,16 @@ $(function() {
         newEL.animate({ opacity: 1 }, 1100);
       });
       $('.Start-crowdfunding').delay(2000).queue(function(){
-        $(this).addClass('Select');
-        $('.select').css({opacity: 1 });
+        $(this).addClass('btn-color');
+        $('.select-2').css({opacity: 1 });
     });
       $('.Understand-crowdfunding').delay(2000).queue(function(){
-        $(this).addClass('Select');
-        $('.select').css({opacity: 1 });
+        $(this).addClass('btn-color');
+        $('.select-2').css({opacity: 1 });
     });
+    $('.phot__image__last').delay(2000).queue(function(){
+      $(this).addClass('.phot__image__cover');
+  });
       
 
      }

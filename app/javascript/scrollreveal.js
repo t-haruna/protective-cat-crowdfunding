@@ -10,7 +10,7 @@ ScrollReveal().reveal('.About-box__grath',{
   delay: 500, // アニメーション開始までの時間
   duration: 1500, // アニメーション完了にかかる時間
   origin: 'right', // 要素がどの方向から来るか
-  distance: '500px', // 移動する距離
+  //distance: '100px', // 移動する距離
   reset: false // フレームインの度に動かすか
   });
 ScrollReveal().reveal('.About-box__crowdfunding',{

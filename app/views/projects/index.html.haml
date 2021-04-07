@@ -1,49 +1,33 @@
 = render 'layouts/header'
 .Phot
   .phot__image
-    = image_tag '/下町ネコ.jpg',class: "phot__image--background-1"
+    = image_tag '/Sneko210DSC03378_TP_V.jpg',class: "phot__image--background-1"
     .expect.expect-1.fade-in-1
       %h2.expect__title.fade-in-2 
         ネコと人が
         %a共存
         できる世界のために
-      -#   %p.expect__body 現在、多くの保護団体や個人のボランティアの方々は
-      -#   %p.expect__body 支援者の援助や自身の貯金を切り崩して
-      -#   %p.expect__body 自身の生活を犠牲にして保護活動を行っています。
-      -#   %p.expect__body そのような中、新型コロナウイルスによる影響により
-      -#   %p.expect__body 保護ネコカフェの経営困難、譲渡会の中止など活動の継続が難しく、
-      -#   %p.expect__body また運営資金の調達も今まで以上に厳しい状況となっています。
-      -# .expect__ask
-      -#   %p 小さな命を救うために
-      -#   %P 今私たちができることを
-      -#   %p 改めて考えてみませんか？
+      
   .phot__image
     = image_tag '/rolling-cat.jpg',class: "phot__image--background-2"
     .expect.expect-2
       %h2.expect__title 
         私たちができること・・・
-      -#   %p.expect__body 現在、多くの保護団体や個人のボランティアの方々は
-      -#   %p.expect__body 支援者の援助や自身の貯金を切り崩して
-      -#   %p.expect__body 自身の生活を犠牲にして保護活動を行っています。
-      -#   %p.expect__body そのような中、新型コロナウイルスによる影響により
-      -#   %p.expect__body 保護ネコカフェの経営困難、譲渡会の中止など活動の継続が難しく、
-      -#   %p.expect__body また運営資金の調達も今まで以上に厳しい状況となっています。
-      -# .expect__ask
-      -#   %p 小さな命を救うために
-      -#   %P 今私たちができることを
-      -#   %p 改めて考えてみませんか？
+      
   .phot__image
-    = image_tag '/背景画像.jpg',class: "phot__image--background-2"
-    #expect__title__crowdfunding
-      保護猫 ✖︎ クラウドファンディング
-    .Btn-box
-      .Start-crowdfunding
-        - if user_signed_in? 
-          = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select"
-        - else
-          = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select"
-      .Understand-crowdfunding
-        = link_to "クラウドファンディングについて知る", "#", method: :get, class: "Select__start select"        
+    = image_tag '/下町ネコのコピー.jpg',class: "phot__image--background-3"
+    .phot__image__last
+      #expect__title__crowdfunding
+        保護猫 ✖︎ クラウドファンディング
+      
+      .Btn-box
+        .Start-crowdfunding
+          - if user_signed_in? 
+            = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select-2"
+          - else
+            = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select-2"
+        .Understand-crowdfunding
+          = link_to "クラウドファンディングについて知る", "#", method: :get, class: "Select__start select-2"        
 
 
   
@@ -51,10 +35,10 @@
   .Contents
     .Contents__expect
       .Contents__expect__title
-        .About 
+        .Big-Tittle.About
           %p About
         %h1 保護ネコ活動✖︎クラウドファンディングについて
-      //%hr.contents-line.title-line
+      
       .About-box
         .About-box__countent
           .About-box__countent__message
@@ -110,36 +94,42 @@
         .circle-handshake
           = image_tag '/handshake.svg',class: "icon-handshake"
         
-        
-
-    .Contents__expect 
-      %h1.Contents__expect__title クラウドファンディングとは
-      %hr.contents-line.title-line
-      %p クラウドファンディングとはインターネットを通して自分の活動を発信することで
-      %p その活動を応援したいと思ってくれる人から資金を募るシステムのことです。
-      %p 病気の保護ネコを治療したい、保護シェルターを建設したい・・
-      %p 保護ネコを救うための多くのプロジェクトを
-      %p プロジェクトに賛同していただいた支援者の方々と共に実現していきます。
+   
+    .Contents__expect.Contents__CrowdFunding
+      .Contents__expect__title 
+        .Big-Tittle.CrowdFunding
+          %p CrowdFunding
+        %h1 クラウドファンディングとは
+      .About-box
+        .About-box__countent
+          .About-box__countent__message
+            %p クラウドファンディングとはインターネットを通して自分の活動を発信することで
+            %p その活動を応援したいと思ってくれる人から資金を募るシステムのことです。
+            %p 病気の保護ネコを治療したい、保護シェルターを建設したい・・
+            %p 保護ネコを救うための多くのプロジェクトを
+            %p プロジェクトに賛同していただいた支援者の方々と共に実現していきます。
     
-      .Btn-box-2
-        .Start-crowdfunding.btn-color
-          = icon('fas', 'angle-double-right')
-          - if user_signed_in? 
-            = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: " select-2"
-          - else
-            = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "select-2"
-        .Understand-crowdfunding.btn-color
-          = icon('fas', 'angle-double-right')
-          = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "select-2"
+        .Btn-box-2
+          .Start-crowdfunding.btn-color
+            = icon('fas', 'angle-double-right')
+            - if user_signed_in? 
+              = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "select-3"
+            - else
+              = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "select-3"
+          -# .Understand-crowdfunding.btn-color
+          -#   = icon('fas', 'angle-double-right')
+          -#   = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "select-2"
 
 
     .Contents__expect 
-      %h1.Contents__expect__title 寄付をする
-      %hr.contents-line.title-line
-      %p ユーザーは支援をしたいプロジェクトに寄付をすることができます。
-      %p 寄付金額は投稿者が設定しているリターンの種類から選択できます。
-      %p 寄付をしていただくと、投稿者からリターンとしてささやかなお礼が届きます。
-      %p また、寄付金を使ったプロジェクトの実行報告を後日確認することができます。
+      .Contents__expect__title
+        %h1 寄付をする
+      .About-box__grath
+        .expect__ask-2
+          %p ユーザーは支援をしたいプロジェクトに寄付をすることができます。
+          %p 寄付金額は投稿者が設定しているリターンの種類から選択できます。
+          %p 寄付をしていただくと、投稿者からリターンとしてささやかなお礼が届きます。
+          %p また、寄付金を使ったプロジェクトの実行報告を後日確認することができます。
     
     .Tag
       Let's Crowd Funding !!
