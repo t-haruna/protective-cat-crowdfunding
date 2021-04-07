@@ -117,7 +117,6 @@
     .phot__image__last{
       width: 100%;
       height: 100%;
-      
       z-index: 7;
       position: absolute;
       top:0px;
@@ -128,14 +127,11 @@
       background-color: rgba(0,0,0,0.5) ;
     }
 
-    
-
     .expect-1{
       position: absolute;
       top: 25%;
       left: 15%;
       opacity: 0;
-      
     }
     
     .expect-2{
@@ -159,86 +155,15 @@
   }
 }
 
-.expect__ask-2{
-  margin: 0 0 0 100px;
-  font-size: 18px;
-}
-
-.expect__box-2{
-  width: 35%;
-  text-align: center;
-  padding: 24px ;
-  border-radius: 7px;
-  background-color: #ffffff;
-}
-
-.point:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border-color: rgb(195, 209, 229) transparent transparent;
-  border-style: solid;
-  border-width: 20px 20px 0 0;
-}
-
-.expect__box-2 p{
-  padding-bottom: 10px;
-  font-weight: 700;
-  font-size: 18px!important;
-}
-
-.grath-line{
-  color: rgb(243,247,253);
-}
-
-.expect__box-2 table{
-  margin: 0 auto;
-  
-}
-
-.expect__box-2 td{
-  width: 45%; 
-  text-align: center;
-}
-
-
-.expect__box-2 th{
-  width: 40%;
-  height: 30px; 
-}
-
-.totale{
-  border-top: solid 1px;   
-}
-
-.phot__image--background-1{
+.phot__image--background{
   width: 100%;
   height: 55vw;
   object-fit: cover;
-  animation: animationZoom 10s ease-in-out forwards;
-}
-
-.phot__image--background-2{
-  width: 100%;
-  height: 55vw;
-  object-fit: cover;
-  animation: animationZoom 10s ease-in-out forwards;
-}
-
-.phot__image--background-3{
-  width: 100%;
-  height: 55vw;
-  object-fit: cover;
-  animation: animationUpSlide 10s ease-in-out forwards;
 }
 
 
 
-
+  //ボタン装飾
 .Btn-box{
   width: 100%;
   text-align: center;
@@ -246,14 +171,6 @@
   top:70%;
   left:50%;
   transform: translateY(-50%) translateX(-50%);
-  // .Select{
-  //   height: 50px;
-  //   background-color: rgb(220, 80, 99);
-  //   display: inline-block;
-  //   line-height: 25px;
-  //   border-radius: 4px;
-  //   box-shadow: 0 0 10px rgba(250, 87, 11, 0.822);
-  // }
   .Start-crowdfunding{
     margin-right: 30px;
     display: inline-block;
@@ -266,176 +183,19 @@
 
 .select{
   text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
+  color: rgb(72, 65, 58);
+  font-size: 15px;
   display: inline-block;
-  margin: 15px;
   font-weight: 700;
   transition: all 1s;
-  opacity: 0;
 }
 
-
-  //中部クラウドファンディング説明部分
-.Tag{
-  background-color:rgb(115, 112, 107) ;
-  height: 50px;
-  width: 100%;
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
+.select:hover {
   color: #ffffff;
-  line-height: 50px;
-  font-size: 24px;
-  opacity: 0.8;
-}
-
-.Contents{
-  color: rgb(74, 73, 70);
-  margin: 200px 0 0 0;
-  &__expect{
-    width: 100%;
-    margin: 70px 0px 150px 0px;
-    background-color: #ffffff;
-    position: relative;
-  }
-  &__expect h1{
-    font-family: "ヒラギノ明朝 Pro W3";
-    font-size: 32px;
-    font-weight: 600;
-    padding: 0 30px;
-    margin: 0 0 50px 0;
-    text-align: center;
-  }
-  &__projects{
-    background-color: rgb(243, 240, 240);
-    padding: 0 60px;
-  }
-}
-
-.Contents__CrowdFunding{
-  margin-top: 300px;
-}
-
-
-
-
-.title-line{
-  margin-bottom: 45px;
-}
-
-.Contents__expect__title{
-  width: 100%;
-  position: absolute;
-  top:-90px;
-  z-index: 10;
-}
-
-.Contents__expect__title h1{
-  padding-left: 60px;
-}
-
-.Big-Tittle{
-  display: flex;
-  align-items: center;
-   
-}
-
-.About{
-  width: 15%;
-}
-
-.CrowdFunding{
-  width: 25%;
-}
-
-.Big-Tittle p{
-  font-size: 45px!important;
-  font-family: "ヒラギノ明朝 Pro W3";
-  padding: 0 7px;
-  color: rgb(72, 65, 58);
-  font-weight: 700;
-}
-
-
-
-
-.Big-Tittle:before {
-	content: "";
-	flex-grow: 1;
-	height: 2px;
-	display: block;
-  
-}
-
-.Big-Tittle:before {
-	margin-left: .4em;
-	background:  rgb(72, 65, 58);
-}
-
-.About-box{
-  position: relative;  
-}
-
-
-.About-box__countent{
-  background-color: rgb(243,247,253);
-  padding: 50px 0 50px 0;
-  width: 95%;
-  line-height: 40px;
-  font-size: 18px;
-  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-}
-
-.About-box__grath{
-  background-color: rgb(237, 241, 246);
-  padding: 50px 50px 50px 150px;
-  line-height: 40px;
-  width: 95%;
-  margin: 70px 0 70px 70px;
-  display: inline-block;
-  display: flex;
-  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
-}
-
-.About-box__crowdfunding{
-  background-color: rgb(243,247,253);
-  padding: 50px 0px 50px 150px;
-  line-height: 40px;
-  font-size: 18px;
-  width: 95%;
-  height: 10%;
-  line-height: 40px;
-  text-align: center;
-  box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
 }
 
 .select-2{
-  text-decoration: none;
-  color: rgb(72, 65, 58);
-  font-size: 15px;
-  display: inline-block;
-  font-weight: 700;
-  transition: all 1s;
   opacity: 0;
-}
-
-.select-3{
-  text-decoration: none;
-  color: rgb(72, 65, 58);
-  font-size: 15px;
-  display: inline-block;
-  font-weight: 700;
-  transition: all 1s;
-}
-
-.Btn-box-2{
-  display: flex;
-  justify-content: space-around;
-  margin: 80px 0 20px 0;
-  
 }
 
 .btn-color{
@@ -446,6 +206,186 @@
   opacity: 0.9;
   border: 1px solid rgb(72, 65, 58);
   color:  rgb(72, 65, 58);
+}
+
+.btn-color:hover{
+  background-color: rgb(72, 65, 58);
+  color: #ffffff;
+}
+
+
+  //保護ネコ活動✖︎クラウドファンディングについて
+
+.Contents{
+  color: rgb(74, 73, 70);
+  margin: 200px 0 0 0;
+  &__expect{
+    width: 100%;
+    margin: 70px 0px 150px 0px;
+    background-color: #ffffff;
+    position: relative;
+    &__title{
+      width: 100%;
+      position: absolute;
+      top:-90px;
+      z-index: 10;
+      .Big-Tittle{
+        display: flex;
+        align-items: center;
+      }
+      .Big-Tittle p{
+        font-size: 45px!important;
+        font-family: "ヒラギノ明朝 Pro W3";
+        padding: 0 7px;
+        color: rgb(72, 65, 58);
+        font-weight: 700;
+      }
+      .Big-Tittle:before {
+        content: "";
+        flex-grow: 1;
+        height: 2px;
+        display: block;
+        margin-left: .4em;
+        background:  rgb(72, 65, 58);
+      }
+      
+      .About{
+        width: 15%;
+      }
+    }
+    &__title h1{
+      font-family: "ヒラギノ明朝 Pro W3";
+      font-size: 32px;
+      font-weight: 600;
+      padding: 0 30px;
+      margin: 0 0 50px 0;
+      text-align: center;
+    }
+    .About-box{
+      position: relative;
+      &__flex{
+        display: flex;
+        justify-content: center;
+      }
+      &__countent{
+        background-color: rgb(243,247,253);
+        padding: 50px 0 50px 0;
+        width: 95%;
+        line-height: 40px;
+        font-size: 18px;
+        box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
+        &__message{
+          text-align: center;
+        }
+      } 
+      &__grath{
+        background-color: rgb(237, 241, 246);
+        padding: 50px 50px 50px 150px;
+        line-height: 40px;
+        width: 95%;
+        margin: 70px 0 70px 70px;
+        display: inline-block;
+        display: flex;
+        box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
+        .expect__box-2{
+          width: 35%;
+          text-align: center;
+          padding: 24px;
+          background-color: #ffffff;
+        }
+        .expect__box-2 p{
+          padding-bottom: 10px;
+          font-weight: 700;
+          font-size: 18px!important;
+        }
+        .expect__box-2 table{
+          margin: 0 auto;
+        }
+        .expect__box-2 td{
+          width: 45%; 
+          text-align: center;
+        }
+        .expect__box-2 th{
+          width: 40%;
+          height: 30px; 
+        }
+        .totale{
+          border-top: solid 1px;   
+        }
+        .expect__ask-2{
+          margin: 0 0 0 100px;
+          font-size: 18px;
+        }
+      }
+      &__crowdfunding{
+        background-color: rgb(243,247,253);
+        padding: 50px 0px 50px 150px;
+        line-height: 40px;
+        font-size: 18px;
+        width: 95%;
+        height: 10%;
+        line-height: 40px;
+        text-align: center;
+        box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
+      }
+    }
+  }
+  &__projects{
+    background-color: rgb(237, 241, 246);
+    padding: 0 60px;
+  }
+}
+
+//クラウドファンディングとは
+.Contents{
+  &__CrowdFunding{
+    margin-top: 300px;
+  }
+  &__expect{
+    &__title{
+      .CrowdFunding{
+        width: 25%;
+      }
+    }
+  }
+}
+
+.CrowdFunding-Box{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  width: 100%;
+  &__base{
+    background-color: #ffffff;
+    padding: 25px;
+    font-size: 15px;
+    width: 35%;
+    position: relative;
+    .Btn-box-2{
+      display: flex;
+      justify-content: space-around;
+      margin: 80px 0 20px 0;
+    }
+  }
+  &__base h2{
+    text-align: center;
+    font-weight: 800;
+    font-size: 24px;
+    padding-bottom: 20px;
+  }
+}
+
+.Tag{
+  background-color: rgb(72, 65, 58);
+  height: 50px;
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  line-height: 50px;
+  font-size: 24px;
+  opacity: 0.8;
 }
 
   //プロジェクトの配列部分
@@ -510,7 +450,23 @@
 
 
 
+
+
+
 //図形作成
+.point:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: rgb(195, 209, 229) transparent transparent;
+  border-style: solid;
+  border-width: 20px 20px 0 0;
+}
+
 .Achievement  {
   position: relative;
   width: 400px;
@@ -541,7 +497,6 @@
 .square{
   color: #ffffff;
   font-size: 24px;
-  //font-weight: 700;
   position: absolute;
   top: 25px;
   left: 6px;
@@ -550,7 +505,6 @@
 	width: 140px;/* 幅 */
 	height: 0px;/* y位置 */
 	border-bottom: 40px solid#69c3be;/* 高さ */
-	//border-left: 30px solid transparent;/* 左側の角度 */
   border-right: 10px solid transparent;/* 側の角度 */
   text-align: center;
   box-shadow: 0px 10px 10px -5px rgba(0,0,0,0.5);
@@ -560,7 +514,6 @@
   width: 150px;
 	height: 150px;
 	background:rgb(195, 209, 229);
-  //opacity: 0;
   border:8px solid rgb(243,247,253);
 	-moz-border-radius: 150px;
 	-webkit-border-radius: 150px;
@@ -582,12 +535,10 @@
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-
   width: 80%;
   height: 80%;
   z-index: 5;
 }
-
 
 .circle-cat{
   width: 240px;
@@ -704,14 +655,6 @@
   z-index: 5;
 }
 
-
-.link-title{
-  text-decoration: none;
-  color: rgb(101, 99, 95);
-  font-weight: 700;
-}
-
-
 //アニメーション設定
   //文字が浮き出るアニメーション
 #expect__title__crowdfunding {
@@ -720,18 +663,11 @@
 }
 
   //だんだんズームしてくるアニメーション
+.background-up{
+  animation: animationZoom 10s ease-in-out forwards;
+}
 @keyframes animationZoom {
   100% { transform: scale(1.1)}
-  }
-
-@keyframes animationUpSlide {
-  0% {
-    transform: translateY(-30px);
-   }
-  100% {
-  transform: translateY(0px);
-  }
-
   }
 
   //フェードイン
@@ -760,24 +696,6 @@
        opacity: 1;
     }
   }
-
-.select:hover {
-  font-size: 24px;
-  padding:0 15px;
-  }
-
-.select-2:hover {
-  color: #ffffff;
-}
-.btn-color:hover{
-  background-color: rgb(72, 65, 58);
-  color: #ffffff;
-}
-.select-3:hover {
-  color: #ffffff;
-}
-
-
 
 .Achievement:hover {
   opacity: 0.5;

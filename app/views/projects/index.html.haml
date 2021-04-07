@@ -1,7 +1,7 @@
 = render 'layouts/header'
 .Phot
   .phot__image
-    = image_tag '/Cat&Clover.jpg',class: "phot__image--background-1"
+    = image_tag '/Cat&Clover.jpg',class: "phot__image--background background-up"
     .expect.expect-1.fade-in-1
       %h2.expect__title.fade-in-2 
         ネコと人が
@@ -9,13 +9,13 @@
         できる世界のために
       
   .phot__image
-    = image_tag '/rolling-cat.jpg',class: "phot__image--background-2"
+    = image_tag '/rolling-cat.jpg',class: "phot__image--background background-up"
     .expect.expect-2
       %h2.expect__title 
         私たちができること・・・
       
   .phot__image
-    = image_tag '/DowntownーCat.jpg',class: "phot__image--background-3"
+    = image_tag '/DowntownーCat.jpg',class: "phot__image--background"
     .phot__image__last
       #expect__title__crowdfunding
         保護猫 ✖︎ クラウドファンディング
@@ -23,11 +23,11 @@
       .Btn-box
         .Start-crowdfunding
           - if user_signed_in? 
-            = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "Select__start select-2"
+            = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "select select-2"
           - else
-            = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "Select__start select-2"
+            = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "select select-2"
         .Understand-crowdfunding
-          = link_to "クラウドファンディングについて知る", "#", method: :get, class: "Select__start select-2"        
+          = link_to "クラウドファンディングについて知る", "#", method: :get, class: "select select-2"        
 
 
   
@@ -38,9 +38,8 @@
         .Big-Tittle.About
           %p About
         %h1 保護ネコ活動✖︎クラウドファンディングについて
-      
       .About-box
-        .About-box__countent
+        .About-box__countent.About-box__flex
           .About-box__countent__message
             %p 現在、多くの保護団体や個人のボランティアの方々は
             %p 支援者の援助や自身の貯金を切り崩して
@@ -96,7 +95,7 @@
         
    
     .Contents__expect.Contents__CrowdFunding
-      .Contents__expect__title 
+      .Contents__expect__title
         .Big-Tittle.CrowdFunding
           %p CrowdFunding
         %h1 クラウドファンディングとは
@@ -105,31 +104,24 @@
           .About-box__countent__message
             %p クラウドファンディングとはインターネットを通して自分の活動を発信することで
             %p その活動を応援したいと思ってくれる人から資金を募るシステムのことです。
-            %p 病気の保護ネコを治療したい、保護シェルターを建設したい・・
-            %p 保護ネコを救うための多くのプロジェクトを
-            %p プロジェクトに賛同していただいた支援者の方々と共に実現していきます。
-    
-        .Btn-box-2
-          .Start-crowdfunding.btn-color
-            = icon('fas', 'angle-double-right')
-            - if user_signed_in? 
-              = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "select-3"
-            - else
-              = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "select-3"
-          -# .Understand-crowdfunding.btn-color
-          -#   = icon('fas', 'angle-double-right')
-          -#   = link_to "クラウドファンディングについて知る", new_project_path, method: :get, class: "select-2"
-
-
-    .Contents__expect 
-      .Contents__expect__title
-        %h1 寄付をする
-      .About-box__grath
-        .expect__ask-2
-          %p ユーザーは支援をしたいプロジェクトに寄付をすることができます。
-          %p 寄付金額は投稿者が設定しているリターンの種類から選択できます。
-          %p 寄付をしていただくと、投稿者からリターンとしてささやかなお礼が届きます。
-          %p また、寄付金を使ったプロジェクトの実行報告を後日確認することができます。
+            
+          .CrowdFunding-Box 
+            .CrowdFunding-Box__base
+              .point 
+              %h2 投稿する
+              %p 保護ネコを救うためのプロジェクトを投稿しプロジェクトに賛同していただいた方々に共に寄付を募ります。期間終了後は集まった寄付金を用いて行ったプロジェクトの実行報告を行います。 
+              .Btn-box-2
+                .Start-crowdfunding.btn-color
+                  = icon('fas', 'angle-double-right')
+                  - if user_signed_in? 
+                    = link_to "クラウドファンディングをはじめる", new_project_path, method: :get, class: "select"
+                  - else
+                    = link_to "クラウドファンディングをはじめる", confirmation_projects_path, method: :get, class: "select"
+            .CrowdFunding-Box__base
+              .point
+              %h2 寄付をする
+              %p 支援をしたいプロジェクトに寄付をすることができます。
+              %p 寄付金額は投稿者が設定しているリターンの種類から選択できます。寄付をしていただくと、投稿者からリターンとしてささやかなお礼が届きます。また、投稿者からの実行報告によって寄付金がどのように使用されたかを確認することができます。
     
     .Tag
       Let's Crowd Funding !!
